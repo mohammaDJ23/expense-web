@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+set -euo pipefail
+
+pnpm exec branch-name-lint .branch.namerc.json
+pnpm exec lint-staged    
+
+echo "✅ All pre-commit checks passed!"

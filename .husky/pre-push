@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+set -euo pipefail
+
+pnpm exec eslint .
+
+echo "✅ All pre-push checks passed!"

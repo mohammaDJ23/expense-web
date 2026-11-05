@@ -10,6 +10,7 @@
         "node": "24"
     },
     "scripts": {
+        "prepare": "husky",
         "dev": "vite",
         "build": "tsc -b && vite build",
         "preview": "vite preview",
@@ -52,6 +53,7 @@
         "eslint-plugin-sonarjs": "^4.2.2",
         "eslint-plugin-unused-imports": "^4.4.1",
         "globals": "^17.13.0",
+        "husky": "^9.1.7",
         "knip": "^6.44.1",
         "lint-staged": "^17.6.0",
         "prettier": "^3.9.10",
