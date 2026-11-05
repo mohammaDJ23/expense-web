@@ -19,7 +19,6 @@
         "lint:ci": "eslint . --max-warnings=0",
         "format:ci": "prettier --check .",
         "knip": "knip",
-        "semantic-release": "semantic-release",
         "install:ci": "pnpm install --ignore-scripts --frozen-lockfile",
         "prepare:release": "prettier --write CHANGELOG.md package.json",
         "eslint:security:scan": "pnpm exec eslint . --ext js,ts --plugin security --config eslint.config.mjs",
@@ -30,7 +29,8 @@
         "tag:app:docker:image": "bash ./scripts/app/docker-image-tag.sh",
         "start:docker:development": "bash ./scripts/app/docker-entrypoint-development.sh",
         "start:docker:ci": "bash ./scripts/app/docker-entrypoint-ci.sh",
-        "start:docker:production": "bash ./scripts/app/docker-entrypoint-production.sh"
+        "start:docker:production": "bash ./scripts/app/docker-entrypoint-production.sh",
+        "create:branch:id": "bash ./scripts/branch-id-creation.sh"
     },
     "dependencies": {
         "react": "^19.3.1",
