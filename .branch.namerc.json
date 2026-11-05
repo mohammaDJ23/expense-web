@@ -1,0 +1,8 @@
+{
+    "branchNameLinter": {
+        "prefixes": ["feature", "chore", "release", "refactor", "fix", "hotfix", "docs", "config"],
+        "separator": "/",
+        "regex": "[0-9]+--[a-z0-9-]+",
+        "msgPrefixNotAllowed": "🚫 Invalid branch name\n\n📝 Expected format: <type>/<id>--<description>\n\n✅ Allowed types: feature, chore, release, refactor, fix, hotfix, docs, config\n✅ ID must be a positive number\n✅ Description: lowercase letters, numbers, hyphens only\n\n📌 Examples:\n   • feature/123--add-user-authentication\n   • fix/456--resolve-login-issue\n   • config/789--update-config\n\n💡 Tip: Use 'git branch -m <new-name>' to rename your branch"
+    }
+}
