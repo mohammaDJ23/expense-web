@@ -25,7 +25,7 @@ const COMMITS = [
     'release',
 ];
 
-module.exports = {
+export default {
     rules: {
         'commit-message-format': [2, 'always'],
     },
