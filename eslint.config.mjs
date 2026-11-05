@@ -33,6 +33,8 @@ export default defineConfig([
             'tsconfig.*.json',
             'pnpm-lock.yaml',
             'eslint.config.mjs',
+            'commitlint.config.js',
+            'lint-staged.config.js',
         ],
     },
     eslint.configs.recommended,

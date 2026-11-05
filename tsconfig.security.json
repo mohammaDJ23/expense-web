@@ -1,0 +1,26 @@
+{
+    "extends": "./tsconfig.app.json",
+    "compilerOptions": {
+        "strict": true,
+        "noImplicitAny": true,
+        "strictBindCallApply": true,
+        "strictFunctionTypes": true,
+        "noImplicitThis": true,
+        "alwaysStrict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "exactOptionalPropertyTypes": false,
+        "noUncheckedIndexedAccess": true,
+        "noImplicitOverride": true,
+        "allowUnusedLabels": false,
+        "allowUnreachableCode": false,
+        "noEmit": true,
+        "declaration": false,
+        "sourceMap": false,
+        "outDir": null,
+        "rootDir": "./"
+    },
+    "exclude": ["node_modules", "dist"]
+}
