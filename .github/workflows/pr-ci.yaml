@@ -1,0 +1,171 @@
+name: PR CI
+
+on:
+    pull_request:
+        types: [opened, synchronize, reopened]
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref_name }}
+    cancel-in-progress: true
+
+env:
+    SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+
+jobs:
+    install-dependencies:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout the source
+              uses: actions/checkout@v4
+              with:
+                  ref: ${{ env.SHA }}
+
+            - name: Install node and node_modules
+              uses: ./.github/actions/setup-node
+
+    branch-and-commit-validation:
+        runs-on: ubuntu-latest
+        needs: install-dependencies
+        steps:
+            - name: Checkout the source
+              uses: actions/checkout@v4
+              with:
+                  ref: ${{ env.SHA }}
+
+            - name: Install node and node_modules
+              uses: ./.github/actions/setup-node
+
+            - name: Validate the branch name
+              run: pnpm exec branch-name-lint .branch.namerc.json
+
+            - name: Validate the commit messages
+              id: commit-validation
+              uses: wagoid/commitlint-github-action@v5
+              with:
+                  configFile: commitlint.config.js
+                  commitDepth: 0
+
+    lint-and-format:
+        needs: [install-dependencies, branch-and-commit-validation]
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout the source
+              uses: actions/checkout@v4
+              with:
+                  ref: ${{ env.SHA }}
+
+            - name: Install node and node_modules
+              uses: ./.github/actions/setup-node
+
+            - name: Run linting
+              run: pnpm run lint:ci
+
+            - name: Check formatting
+              run: pnpm run format:ci
+
+    security-checks:
+        runs-on: ubuntu-latest
+        needs: lint-and-format
+        permissions:
+            security-events: write
+            actions: read
+            contents: read
+        steps:
+            - name: Checkout the source
+              uses: actions/checkout@v4
+              with:
+                  ref: ${{ env.SHA }}
+                  fetch-depth: 0
+
+            - name: Install node and node_modules
+              uses: ./.github/actions/setup-node
+
+            - name: ESLint security scan
+              run: pnpm run eslint:security:scan
+
+            - name: TypeScript security compilation scan
+              run: pnpm run ts:compilation:security:scan
+
+            - name: TypeScript security scan (tsec)
+              run: pnpm run ts:tsec:security:scan
+
+            - name: CodeQL Analysis
+              uses: github/codeql-action/init@v4
+              with:
+                  languages: javascript-typescript
+
+            - name: CodeQL Analyze
+              uses: github/codeql-action/analyze@v4
+
+            - name: Security audit
+              run: pnpm audit --audit-level=high
+
+            - name: ShellCheck scan
+              uses: azohra/shell-linter@latest
+              with:
+                  path: '.'
+                  severity: error
+                  exclude-paths: 'node_modules'
+
+            - name: Snyk - Scan dependencies
+              uses: snyk/actions/node@master
+              env:
+                  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+              with:
+                  args: --all-projects --severity-threshold=high
+
+            - name: Snyk - Scan code
+              uses: snyk/actions@master
+              env:
+                  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+              with:
+                  command: code
+                  args: --severity-threshold=high
+
+            - name: Secret detection
+              uses: trufflesecurity/trufflehog@main
+              with:
+                  path: ./
+
+            - name: Gitleaks pattern detection
+              uses: gitleaks/gitleaks-action@v2
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    docker-security:
+        runs-on: ubuntu-latest
+        needs: lint-and-format
+        steps:
+            - name: Checkout the source
+              uses: actions/checkout@v4
+              with:
+                  ref: ${{ env.SHA }}
+
+            - name: Lint Dockerfile with hadolint
+              uses: hadolint/hadolint-action@v3.1.0
+              with:
+                  dockerfile: Dockerfile
+                  failure-threshold: error
+                  ignore: DL3018,DL3016
+
+    build:
+        runs-on: ubuntu-latest
+        needs:
+            [
+                install-dependencies,
+                branch-and-commit-validation,
+                lint-and-format,
+                security-checks,
+                docker-security,
+            ]
+        steps:
+            - name: Checkout the source
+              uses: actions/checkout@v4
+              with:
+                  ref: ${{ env.SHA }}
+
+            - name: Install node and node_modules
+              uses: ./.github/actions/setup-node
+
+            - name: Build the project
+              run: pnpm run build
