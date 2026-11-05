@@ -25,6 +25,9 @@
         "eslint:security:scan": "pnpm exec eslint . --ext js,ts --plugin security --config eslint.config.mjs",
         "ts:compilation:security:scan": "tsc --project tsconfig.security.json",
         "ts:tsec:security:scan": "tsec --project tsconfig.security.json",
+        "name:app:docker:image": "bash ./scripts/app/docker-image-name.sh",
+        "push:app:docker:image": "bash ./scripts/app/docker-image-push.sh",
+        "tag:app:docker:image": "bash ./scripts/app/docker-image-tag.sh",
         "start:docker:development": "bash ./scripts/app/docker-entrypoint-development.sh",
         "start:docker:ci": "bash ./scripts/app/docker-entrypoint-ci.sh",
         "start:docker:production": "bash ./scripts/app/docker-entrypoint-production.sh"
