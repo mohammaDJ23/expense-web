@@ -36,6 +36,9 @@ jobs:
         needs: manual-approval
         runs-on: ubuntu-latest
         timeout-minutes: 15
+        permissions:
+            contents: write
+            issues: write
         outputs:
             version: ${{ steps.release.outputs.new_release_version }}
             commit_sha: ${{ steps.release.outputs.new_release_git_head }}
