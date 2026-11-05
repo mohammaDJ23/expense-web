@@ -1,0 +1,31 @@
+name: development-expense-web
+
+services:
+    expense-web:
+        stdin_open: true
+        tty: true
+        image: development-expense-web
+        build:
+            context: .
+            dockerfile: Dockerfile
+            target: development
+        ports:
+            - '8585:8585'
+        environment:
+            NODE_ENV: development
+        volumes:
+            - ./src:/usr/src/app/src
+        restart: unless-stopped
+        healthcheck:
+            test: ['CMD', 'wget', '-qO-', 'http://127.0.0.1:8585/']
+            interval: 15s
+            timeout: 5s
+            start_period: 90s
+            retries: 3
+        networks:
+            - expense-web
+        pull_policy: never
+
+networks:
+    expense-web:
+        driver: bridge

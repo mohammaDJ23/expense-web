@@ -1,0 +1,10 @@
+name: ci-expense-web
+
+services:
+    expense-web:
+        image: ci-expense-web
+        build:
+            context: .
+            target: production
+            dockerfile: Dockerfile
+        pull_policy: never
