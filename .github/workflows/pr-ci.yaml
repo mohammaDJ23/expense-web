@@ -35,6 +35,11 @@ jobs:
             - name: Install node and node_modules
               uses: ./.github/actions/setup-node
 
+            - name: Set the PR source branch
+              env:
+                  BRANCH_NAME: ${{ github.head_ref }}
+              run: git switch -c "$BRANCH_NAME"
+
             - name: Validate the branch name
               run: pnpm exec branch-name-lint .branch.namerc.json
 
