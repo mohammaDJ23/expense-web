@@ -49,6 +49,7 @@ jobs:
               with:
                   ref: ${{ env.SHA }}
                   fetch-depth: 0
+                  token: ${{ secrets.SEMANTIC_RELEASE_BOT_PAT_TOKEN }}
 
             - name: Install node and node_modules
               uses: ./.github/actions/setup-node
@@ -60,7 +61,7 @@ jobs:
                   extra_plugins: |
                       conventional-changelog-conventionalcommits@9.3.1
               env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_BOT_PAT_TOKEN }}
 
     expense-web:
         needs: create-version
