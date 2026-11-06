@@ -2,7 +2,7 @@ name: ci-expense-web
 
 services:
     expense-web:
-        image: ci-expense-web
+        image: ${IMAGE:?ERROR IMAGE must be provided}
         build:
             context: .
             target: production
