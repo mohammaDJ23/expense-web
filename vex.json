@@ -52,6 +52,30 @@
             ],
             "status": "not_affected",
             "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-9079"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.14.1-r3"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-86140"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/libxml2@2.13.9-r1"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
         }
     ]
 }
