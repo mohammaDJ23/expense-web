@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/mohammaDJ23/expense-web/compare/v1.1.1...v1.1.2) (2026-11-06)
+
+### 🔧 Chores
+
+- apply format ([1042971](https://github.com/mohammaDJ23/expense-web/commit/10429710185813c525c3bd05a4d48d47a27b7425))
+- configure tailwind ([88c7640](https://github.com/mohammaDJ23/expense-web/commit/88c76408c1e765286e66da97f0d44dfbd6c78ed2))
+
 ## [1.1.1](https://github.com/mohammaDJ23/expense-web/compare/v1.1.0...v1.1.1) (2026-11-06)
 
 ### 🔧 Chores
