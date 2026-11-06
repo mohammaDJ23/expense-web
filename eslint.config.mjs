@@ -35,6 +35,8 @@ export default defineConfig([
             'eslint.config.mjs',
             'commitlint.config.js',
             'lint-staged.config.js',
+            'orval.config.ts',
+            'src/api/orval/generated/**/*.ts',
         ],
     },
     eslint.configs.recommended,

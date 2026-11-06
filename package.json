@@ -30,7 +30,9 @@
         "start:docker:development": "bash ./scripts/app/docker-entrypoint-development.sh",
         "start:docker:ci": "bash ./scripts/app/docker-entrypoint-ci.sh",
         "start:docker:production": "bash ./scripts/app/docker-entrypoint-production.sh",
-        "create:branch:id": "bash ./scripts/branch-id-creation.sh"
+        "create:branch:id": "bash ./scripts/branch-id-creation.sh",
+        "api:generate": "orval",
+        "api:generate:watch": "orval --watch"
     },
     "dependencies": {
         "@tanstack/react-query": "^5.106.1",
