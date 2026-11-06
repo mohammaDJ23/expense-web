@@ -1,3 +1,9 @@
+## [1.0.6](https://github.com/mohammaDJ23/expense-web/compare/v1.0.5...v1.0.6) (2026-11-06)
+
+### 🔧 Chores
+
+- add the pkg:apk/alpine/curl@8.14.1-r3 & pkg:apk/alpine/libxml2@2.13.9-r1 ([11c6d62](https://github.com/mohammaDJ23/expense-web/commit/11c6d62b20ce5a05ce4fc6202ea9ac855ad52895))
+
 ## [1.0.5](https://github.com/mohammaDJ23/expense-web/compare/v1.0.4...v1.0.5) (2026-11-06)
 
 ### 🔧 Continuous Integration
