@@ -1,0 +1,14 @@
+node_modules
+dist
+.vscode
+*.spec.ts
+docker-compose.yml
+docker-compose.*.yml
+Dockerfile*
+.dockerignore
+.git
+.gitignore
+.gitattributes
+secrets
+*.tsbuildinfo
+.DS_Store
