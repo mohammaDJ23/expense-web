@@ -11,6 +11,7 @@ cleanup() {
 trap cleanup EXIT
 
 docker_compose \
+    --env-file .env \
     -f docker-compose.development.yml \
     up \
     --build \

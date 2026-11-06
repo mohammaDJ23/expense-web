@@ -12,6 +12,10 @@ RUN apk update && \
 
 FROM node-patched AS base
 
+ARG VITE_API_URL
+
+ENV VITE_API_URL=${VITE_API_URL}
+
 RUN corepack enable && \
     corepack prepare pnpm@10.29.2 --activate
 

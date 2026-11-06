@@ -11,6 +11,7 @@ cleanup() {
 trap cleanup EXIT
 
 if ! docker_compose \
+    --env-file .env.production \
     -f docker-compose.production.yml \
     -f docker-compose.ci.yml \
     up \
