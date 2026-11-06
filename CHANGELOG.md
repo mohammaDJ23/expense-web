@@ -1,3 +1,9 @@
+## [1.0.5](https://github.com/mohammaDJ23/expense-web/compare/v1.0.4...v1.0.5) (2026-11-06)
+
+### 🔧 Continuous Integration
+
+- add the vex file and ignore curl vulnerability ([5ec4c00](https://github.com/mohammaDJ23/expense-web/commit/5ec4c003734ab1d8918a6c42fbd7c119fc10987e))
+
 ## [1.0.4](https://github.com/mohammaDJ23/expense-web/compare/v1.0.3...v1.0.4) (2026-11-06)
 
 ### 🔧 Continuous Integration
