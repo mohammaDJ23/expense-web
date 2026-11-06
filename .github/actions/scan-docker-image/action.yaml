@@ -33,7 +33,6 @@ runs:
               exit-code: true
               only-severities: critical,high
               ignore-base: true
-              vex-location: ./vex.json
               only-vex-affected: true
 
         - name: Snyk container scan
@@ -45,8 +44,6 @@ runs:
               docker run --rm \
               -e SNYK_TOKEN \
               -v /var/run/docker.sock:/var/run/docker.sock \
-              -v "$GITHUB_WORKSPACE/.snyk:/scan/.snyk:ro" \
               snyk/snyk:docker \
               snyk container test "$IMAGE_NAME" \
-                  --severity-threshold=high \
-                  --policy-path=/scan/.snyk
+                  --severity-threshold=high
