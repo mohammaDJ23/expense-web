@@ -1,3 +1,9 @@
+## [1.0.4](https://github.com/mohammaDJ23/expense-web/compare/v1.0.3...v1.0.4) (2026-11-06)
+
+### 🔧 Continuous Integration
+
+- remove the not exists files ([18206ea](https://github.com/mohammaDJ23/expense-web/commit/18206ea5b5d38bb83e0337d068a0343d7dccd4b4))
+
 ## [1.0.3](https://github.com/mohammaDJ23/expense-web/compare/v1.0.2...v1.0.3) (2026-11-06)
 
 ### 🔧 Chores
