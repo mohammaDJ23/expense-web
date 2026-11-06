@@ -33,6 +33,8 @@
         "create:branch:id": "bash ./scripts/branch-id-creation.sh"
     },
     "dependencies": {
+        "@tanstack/react-query": "^5.106.1",
+        "axios": "^1.21.0",
         "react": "^19.3.1",
         "react-dom": "^19.3.1"
     },
@@ -63,6 +65,7 @@
         "husky": "^9.1.7",
         "knip": "^6.44.1",
         "lint-staged": "^17.6.0",
+        "orval": "^8.46.0",
         "prettier": "^3.9.10",
         "semantic-release": "^25.0.9",
         "tsec": "^0.2.9",
