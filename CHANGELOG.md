@@ -1,3 +1,16 @@
+## [1.1.0](https://github.com/mohammaDJ23/expense-web/compare/v1.0.7...v1.1.0) (2026-11-06)
+
+### ✨ Features
+
+- add the orval configuration and the entire backend apis ([0d6851d](https://github.com/mohammaDJ23/expense-web/commit/0d6851d602b337ebc5cc20891ff01a10233560c6))
+
+### 🔧 Chores
+
+- add backend-apis.json ([a831b90](https://github.com/mohammaDJ23/expense-web/commit/a831b90d63a4e79849c8c4aa10e287f589a3d8df))
+- add dockerignore ([553f654](https://github.com/mohammaDJ23/expense-web/commit/553f654309cd00b4d6b0579c982bdf99b9d59e31))
+- add the @tanstack/react-query, axios and orval packages ([2fe5b3a](https://github.com/mohammaDJ23/expense-web/commit/2fe5b3a788acf3eb94e436b550dae21759cd9ca4))
+- remove readme content ([86486b9](https://github.com/mohammaDJ23/expense-web/commit/86486b984586f1a37d4c6275358c3e57c2d0c6da))
+
 ## [1.0.7](https://github.com/mohammaDJ23/expense-web/compare/v1.0.6...v1.0.7) (2026-11-06)
 
 ### 🔧 Chores
