@@ -1,0 +1,57 @@
+{
+    "@context": "https://openvex.dev/ns/v0.2.0",
+    "@id": "urn:uuid:550e8400-e29b-41d4-a716-446655440000",
+    "author": "Expense-web",
+    "timestamp": "2026-06-06T00:00:00Z",
+    "version": 1,
+    "statements": [
+        {
+            "vulnerability": {
+                "name": "CVE-2026-3805"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.17.0-r1"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-6276"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.19.0-r0"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-5773"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.19.0-r0"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-92392"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.22.0-r0"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        }
+    ]
+}
