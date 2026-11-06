@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/mohammaDJ23/expense-web/compare/v1.1.0...v1.1.1) (2026-11-06)
+
+### 🔧 Chores
+
+- add the api url as an env ([7fd69b7](https://github.com/mohammaDJ23/expense-web/commit/7fd69b70e2af2ca15c25b5038225bda828cfd902))
+
 ## [1.1.0](https://github.com/mohammaDJ23/expense-web/compare/v1.0.7...v1.1.0) (2026-11-06)
 
 ### ✨ Features
