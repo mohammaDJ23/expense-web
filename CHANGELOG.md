@@ -1,3 +1,9 @@
+## [1.0.3](https://github.com/mohammaDJ23/expense-web/compare/v1.0.2...v1.0.3) (2026-11-06)
+
+### 🔧 Chores
+
+- provide the IMAGE env ([253987e](https://github.com/mohammaDJ23/expense-web/commit/253987e976f8189529a3796b9d5ad6244a1ea3f0))
+
 ## [1.0.2](https://github.com/mohammaDJ23/expense-web/compare/v1.0.1...v1.0.2) (2026-11-06)
 
 ### 🔧 Chores
