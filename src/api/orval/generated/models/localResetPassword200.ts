@@ -15,5 +15,5 @@
 import type { HttpResponseDto } from './httpResponseDto';
 
 export type LocalResetPassword200 = HttpResponseDto & {
-  data?: boolean;
+    data?: boolean;
 };

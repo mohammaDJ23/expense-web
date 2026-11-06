@@ -14,8 +14,8 @@
  */
 
 export interface LocationResponseDto {
-  id: string;
-  name: string;
-  createdAt: string;
-  updatedAt: string;
+    id: string;
+    name: string;
+    createdAt: string;
+    updatedAt: string;
 }

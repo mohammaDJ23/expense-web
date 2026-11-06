@@ -14,6 +14,6 @@
  */
 
 export interface FindBillsTimelineResponseDto {
-  date: string;
-  count: number;
+    date: string;
+    count: number;
 }

@@ -16,5 +16,5 @@ import type { ExceptionDto } from './exceptionDto';
 import type { HttpResponseDto } from './httpResponseDto';
 
 export type FindUser404 = HttpResponseDto & {
-  data?: ExceptionDto;
+    data?: ExceptionDto;
 };

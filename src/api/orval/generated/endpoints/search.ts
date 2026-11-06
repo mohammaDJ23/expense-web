@@ -12,216 +12,227 @@
  *
  * OpenAPI spec version: 5.3.5
  */
-import {
-  useMutation,
-  useQuery
-} from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import type {
-  DataTag,
-  DefinedInitialDataOptions,
-  DefinedUseQueryResult,
-  MutationFunction,
-  QueryClient,
-  QueryFunction,
-  QueryKey,
-  UndefinedInitialDataOptions,
-  UseMutationOptions,
-  UseMutationResult,
-  UseQueryOptions,
-  UseQueryResult
+    DataTag,
+    DefinedInitialDataOptions,
+    DefinedUseQueryResult,
+    MutationFunction,
+    QueryClient,
+    QueryFunction,
+    QueryKey,
+    UndefinedInitialDataOptions,
+    UseMutationOptions,
+    UseMutationResult,
+    UseQueryOptions,
+    UseQueryResult,
 } from '@tanstack/react-query';
 
 import type {
-  GlobalSearch200,
-  GlobalSearch400,
-  GlobalSearch401,
-  GlobalSearch429,
-  GlobalSearch500,
-  GlobalSearchParams,
-  SyncGlobalSearch200,
-  SyncGlobalSearch400,
-  SyncGlobalSearch429,
-  SyncGlobalSearch500
+    GlobalSearch200,
+    GlobalSearch400,
+    GlobalSearch401,
+    GlobalSearch429,
+    GlobalSearch500,
+    GlobalSearchParams,
+    SyncGlobalSearch200,
+    SyncGlobalSearch400,
+    SyncGlobalSearch429,
+    SyncGlobalSearch500,
 } from '../models';
 
 import { customInstance } from '../../mutator/custom-instance';
 
-
-
-
-
 const withQueryKey = <T extends object, K>(query: T, queryKey: K): T & { queryKey: K } => {
-  const result = { queryKey } as T & { queryKey: K };
-  for (const key of Object.keys(query)) {
-    // The explicit queryKey always wins, matching the previous
-    // `{ ...query, queryKey }` spread where it was set last.
-    if (key === 'queryKey') continue;
-    Object.defineProperty(result, key, {
-      enumerable: true,
-      configurable: true,
-      get: () => (query as Record<string, unknown>)[key],
-    });
-  }
-  return result;
+    const result = { queryKey } as T & { queryKey: K };
+    for (const key of Object.keys(query)) {
+        // The explicit queryKey always wins, matching the previous
+        // `{ ...query, queryKey }` spread where it was set last.
+        if (key === 'queryKey') continue;
+        Object.defineProperty(result, key, {
+            enumerable: true,
+            configurable: true,
+            get: () => (query as Record<string, unknown>)[key],
+        });
+    }
+    return result;
 };
 
 /**
  * It is including the bills, receivers, consumers and locations
  * @summary Application search
  */
-export const globalSearch = (
+export const globalSearch = (params?: GlobalSearchParams, signal?: AbortSignal) => {
+    return customInstance<GlobalSearch200>({
+        url: `/v1/api/search`,
+        method: 'GET',
+        params,
+        signal,
+    });
+};
+
+export const getGlobalSearchQueryKey = (params?: GlobalSearchParams) => {
+    return [`/v1/api/search`, ...(params ? [params] : [])] as const;
+};
+
+export const getGlobalSearchQueryOptions = <
+    TData = Awaited<ReturnType<typeof globalSearch>>,
+    TError = GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500,
+>(
     params?: GlobalSearchParams,
- signal?: AbortSignal
-) => {
-
-
-      return customInstance<GlobalSearch200>(
-      {url: `/v1/api/search`, method: 'GET',
-        params, signal
+    options?: {
+        query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof globalSearch>>, TError, TData>>;
     },
-      );
-    }
-
-
-
-
-export const getGlobalSearchQueryKey = (params?: GlobalSearchParams,) => {
-    return [
-    `/v1/api/search`, ...(params ? [params] : [])
-    ] as const;
-    }
-
-
-export const getGlobalSearchQueryOptions = <TData = Awaited<ReturnType<typeof globalSearch>>, TError = GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500>(params?: GlobalSearchParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof globalSearch>>, TError, TData>>, }
 ) => {
+    const { query: queryOptions } = options ?? {};
 
-const {query: queryOptions} = options ?? {};
+    const queryKey = queryOptions?.queryKey ?? getGlobalSearchQueryKey(params);
 
-  const queryKey =  queryOptions?.queryKey ?? getGlobalSearchQueryKey(params);
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof globalSearch>>> = ({ signal }) =>
+        globalSearch(params, signal);
 
+    return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
+        Awaited<ReturnType<typeof globalSearch>>,
+        TError,
+        TData
+    > & { queryKey: DataTag<QueryKey, TData, TError> };
+};
 
+export type GlobalSearchQueryResult = NonNullable<Awaited<ReturnType<typeof globalSearch>>>;
+export type GlobalSearchQueryError =
+    GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500;
 
-    const queryFn: QueryFunction<Awaited<ReturnType<typeof globalSearch>>> = ({ signal }) => globalSearch(params, signal);
-
-
-
-
-
-   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof globalSearch>>, TError, TData> & { queryKey: DataTag<QueryKey, TData, TError> }
-}
-
-export type GlobalSearchQueryResult = NonNullable<Awaited<ReturnType<typeof globalSearch>>>
-export type GlobalSearchQueryError = GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500
-
-
-export function useGlobalSearch<TData = Awaited<ReturnType<typeof globalSearch>>, TError = GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500>(
- params: undefined |  GlobalSearchParams, options: { query:Partial<UseQueryOptions<Awaited<ReturnType<typeof globalSearch>>, TError, TData>> & Pick<
-        DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof globalSearch>>,
-          TError,
-          Awaited<ReturnType<typeof globalSearch>>
-        > , 'initialData'
-      >, }
- , queryClient?: QueryClient
-  ):  DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useGlobalSearch<TData = Awaited<ReturnType<typeof globalSearch>>, TError = GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500>(
- params?: GlobalSearchParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof globalSearch>>, TError, TData>> & Pick<
-        UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof globalSearch>>,
-          TError,
-          Awaited<ReturnType<typeof globalSearch>>
-        > , 'initialData'
-      >, }
- , queryClient?: QueryClient
-  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useGlobalSearch<TData = Awaited<ReturnType<typeof globalSearch>>, TError = GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500>(
- params?: GlobalSearchParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof globalSearch>>, TError, TData>>, }
- , queryClient?: QueryClient
-  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
+export function useGlobalSearch<
+    TData = Awaited<ReturnType<typeof globalSearch>>,
+    TError = GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500,
+>(
+    params: undefined | GlobalSearchParams,
+    options: {
+        query: Partial<UseQueryOptions<Awaited<ReturnType<typeof globalSearch>>, TError, TData>> &
+            Pick<
+                DefinedInitialDataOptions<
+                    Awaited<ReturnType<typeof globalSearch>>,
+                    TError,
+                    Awaited<ReturnType<typeof globalSearch>>
+                >,
+                'initialData'
+            >;
+    },
+    queryClient?: QueryClient,
+): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
+export function useGlobalSearch<
+    TData = Awaited<ReturnType<typeof globalSearch>>,
+    TError = GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500,
+>(
+    params?: GlobalSearchParams,
+    options?: {
+        query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof globalSearch>>, TError, TData>> &
+            Pick<
+                UndefinedInitialDataOptions<
+                    Awaited<ReturnType<typeof globalSearch>>,
+                    TError,
+                    Awaited<ReturnType<typeof globalSearch>>
+                >,
+                'initialData'
+            >;
+    },
+    queryClient?: QueryClient,
+): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
+export function useGlobalSearch<
+    TData = Awaited<ReturnType<typeof globalSearch>>,
+    TError = GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500,
+>(
+    params?: GlobalSearchParams,
+    options?: {
+        query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof globalSearch>>, TError, TData>>;
+    },
+    queryClient?: QueryClient,
+): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 /**
  * @summary Application search
  */
 
-export function useGlobalSearch<TData = Awaited<ReturnType<typeof globalSearch>>, TError = GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500>(
- params?: GlobalSearchParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof globalSearch>>, TError, TData>>, }
- , queryClient?: QueryClient
- ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
+export function useGlobalSearch<
+    TData = Awaited<ReturnType<typeof globalSearch>>,
+    TError = GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500,
+>(
+    params?: GlobalSearchParams,
+    options?: {
+        query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof globalSearch>>, TError, TData>>;
+    },
+    queryClient?: QueryClient,
+): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
+    const queryOptions = getGlobalSearchQueryOptions(params, options);
 
-  const queryOptions = getGlobalSearchQueryOptions(params,options)
+    const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
+        queryKey: DataTag<QueryKey, TData, TError>;
+    };
 
-  const query = useQuery(queryOptions, queryClient) as  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
-
-  return withQueryKey(query, queryOptions.queryKey);
+    return withQueryKey(query, queryOptions.queryKey);
 }
-
-
-
-
-
 
 /**
  * It is for syncing the search engine with database
  * @summary Search syncing
  */
-export const syncGlobalSearch = (
-
- signal?: AbortSignal
-) => {
-
-
-      return customInstance<SyncGlobalSearch200>(
-      {url: `/v1/api/search/sync`, method: 'POST', signal
-    },
-      );
-    }
-
-
-
+export const syncGlobalSearch = (signal?: AbortSignal) => {
+    return customInstance<SyncGlobalSearch200>({
+        url: `/v1/api/search/sync`,
+        method: 'POST',
+        signal,
+    });
+};
 
 export const getSyncGlobalSearchMutationKey = () => ['syncGlobalSearch'] as const;
 
-export const getSyncGlobalSearchMutationOptions = <TError = SyncGlobalSearch400 | SyncGlobalSearch429 | SyncGlobalSearch500,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof syncGlobalSearch>>, TError,void, TContext>, }
-): UseMutationOptions<Awaited<ReturnType<typeof syncGlobalSearch>>, TError,void, TContext> => {
-
-const mutationKey = getSyncGlobalSearchMutationKey();
-const {mutation: mutationOptions} = options ?
-      options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey ?
-      options
-      : {...options, mutation: {...options.mutation, mutationKey}}
-      : {mutation: { mutationKey, }};
-
-
-
-
-      const mutationFn: MutationFunction<Awaited<ReturnType<typeof syncGlobalSearch>>, void> = () => {
-
-
-          return  syncGlobalSearch()
-        }
-
-
-
-
-
-
-  return  { mutationFn, ...mutationOptions }}
-
-    export type SyncGlobalSearchMutationResult = NonNullable<Awaited<ReturnType<typeof syncGlobalSearch>>>
-
-    export type SyncGlobalSearchMutationError = SyncGlobalSearch400 | SyncGlobalSearch429 | SyncGlobalSearch500
-
-
-    /**
- * @summary Search syncing
- */
-export const useSyncGlobalSearch = <TError = SyncGlobalSearch400 | SyncGlobalSearch429 | SyncGlobalSearch500,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof syncGlobalSearch>>, TError,void, TContext>, }
- , queryClient?: QueryClient): UseMutationResult<
+export const getSyncGlobalSearchMutationOptions = <
+    TError = SyncGlobalSearch400 | SyncGlobalSearch429 | SyncGlobalSearch500,
+    TContext = unknown,
+>(options?: {
+    mutation?: UseMutationOptions<
         Awaited<ReturnType<typeof syncGlobalSearch>>,
         TError,
         void,
         TContext
-      > => {
-      return useMutation(getSyncGlobalSearchMutationOptions(options), queryClient);
-    }
+    >;
+}): UseMutationOptions<Awaited<ReturnType<typeof syncGlobalSearch>>, TError, void, TContext> => {
+    const mutationKey = getSyncGlobalSearchMutationKey();
+    const { mutation: mutationOptions } = options
+        ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
+            ? options
+            : { ...options, mutation: { ...options.mutation, mutationKey } }
+        : { mutation: { mutationKey } };
+
+    const mutationFn: MutationFunction<Awaited<ReturnType<typeof syncGlobalSearch>>, void> = () => {
+        return syncGlobalSearch();
+    };
+
+    return { mutationFn, ...mutationOptions };
+};
+
+export type SyncGlobalSearchMutationResult = NonNullable<
+    Awaited<ReturnType<typeof syncGlobalSearch>>
+>;
+
+export type SyncGlobalSearchMutationError =
+    SyncGlobalSearch400 | SyncGlobalSearch429 | SyncGlobalSearch500;
+
+/**
+ * @summary Search syncing
+ */
+export const useSyncGlobalSearch = <
+    TError = SyncGlobalSearch400 | SyncGlobalSearch429 | SyncGlobalSearch500,
+    TContext = unknown,
+>(
+    options?: {
+        mutation?: UseMutationOptions<
+            Awaited<ReturnType<typeof syncGlobalSearch>>,
+            TError,
+            void,
+            TContext
+        >;
+    },
+    queryClient?: QueryClient,
+): UseMutationResult<Awaited<ReturnType<typeof syncGlobalSearch>>, TError, void, TContext> => {
+    return useMutation(getSyncGlobalSearchMutationOptions(options), queryClient);
+};

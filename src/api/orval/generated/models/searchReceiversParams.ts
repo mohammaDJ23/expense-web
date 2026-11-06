@@ -14,6 +14,6 @@
  */
 
 export type SearchReceiversParams = {
-  limit?: number;
-  q?: string;
+    limit?: number;
+    q?: string;
 };

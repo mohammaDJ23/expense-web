@@ -16,5 +16,5 @@ import type { FindReceiverList200Data } from './findReceiverList200Data';
 import type { HttpResponseDto } from './httpResponseDto';
 
 export type FindReceiverList200 = HttpResponseDto & {
-  data?: FindReceiverList200Data;
+    data?: FindReceiverList200Data;
 };

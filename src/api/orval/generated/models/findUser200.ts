@@ -16,5 +16,5 @@ import type { HttpResponseDto } from './httpResponseDto';
 import type { UserResponseDto } from './userResponseDto';
 
 export type FindUser200 = HttpResponseDto & {
-  data?: UserResponseDto;
+    data?: UserResponseDto;
 };

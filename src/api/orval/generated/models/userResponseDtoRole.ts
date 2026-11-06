@@ -13,10 +13,9 @@
  * OpenAPI spec version: 5.3.5
  */
 
-export type UserResponseDtoRole = typeof UserResponseDtoRole[keyof typeof UserResponseDtoRole];
-
+export type UserResponseDtoRole = (typeof UserResponseDtoRole)[keyof typeof UserResponseDtoRole];
 
 export const UserResponseDtoRole = {
-  owner: 'owner',
-  user: 'user',
+    owner: 'owner',
+    user: 'user',
 } as const;

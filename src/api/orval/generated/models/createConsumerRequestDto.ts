@@ -14,5 +14,5 @@
  */
 
 export interface CreateConsumerRequestDto {
-  name: string;
+    name: string;
 }

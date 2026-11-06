@@ -14,5 +14,5 @@
  */
 
 export interface CreateReceiverRequestDto {
-  name: string;
+    name: string;
 }

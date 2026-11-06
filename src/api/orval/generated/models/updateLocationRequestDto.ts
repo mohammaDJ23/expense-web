@@ -14,6 +14,6 @@
  */
 
 export interface UpdateLocationRequestDto {
-  id: string;
-  name: string;
+    id: string;
+    name: string;
 }

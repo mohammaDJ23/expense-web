@@ -14,6 +14,6 @@
  */
 
 export type SearchConsumersParams = {
-  limit?: number;
-  q?: string;
+    limit?: number;
+    q?: string;
 };

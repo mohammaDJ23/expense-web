@@ -16,5 +16,5 @@ import type { ConsumerResponseDto } from './consumerResponseDto';
 import type { HttpResponseDto } from './httpResponseDto';
 
 export type FindConsumer200 = HttpResponseDto & {
-  data?: ConsumerResponseDto;
+    data?: ConsumerResponseDto;
 };

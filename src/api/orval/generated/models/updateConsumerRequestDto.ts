@@ -14,6 +14,6 @@
  */
 
 export interface UpdateConsumerRequestDto {
-  id: string;
-  name: string;
+    id: string;
+    name: string;
 }

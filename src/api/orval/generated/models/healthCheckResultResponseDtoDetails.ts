@@ -14,4 +14,4 @@
  */
 import type { HealthEntityResponseDto } from './healthEntityResponseDto';
 
-export type HealthCheckResultResponseDtoDetails = {[key: string]: HealthEntityResponseDto};
+export type HealthCheckResultResponseDtoDetails = { [key: string]: HealthEntityResponseDto };

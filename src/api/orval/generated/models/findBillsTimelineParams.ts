@@ -14,8 +14,8 @@
  */
 
 export type FindBillsTimelineParams = {
-  /** @nullable */
-  start?: string | null;
-  /** @nullable */
-  end?: string | null;
+    /** @nullable */
+    start?: string | null;
+    /** @nullable */
+    end?: string | null;
 };

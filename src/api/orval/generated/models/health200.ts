@@ -16,5 +16,5 @@ import type { HealthCheckResultResponseDto } from './healthCheckResultResponseDt
 import type { HttpResponseDto } from './httpResponseDto';
 
 export type Health200 = HttpResponseDto & {
-  data?: HealthCheckResultResponseDto;
+    data?: HealthCheckResultResponseDto;
 };

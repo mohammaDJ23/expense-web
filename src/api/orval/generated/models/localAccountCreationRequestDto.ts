@@ -14,6 +14,6 @@
  */
 
 export interface LocalAccountCreationRequestDto {
-  password: string;
-  token: string;
+    password: string;
+    token: string;
 }

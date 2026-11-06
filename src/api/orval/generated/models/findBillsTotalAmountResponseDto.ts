@@ -14,6 +14,6 @@
  */
 
 export interface FindBillsTotalAmountResponseDto {
-  /** @nullable */
-  totalAmount: string | null;
+    /** @nullable */
+    totalAmount: string | null;
 }

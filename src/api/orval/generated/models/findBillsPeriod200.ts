@@ -16,5 +16,5 @@ import type { FindBillsPeriodResponseDto } from './findBillsPeriodResponseDto';
 import type { HttpResponseDto } from './httpResponseDto';
 
 export type FindBillsPeriod200 = HttpResponseDto & {
-  data?: FindBillsPeriodResponseDto;
+    data?: FindBillsPeriodResponseDto;
 };

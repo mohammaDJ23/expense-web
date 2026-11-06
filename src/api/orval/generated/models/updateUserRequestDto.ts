@@ -14,10 +14,10 @@
  */
 
 export interface UpdateUserRequestDto {
-  /** @nullable */
-  firstName?: string | null;
-  /** @nullable */
-  lastName?: string | null;
-  /** @nullable */
-  phone?: string | null;
+    /** @nullable */
+    firstName?: string | null;
+    /** @nullable */
+    lastName?: string | null;
+    /** @nullable */
+    phone?: string | null;
 }

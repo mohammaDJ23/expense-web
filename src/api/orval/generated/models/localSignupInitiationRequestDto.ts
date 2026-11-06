@@ -14,5 +14,5 @@
  */
 
 export interface LocalSignupInitiationRequestDto {
-  email: string;
+    email: string;
 }

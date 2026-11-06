@@ -14,5 +14,5 @@
  */
 
 export interface LocalAccountInitiationRequestDto {
-  email: string;
+    email: string;
 }

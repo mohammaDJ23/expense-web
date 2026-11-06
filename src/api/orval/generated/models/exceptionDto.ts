@@ -14,7 +14,7 @@
  */
 
 export interface ExceptionDto {
-  statusCode: number;
-  message: string;
-  timestamp: string;
+    statusCode: number;
+    message: string;
+    timestamp: string;
 }

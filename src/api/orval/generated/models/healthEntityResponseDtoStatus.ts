@@ -13,10 +13,10 @@
  * OpenAPI spec version: 5.3.5
  */
 
-export type HealthEntityResponseDtoStatus = typeof HealthEntityResponseDtoStatus[keyof typeof HealthEntityResponseDtoStatus];
-
+export type HealthEntityResponseDtoStatus =
+    (typeof HealthEntityResponseDtoStatus)[keyof typeof HealthEntityResponseDtoStatus];
 
 export const HealthEntityResponseDtoStatus = {
-  up: 'up',
-  down: 'down',
+    up: 'up',
+    down: 'down',
 } as const;

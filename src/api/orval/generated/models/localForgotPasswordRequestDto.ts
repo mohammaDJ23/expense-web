@@ -14,5 +14,5 @@
  */
 
 export interface LocalForgotPasswordRequestDto {
-  email: string;
+    email: string;
 }

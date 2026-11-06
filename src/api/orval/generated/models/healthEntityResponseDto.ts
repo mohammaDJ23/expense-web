@@ -16,8 +16,8 @@ import type { HealthEntityResponseDtoDetails } from './healthEntityResponseDtoDe
 import type { HealthEntityResponseDtoStatus } from './healthEntityResponseDtoStatus';
 
 export interface HealthEntityResponseDto {
-  timestamp: string;
-  name: string;
-  status: HealthEntityResponseDtoStatus;
-  details: HealthEntityResponseDtoDetails;
+    timestamp: string;
+    name: string;
+    status: HealthEntityResponseDtoStatus;
+    details: HealthEntityResponseDtoDetails;
 }

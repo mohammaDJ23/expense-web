@@ -16,5 +16,5 @@ import type { HttpResponseDto } from './httpResponseDto';
 import type { ReceiverResponseDto } from './receiverResponseDto';
 
 export type SearchReceivers200 = HttpResponseDto & {
-  data?: ReceiverResponseDto[];
+    data?: ReceiverResponseDto[];
 };

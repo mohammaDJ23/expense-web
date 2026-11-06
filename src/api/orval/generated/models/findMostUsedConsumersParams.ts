@@ -14,5 +14,5 @@
  */
 
 export type FindMostUsedConsumersParams = {
-  limit?: number;
+    limit?: number;
 };

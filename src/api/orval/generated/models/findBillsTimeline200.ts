@@ -16,5 +16,5 @@ import type { FindBillsTimelineResponseDto } from './findBillsTimelineResponseDt
 import type { HttpResponseDto } from './httpResponseDto';
 
 export type FindBillsTimeline200 = HttpResponseDto & {
-  data?: FindBillsTimelineResponseDto[];
+    data?: FindBillsTimelineResponseDto[];
 };

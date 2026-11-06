@@ -18,8 +18,8 @@ import type { LocationResponseDto } from './locationResponseDto';
 import type { ReceiverResponseDto } from './receiverResponseDto';
 
 export interface SearchResponseDto {
-  bills: BillResponseDto[];
-  receivers: ReceiverResponseDto[];
-  locations: LocationResponseDto[];
-  consumers: ConsumerResponseDto[];
+    bills: BillResponseDto[];
+    receivers: ReceiverResponseDto[];
+    locations: LocationResponseDto[];
+    consumers: ConsumerResponseDto[];
 }

@@ -16,5 +16,5 @@ import type { FindUserListResponseDto } from './findUserListResponseDto';
 import type { UserResponseDto } from './userResponseDto';
 
 export type FindUserList200Data = FindUserListResponseDto & {
-  items?: UserResponseDto[];
+    items?: UserResponseDto[];
 };

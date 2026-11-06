@@ -14,7 +14,7 @@
  */
 
 export type FindConsumerListParams = {
-  limit?: number;
-  /** @nullable */
-  cursor?: string | null;
+    limit?: number;
+    /** @nullable */
+    cursor?: string | null;
 };

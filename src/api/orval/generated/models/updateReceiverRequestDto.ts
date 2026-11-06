@@ -14,6 +14,6 @@
  */
 
 export interface UpdateReceiverRequestDto {
-  id: string;
-  name: string;
+    id: string;
+    name: string;
 }

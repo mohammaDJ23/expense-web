@@ -14,6 +14,6 @@
  */
 
 export interface LocalResetPasswordRequestDto {
-  newPassword: string;
-  token: string;
+    newPassword: string;
+    token: string;
 }

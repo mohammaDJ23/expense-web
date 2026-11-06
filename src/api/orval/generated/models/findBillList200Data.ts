@@ -16,5 +16,5 @@ import type { BillResponseDto } from './billResponseDto';
 import type { FindBillListResponseDto } from './findBillListResponseDto';
 
 export type FindBillList200Data = FindBillListResponseDto & {
-  items?: BillResponseDto[];
+    items?: BillResponseDto[];
 };

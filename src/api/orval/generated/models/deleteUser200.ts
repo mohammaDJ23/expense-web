@@ -16,5 +16,5 @@ import type { HttpResponseDto } from './httpResponseDto';
 import type { IdResponseDto } from './idResponseDto';
 
 export type DeleteUser200 = HttpResponseDto & {
-  data?: IdResponseDto;
+    data?: IdResponseDto;
 };
