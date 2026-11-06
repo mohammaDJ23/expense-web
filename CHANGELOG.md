@@ -1,3 +1,9 @@
+## [1.0.7](https://github.com/mohammaDJ23/expense-web/compare/v1.0.6...v1.0.7) (2026-11-06)
+
+### 🔧 Chores
+
+- add the pkg:apk/alpine/curl@8.14.1-r3 ([eb0c9b3](https://github.com/mohammaDJ23/expense-web/commit/eb0c9b32cb8aff1d6296be14b4085edb302a9fa3))
+
 ## [1.0.6](https://github.com/mohammaDJ23/expense-web/compare/v1.0.5...v1.0.6) (2026-11-06)
 
 ### 🔧 Chores
