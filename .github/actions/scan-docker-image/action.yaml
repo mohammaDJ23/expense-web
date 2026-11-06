@@ -33,6 +33,7 @@ runs:
               exit-code: true
               only-severities: critical,high
               ignore-base: true
+              vex-location: ./vex.json
               only-vex-affected: true
 
         - name: Snyk container scan
