@@ -7,4 +7,6 @@ services:
             context: .
             target: production
             dockerfile: Dockerfile
+            args:
+                VITE_API_URL: ${VITE_API_URL}
         pull_policy: never
