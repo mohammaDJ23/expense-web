@@ -76,6 +76,210 @@
             ],
             "status": "not_affected",
             "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-19931"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.14.1-r3"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-11856"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.14.1-r3"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-10536"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.14.1-r3"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-8926"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.14.1-r3"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-18924"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.14.1-r3"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-82209"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.14.1-r3"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-9545"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.14.1-r3"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-8932"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.14.1-r3"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-82208"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.14.1-r3"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-80255"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.14.1-r3"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-80231"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.14.1-r3"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-80230"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.14.1-r3"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-80229"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.14.1-r3"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-12064"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.14.1-r3"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-9547"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.14.1-r3"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-13608"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.14.1-r3"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
+        },
+        {
+            "vulnerability": {
+                "name": "CVE-2026-9080"
+            },
+            "products": [
+                {
+                    "@id": "pkg:apk/alpine/curl@8.14.1-r3"
+                }
+            ],
+            "status": "not_affected",
+            "justification": "vulnerable_code_not_in_executable_path"
         }
     ]
 }
