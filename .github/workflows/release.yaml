@@ -84,7 +84,7 @@ jobs:
                   password: ${{ secrets.DOCKER_PASSWORD }}
 
             - name: Set up Docker Buildx
-              uses: docker/setup-buildx-action@v31
+              uses: docker/setup-buildx-action@v3
 
             - name: Create image name
               id: create-docker-image-name
