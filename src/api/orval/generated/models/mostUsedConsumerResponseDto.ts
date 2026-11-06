@@ -14,9 +14,9 @@
  */
 
 export interface MostUsedConsumerResponseDto {
-  id: string;
-  name: string;
-  createdAt: string;
-  updatedAt: string;
-  total: number;
+    id: string;
+    name: string;
+    createdAt: string;
+    updatedAt: string;
+    total: number;
 }

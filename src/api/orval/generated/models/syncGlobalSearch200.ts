@@ -15,5 +15,5 @@
 import type { HttpResponseDto } from './httpResponseDto';
 
 export type SyncGlobalSearch200 = HttpResponseDto & {
-  data?: boolean;
+    data?: boolean;
 };

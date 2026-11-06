@@ -16,5 +16,5 @@ import type { ExceptionDto } from './exceptionDto';
 import type { HttpResponseDto } from './httpResponseDto';
 
 export type SearchConsumers429 = HttpResponseDto & {
-  data?: ExceptionDto;
+    data?: ExceptionDto;
 };

@@ -16,5 +16,5 @@ import type { GlobalSearch200Data } from './globalSearch200Data';
 import type { HttpResponseDto } from './httpResponseDto';
 
 export type GlobalSearch200 = HttpResponseDto & {
-  data?: GlobalSearch200Data;
+    data?: GlobalSearch200Data;
 };

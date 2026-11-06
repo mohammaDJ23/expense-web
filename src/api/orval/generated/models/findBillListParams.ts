@@ -14,7 +14,7 @@
  */
 
 export type FindBillListParams = {
-  limit?: number;
-  /** @nullable */
-  cursor?: string | null;
+    limit?: number;
+    /** @nullable */
+    cursor?: string | null;
 };

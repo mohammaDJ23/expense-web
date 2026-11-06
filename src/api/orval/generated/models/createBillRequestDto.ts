@@ -14,10 +14,10 @@
  */
 
 export interface CreateBillRequestDto {
-  amount: string;
-  description: string;
-  purchasedAt: string;
-  receiverId: string;
-  locationId: string;
-  consumerIds: string[];
+    amount: string;
+    description: string;
+    purchasedAt: string;
+    receiverId: string;
+    locationId: string;
+    consumerIds: string[];
 }

@@ -16,5 +16,5 @@ import type { HttpResponseDto } from './httpResponseDto';
 import type { MostUsedConsumerResponseDto } from './mostUsedConsumerResponseDto';
 
 export type FindMostUsedConsumers200 = HttpResponseDto & {
-  data?: MostUsedConsumerResponseDto[];
+    data?: MostUsedConsumerResponseDto[];
 };

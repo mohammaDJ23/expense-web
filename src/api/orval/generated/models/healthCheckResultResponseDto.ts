@@ -16,6 +16,6 @@ import type { HealthCheckResultResponseDtoDetails } from './healthCheckResultRes
 import type { HealthCheckResultResponseDtoStatus } from './healthCheckResultResponseDtoStatus';
 
 export interface HealthCheckResultResponseDto {
-  status: HealthCheckResultResponseDtoStatus;
-  details: HealthCheckResultResponseDtoDetails;
+    status: HealthCheckResultResponseDtoStatus;
+    details: HealthCheckResultResponseDtoDetails;
 }

@@ -16,5 +16,5 @@ import type { ConsumerResponseDto } from './consumerResponseDto';
 import type { FindConsumerListResponseDto } from './findConsumerListResponseDto';
 
 export type FindConsumerList200Data = FindConsumerListResponseDto & {
-  items?: ConsumerResponseDto[];
+    items?: ConsumerResponseDto[];
 };

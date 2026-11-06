@@ -14,6 +14,6 @@
  */
 
 export interface LocalLoginRequestDto {
-  email: string;
-  password: string;
+    email: string;
+    password: string;
 }

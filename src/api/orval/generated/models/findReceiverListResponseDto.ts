@@ -15,9 +15,9 @@
 import type { ReceiverResponseDto } from './receiverResponseDto';
 
 export interface FindReceiverListResponseDto {
-  items: ReceiverResponseDto[];
-  total: number;
-  hasNextPage: boolean;
-  /** @nullable */
-  nextCursor: string | null;
+    items: ReceiverResponseDto[];
+    total: number;
+    hasNextPage: boolean;
+    /** @nullable */
+    nextCursor: string | null;
 }

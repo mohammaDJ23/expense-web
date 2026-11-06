@@ -15,16 +15,16 @@
 import type { UserResponseDtoRole } from './userResponseDtoRole';
 
 export interface UserResponseDto {
-  id: string;
-  role: UserResponseDtoRole;
-  /** @nullable */
-  firstName: string | null;
-  /** @nullable */
-  lastName: string | null;
-  /** @nullable */
-  avatar: string | null;
-  /** @nullable */
-  phone: string | null;
-  createdAt: string;
-  updatedAt: string;
+    id: string;
+    role: UserResponseDtoRole;
+    /** @nullable */
+    firstName: string | null;
+    /** @nullable */
+    lastName: string | null;
+    /** @nullable */
+    avatar: string | null;
+    /** @nullable */
+    phone: string | null;
+    createdAt: string;
+    updatedAt: string;
 }

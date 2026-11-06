@@ -14,5 +14,5 @@
  */
 
 export interface CreateLocationRequestDto {
-  name: string;
+    name: string;
 }

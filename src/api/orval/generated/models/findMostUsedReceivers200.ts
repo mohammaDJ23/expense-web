@@ -16,5 +16,5 @@ import type { HttpResponseDto } from './httpResponseDto';
 import type { MostUsedReceiverResponseDto } from './mostUsedReceiverResponseDto';
 
 export type FindMostUsedReceivers200 = HttpResponseDto & {
-  data?: MostUsedReceiverResponseDto[];
+    data?: MostUsedReceiverResponseDto[];
 };

@@ -15,9 +15,9 @@
 import type { LocationResponseDto } from './locationResponseDto';
 
 export interface FindLocationListResponseDto {
-  items: LocationResponseDto[];
-  total: number;
-  hasNextPage: boolean;
-  /** @nullable */
-  nextCursor: string | null;
+    items: LocationResponseDto[];
+    total: number;
+    hasNextPage: boolean;
+    /** @nullable */
+    nextCursor: string | null;
 }

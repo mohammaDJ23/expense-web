@@ -16,5 +16,5 @@ import type { FindBillsTotalAmountResponseDto } from './findBillsTotalAmountResp
 import type { HttpResponseDto } from './httpResponseDto';
 
 export type FindBillsTotalAmount200 = HttpResponseDto & {
-  data?: FindBillsTotalAmountResponseDto;
+    data?: FindBillsTotalAmountResponseDto;
 };

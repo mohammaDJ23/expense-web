@@ -14,11 +14,11 @@
  */
 
 export interface UpdateBillRequestDto {
-  id: string;
-  amount: string;
-  description: string;
-  purchasedAt: string;
-  receiverId: string;
-  locationId: string;
-  consumerIds: string[];
+    id: string;
+    amount: string;
+    description: string;
+    purchasedAt: string;
+    receiverId: string;
+    locationId: string;
+    consumerIds: string[];
 }

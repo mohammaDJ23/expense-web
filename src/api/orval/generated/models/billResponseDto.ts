@@ -17,13 +17,13 @@ import type { LocationResponseDto } from './locationResponseDto';
 import type { ReceiverResponseDto } from './receiverResponseDto';
 
 export interface BillResponseDto {
-  id: string;
-  amount: string;
-  description: string;
-  purchasedAt: string;
-  createdAt: string;
-  updatedAt: string;
-  location: LocationResponseDto;
-  receiver: ReceiverResponseDto;
-  consumers: ConsumerResponseDto[];
+    id: string;
+    amount: string;
+    description: string;
+    purchasedAt: string;
+    createdAt: string;
+    updatedAt: string;
+    location: LocationResponseDto;
+    receiver: ReceiverResponseDto;
+    consumers: ConsumerResponseDto[];
 }

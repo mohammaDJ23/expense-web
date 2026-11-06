@@ -19,5 +19,11 @@ export default defineConfig({
                 },
             },
         },
+        hooks: {
+            afterAllFilesWrite: {
+                command: 'pnpm run format',
+                injectGeneratedDirsAndFiles: false,
+            },
+        },
     },
 });

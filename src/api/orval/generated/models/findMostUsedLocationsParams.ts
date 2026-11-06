@@ -14,5 +14,5 @@
  */
 
 export type FindMostUsedLocationsParams = {
-  limit?: number;
+    limit?: number;
 };

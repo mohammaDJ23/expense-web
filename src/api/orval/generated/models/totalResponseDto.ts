@@ -14,5 +14,5 @@
  */
 
 export interface TotalResponseDto {
-  total: number;
+    total: number;
 }

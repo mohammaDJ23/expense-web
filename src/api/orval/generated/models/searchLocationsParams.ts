@@ -14,6 +14,6 @@
  */
 
 export type SearchLocationsParams = {
-  limit?: number;
-  q?: string;
+    limit?: number;
+    q?: string;
 };

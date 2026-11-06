@@ -16,5 +16,5 @@ import type { FindUserList200Data } from './findUserList200Data';
 import type { HttpResponseDto } from './httpResponseDto';
 
 export type FindUserList200 = HttpResponseDto & {
-  data?: FindUserList200Data;
+    data?: FindUserList200Data;
 };

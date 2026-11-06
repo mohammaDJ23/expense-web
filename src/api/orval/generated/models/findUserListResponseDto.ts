@@ -15,9 +15,9 @@
 import type { UserResponseDto } from './userResponseDto';
 
 export interface FindUserListResponseDto {
-  items: UserResponseDto[];
-  total: number;
-  hasNextPage: boolean;
-  /** @nullable */
-  nextCursor: string | null;
+    items: UserResponseDto[];
+    total: number;
+    hasNextPage: boolean;
+    /** @nullable */
+    nextCursor: string | null;
 }

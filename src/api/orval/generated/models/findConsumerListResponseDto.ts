@@ -15,9 +15,9 @@
 import type { ConsumerResponseDto } from './consumerResponseDto';
 
 export interface FindConsumerListResponseDto {
-  items: ConsumerResponseDto[];
-  total: number;
-  hasNextPage: boolean;
-  /** @nullable */
-  nextCursor: string | null;
+    items: ConsumerResponseDto[];
+    total: number;
+    hasNextPage: boolean;
+    /** @nullable */
+    nextCursor: string | null;
 }

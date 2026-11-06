@@ -15,9 +15,9 @@
 import type { BillResponseDto } from './billResponseDto';
 
 export interface FindBillListResponseDto {
-  items: BillResponseDto[];
-  total: number;
-  hasNextPage: boolean;
-  /** @nullable */
-  nextCursor: string | null;
+    items: BillResponseDto[];
+    total: number;
+    hasNextPage: boolean;
+    /** @nullable */
+    nextCursor: string | null;
 }

@@ -16,5 +16,5 @@ import type { HttpResponseDto } from './httpResponseDto';
 import type { TotalResponseDto } from './totalResponseDto';
 
 export type FindTotalReceivers200 = HttpResponseDto & {
-  data?: TotalResponseDto;
+    data?: TotalResponseDto;
 };

@@ -14,8 +14,8 @@
  */
 
 export interface FindBillsPeriodResponseDto {
-  /** @nullable */
-  start: string | null;
-  /** @nullable */
-  end: string | null;
+    /** @nullable */
+    start: string | null;
+    /** @nullable */
+    end: string | null;
 }

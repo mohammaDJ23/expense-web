@@ -16,5 +16,5 @@ import type { HttpResponseDto } from './httpResponseDto';
 import type { LocationResponseDto } from './locationResponseDto';
 
 export type FindLocation200 = HttpResponseDto & {
-  data?: LocationResponseDto;
+    data?: LocationResponseDto;
 };

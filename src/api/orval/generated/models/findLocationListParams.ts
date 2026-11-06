@@ -14,7 +14,7 @@
  */
 
 export type FindLocationListParams = {
-  limit?: number;
-  /** @nullable */
-  cursor?: string | null;
+    limit?: number;
+    /** @nullable */
+    cursor?: string | null;
 };

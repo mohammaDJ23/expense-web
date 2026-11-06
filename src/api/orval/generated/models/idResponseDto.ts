@@ -14,5 +14,5 @@
  */
 
 export interface IdResponseDto {
-  id: string;
+    id: string;
 }

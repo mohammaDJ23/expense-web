@@ -16,5 +16,5 @@ import type { FindBillList200Data } from './findBillList200Data';
 import type { HttpResponseDto } from './httpResponseDto';
 
 export type FindBillList200 = HttpResponseDto & {
-  data?: FindBillList200Data;
+    data?: FindBillList200Data;
 };

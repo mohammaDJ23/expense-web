@@ -19,8 +19,8 @@ import type { ReceiverResponseDto } from './receiverResponseDto';
 import type { SearchResponseDto } from './searchResponseDto';
 
 export type GlobalSearch200Data = SearchResponseDto & {
-  bills?: BillResponseDto[];
-  receivers?: ReceiverResponseDto[];
-  locations?: LocationResponseDto[];
-  consumers?: ConsumerResponseDto[];
+    bills?: BillResponseDto[];
+    receivers?: ReceiverResponseDto[];
+    locations?: LocationResponseDto[];
+    consumers?: ConsumerResponseDto[];
 };

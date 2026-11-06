@@ -16,5 +16,5 @@ import type { FindLocationListResponseDto } from './findLocationListResponseDto'
 import type { LocationResponseDto } from './locationResponseDto';
 
 export type FindLocationList200Data = FindLocationListResponseDto & {
-  items?: LocationResponseDto[];
+    items?: LocationResponseDto[];
 };

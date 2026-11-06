@@ -16,5 +16,5 @@ import type { HttpResponseDto } from './httpResponseDto';
 import type { MostUsedLocationResponseDto } from './mostUsedLocationResponseDto';
 
 export type FindMostUsedLocations200 = HttpResponseDto & {
-  data?: MostUsedLocationResponseDto[];
+    data?: MostUsedLocationResponseDto[];
 };

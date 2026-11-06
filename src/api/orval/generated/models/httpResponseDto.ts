@@ -15,9 +15,9 @@
 import type { HttpResponseDtoData } from './httpResponseDtoData';
 
 export interface HttpResponseDto {
-  message: string;
-  data: HttpResponseDtoData;
-  statusCode: number;
-  success: boolean;
-  error: boolean;
+    message: string;
+    data: HttpResponseDtoData;
+    statusCode: number;
+    success: boolean;
+    error: boolean;
 }

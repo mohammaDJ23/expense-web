@@ -12,92 +12,85 @@
  *
  * OpenAPI spec version: 5.3.5
  */
-import {
-  useMutation,
-  useQuery
-} from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import type {
-  DataTag,
-  DefinedInitialDataOptions,
-  DefinedUseQueryResult,
-  MutationFunction,
-  QueryClient,
-  QueryFunction,
-  QueryKey,
-  UndefinedInitialDataOptions,
-  UseMutationOptions,
-  UseMutationResult,
-  UseQueryOptions,
-  UseQueryResult
+    DataTag,
+    DefinedInitialDataOptions,
+    DefinedUseQueryResult,
+    MutationFunction,
+    QueryClient,
+    QueryFunction,
+    QueryKey,
+    UndefinedInitialDataOptions,
+    UseMutationOptions,
+    UseMutationResult,
+    UseQueryOptions,
+    UseQueryResult,
 } from '@tanstack/react-query';
 
 import type {
-  CreateLocation201,
-  CreateLocation400,
-  CreateLocation401,
-  CreateLocation404,
-  CreateLocation409,
-  CreateLocation429,
-  CreateLocation500,
-  CreateLocationRequestDto,
-  DeleteLocation200,
-  DeleteLocation400,
-  DeleteLocation401,
-  DeleteLocation404,
-  DeleteLocation429,
-  DeleteLocation500,
-  FindLocation200,
-  FindLocation400,
-  FindLocation401,
-  FindLocation404,
-  FindLocation429,
-  FindLocation500,
-  FindLocationList200,
-  FindLocationList400,
-  FindLocationList401,
-  FindLocationList429,
-  FindLocationList500,
-  FindLocationListParams,
-  FindTotalLocations200,
-  FindTotalLocations400,
-  FindTotalLocations401,
-  FindTotalLocations429,
-  FindTotalLocations500,
-  SearchLocations200,
-  SearchLocations400,
-  SearchLocations401,
-  SearchLocations429,
-  SearchLocations500,
-  SearchLocationsParams,
-  UpdateLocation200,
-  UpdateLocation400,
-  UpdateLocation401,
-  UpdateLocation404,
-  UpdateLocation409,
-  UpdateLocation429,
-  UpdateLocation500,
-  UpdateLocationRequestDto
+    CreateLocation201,
+    CreateLocation400,
+    CreateLocation401,
+    CreateLocation404,
+    CreateLocation409,
+    CreateLocation429,
+    CreateLocation500,
+    CreateLocationRequestDto,
+    DeleteLocation200,
+    DeleteLocation400,
+    DeleteLocation401,
+    DeleteLocation404,
+    DeleteLocation429,
+    DeleteLocation500,
+    FindLocation200,
+    FindLocation400,
+    FindLocation401,
+    FindLocation404,
+    FindLocation429,
+    FindLocation500,
+    FindLocationList200,
+    FindLocationList400,
+    FindLocationList401,
+    FindLocationList429,
+    FindLocationList500,
+    FindLocationListParams,
+    FindTotalLocations200,
+    FindTotalLocations400,
+    FindTotalLocations401,
+    FindTotalLocations429,
+    FindTotalLocations500,
+    SearchLocations200,
+    SearchLocations400,
+    SearchLocations401,
+    SearchLocations429,
+    SearchLocations500,
+    SearchLocationsParams,
+    UpdateLocation200,
+    UpdateLocation400,
+    UpdateLocation401,
+    UpdateLocation404,
+    UpdateLocation409,
+    UpdateLocation429,
+    UpdateLocation500,
+    UpdateLocationRequestDto,
 } from '../models';
 
 import { customInstance } from '../../mutator/custom-instance';
 
-
-
-
-
 const withQueryKey = <T extends object, K>(query: T, queryKey: K): T & { queryKey: K } => {
-  const result = { queryKey } as T & { queryKey: K };
-  for (const key of Object.keys(query)) {
-    // The explicit queryKey always wins, matching the previous
-    // `{ ...query, queryKey }` spread where it was set last.
-    if (key === 'queryKey') continue;
-    Object.defineProperty(result, key, {
-      enumerable: true,
-      configurable: true,
-      get: () => (query as Record<string, unknown>)[key],
-    });
-  }
-  return result;
+    const result = { queryKey } as T & { queryKey: K };
+    for (const key of Object.keys(query)) {
+        // The explicit queryKey always wins, matching the previous
+        // `{ ...query, queryKey }` spread where it was set last.
+        if (key === 'queryKey') continue;
+        Object.defineProperty(result, key, {
+            enumerable: true,
+            configurable: true,
+            get: () => (query as Record<string, unknown>)[key],
+        });
+    }
+    return result;
 };
 
 /**
@@ -106,573 +99,792 @@ const withQueryKey = <T extends object, K>(query: T, queryKey: K): T & { queryKe
  */
 export const createLocation = (
     createLocationRequestDto: CreateLocationRequestDto,
- signal?: AbortSignal
+    signal?: AbortSignal,
 ) => {
-
-
-      return customInstance<CreateLocation201>(
-      {url: `/v1/api/locations`, method: 'POST',
-      headers: {'Content-Type': 'application/json', },
-      data: createLocationRequestDto, signal
-    },
-      );
-    }
-
-
-
+    return customInstance<CreateLocation201>({
+        url: `/v1/api/locations`,
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        data: createLocationRequestDto,
+        signal,
+    });
+};
 
 export const getCreateLocationMutationKey = () => ['createLocation'] as const;
 
-export const getCreateLocationMutationOptions = <TError = CreateLocation400 | CreateLocation401 | CreateLocation404 | CreateLocation409 | CreateLocation429 | CreateLocation500,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof createLocation>>, TError,CreateLocationMutationVariables, TContext>, }
-): UseMutationOptions<Awaited<ReturnType<typeof createLocation>>, TError,CreateLocationMutationVariables, TContext> => {
-
-const mutationKey = getCreateLocationMutationKey();
-const {mutation: mutationOptions} = options ?
-      options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey ?
-      options
-      : {...options, mutation: {...options.mutation, mutationKey}}
-      : {mutation: { mutationKey, }};
-
-
-
-
-      const mutationFn: MutationFunction<Awaited<ReturnType<typeof createLocation>>, CreateLocationMutationVariables> = (props) => {
-          const {data} = props ?? {};
-
-          return  createLocation(data,)
-        }
-
-
-
-
-
-
-  return  { mutationFn, ...mutationOptions }}
-
-    export type CreateLocationMutationResult = NonNullable<Awaited<ReturnType<typeof createLocation>>>
-    export type CreateLocationMutationBody = CreateLocationRequestDto
-    export type CreateLocationMutationError = CreateLocation400 | CreateLocation401 | CreateLocation404 | CreateLocation409 | CreateLocation429 | CreateLocation500
-    export type CreateLocationMutationVariables = {data: CreateLocationRequestDto}
-
-    /**
- * @summary Create a location
- */
-export const useCreateLocation = <TError = CreateLocation400 | CreateLocation401 | CreateLocation404 | CreateLocation409 | CreateLocation429 | CreateLocation500,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof createLocation>>, TError,CreateLocationMutationVariables, TContext>, }
- , queryClient?: QueryClient): UseMutationResult<
+export const getCreateLocationMutationOptions = <
+    TError =
+        | CreateLocation400
+        | CreateLocation401
+        | CreateLocation404
+        | CreateLocation409
+        | CreateLocation429
+        | CreateLocation500,
+    TContext = unknown,
+>(options?: {
+    mutation?: UseMutationOptions<
         Awaited<ReturnType<typeof createLocation>>,
         TError,
         CreateLocationMutationVariables,
         TContext
-      > => {
-      return useMutation(getCreateLocationMutationOptions(options), queryClient);
-    }
-    /**
+    >;
+}): UseMutationOptions<
+    Awaited<ReturnType<typeof createLocation>>,
+    TError,
+    CreateLocationMutationVariables,
+    TContext
+> => {
+    const mutationKey = getCreateLocationMutationKey();
+    const { mutation: mutationOptions } = options
+        ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
+            ? options
+            : { ...options, mutation: { ...options.mutation, mutationKey } }
+        : { mutation: { mutationKey } };
+
+    const mutationFn: MutationFunction<
+        Awaited<ReturnType<typeof createLocation>>,
+        CreateLocationMutationVariables
+    > = (props) => {
+        const { data } = props ?? {};
+
+        return createLocation(data);
+    };
+
+    return { mutationFn, ...mutationOptions };
+};
+
+export type CreateLocationMutationResult = NonNullable<Awaited<ReturnType<typeof createLocation>>>;
+export type CreateLocationMutationBody = CreateLocationRequestDto;
+export type CreateLocationMutationError =
+    | CreateLocation400
+    | CreateLocation401
+    | CreateLocation404
+    | CreateLocation409
+    | CreateLocation429
+    | CreateLocation500;
+export type CreateLocationMutationVariables = { data: CreateLocationRequestDto };
+
+/**
+ * @summary Create a location
+ */
+export const useCreateLocation = <
+    TError =
+        | CreateLocation400
+        | CreateLocation401
+        | CreateLocation404
+        | CreateLocation409
+        | CreateLocation429
+        | CreateLocation500,
+    TContext = unknown,
+>(
+    options?: {
+        mutation?: UseMutationOptions<
+            Awaited<ReturnType<typeof createLocation>>,
+            TError,
+            CreateLocationMutationVariables,
+            TContext
+        >;
+    },
+    queryClient?: QueryClient,
+): UseMutationResult<
+    Awaited<ReturnType<typeof createLocation>>,
+    TError,
+    CreateLocationMutationVariables,
+    TContext
+> => {
+    return useMutation(getCreateLocationMutationOptions(options), queryClient);
+};
+/**
  * This is for updating a location
  * @summary Update a location
  */
 export const updateLocation = (
     updateLocationRequestDto: UpdateLocationRequestDto,
- signal?: AbortSignal
+    signal?: AbortSignal,
 ) => {
-
-
-      return customInstance<UpdateLocation200>(
-      {url: `/v1/api/locations`, method: 'PUT',
-      headers: {'Content-Type': 'application/json', },
-      data: updateLocationRequestDto, signal
-    },
-      );
-    }
-
-
-
+    return customInstance<UpdateLocation200>({
+        url: `/v1/api/locations`,
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        data: updateLocationRequestDto,
+        signal,
+    });
+};
 
 export const getUpdateLocationMutationKey = () => ['updateLocation'] as const;
 
-export const getUpdateLocationMutationOptions = <TError = UpdateLocation400 | UpdateLocation401 | UpdateLocation404 | UpdateLocation409 | UpdateLocation429 | UpdateLocation500,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof updateLocation>>, TError,UpdateLocationMutationVariables, TContext>, }
-): UseMutationOptions<Awaited<ReturnType<typeof updateLocation>>, TError,UpdateLocationMutationVariables, TContext> => {
-
-const mutationKey = getUpdateLocationMutationKey();
-const {mutation: mutationOptions} = options ?
-      options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey ?
-      options
-      : {...options, mutation: {...options.mutation, mutationKey}}
-      : {mutation: { mutationKey, }};
-
-
-
-
-      const mutationFn: MutationFunction<Awaited<ReturnType<typeof updateLocation>>, UpdateLocationMutationVariables> = (props) => {
-          const {data} = props ?? {};
-
-          return  updateLocation(data,)
-        }
-
-
-
-
-
-
-  return  { mutationFn, ...mutationOptions }}
-
-    export type UpdateLocationMutationResult = NonNullable<Awaited<ReturnType<typeof updateLocation>>>
-    export type UpdateLocationMutationBody = UpdateLocationRequestDto
-    export type UpdateLocationMutationError = UpdateLocation400 | UpdateLocation401 | UpdateLocation404 | UpdateLocation409 | UpdateLocation429 | UpdateLocation500
-    export type UpdateLocationMutationVariables = {data: UpdateLocationRequestDto}
-
-    /**
- * @summary Update a location
- */
-export const useUpdateLocation = <TError = UpdateLocation400 | UpdateLocation401 | UpdateLocation404 | UpdateLocation409 | UpdateLocation429 | UpdateLocation500,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof updateLocation>>, TError,UpdateLocationMutationVariables, TContext>, }
- , queryClient?: QueryClient): UseMutationResult<
+export const getUpdateLocationMutationOptions = <
+    TError =
+        | UpdateLocation400
+        | UpdateLocation401
+        | UpdateLocation404
+        | UpdateLocation409
+        | UpdateLocation429
+        | UpdateLocation500,
+    TContext = unknown,
+>(options?: {
+    mutation?: UseMutationOptions<
         Awaited<ReturnType<typeof updateLocation>>,
         TError,
         UpdateLocationMutationVariables,
         TContext
-      > => {
-      return useMutation(getUpdateLocationMutationOptions(options), queryClient);
-    }
-    /**
+    >;
+}): UseMutationOptions<
+    Awaited<ReturnType<typeof updateLocation>>,
+    TError,
+    UpdateLocationMutationVariables,
+    TContext
+> => {
+    const mutationKey = getUpdateLocationMutationKey();
+    const { mutation: mutationOptions } = options
+        ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
+            ? options
+            : { ...options, mutation: { ...options.mutation, mutationKey } }
+        : { mutation: { mutationKey } };
+
+    const mutationFn: MutationFunction<
+        Awaited<ReturnType<typeof updateLocation>>,
+        UpdateLocationMutationVariables
+    > = (props) => {
+        const { data } = props ?? {};
+
+        return updateLocation(data);
+    };
+
+    return { mutationFn, ...mutationOptions };
+};
+
+export type UpdateLocationMutationResult = NonNullable<Awaited<ReturnType<typeof updateLocation>>>;
+export type UpdateLocationMutationBody = UpdateLocationRequestDto;
+export type UpdateLocationMutationError =
+    | UpdateLocation400
+    | UpdateLocation401
+    | UpdateLocation404
+    | UpdateLocation409
+    | UpdateLocation429
+    | UpdateLocation500;
+export type UpdateLocationMutationVariables = { data: UpdateLocationRequestDto };
+
+/**
+ * @summary Update a location
+ */
+export const useUpdateLocation = <
+    TError =
+        | UpdateLocation400
+        | UpdateLocation401
+        | UpdateLocation404
+        | UpdateLocation409
+        | UpdateLocation429
+        | UpdateLocation500,
+    TContext = unknown,
+>(
+    options?: {
+        mutation?: UseMutationOptions<
+            Awaited<ReturnType<typeof updateLocation>>,
+            TError,
+            UpdateLocationMutationVariables,
+            TContext
+        >;
+    },
+    queryClient?: QueryClient,
+): UseMutationResult<
+    Awaited<ReturnType<typeof updateLocation>>,
+    TError,
+    UpdateLocationMutationVariables,
+    TContext
+> => {
+    return useMutation(getUpdateLocationMutationOptions(options), queryClient);
+};
+/**
  * This is for finding a location list
  * @summary Find a location list
  */
-export const findLocationList = (
+export const findLocationList = (params?: FindLocationListParams, signal?: AbortSignal) => {
+    return customInstance<FindLocationList200>({
+        url: `/v1/api/locations`,
+        method: 'GET',
+        params,
+        signal,
+    });
+};
+
+export const getFindLocationListQueryKey = (params?: FindLocationListParams) => {
+    return [`/v1/api/locations`, ...(params ? [params] : [])] as const;
+};
+
+export const getFindLocationListQueryOptions = <
+    TData = Awaited<ReturnType<typeof findLocationList>>,
+    TError = FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500,
+>(
     params?: FindLocationListParams,
- signal?: AbortSignal
-) => {
-
-
-      return customInstance<FindLocationList200>(
-      {url: `/v1/api/locations`, method: 'GET',
-        params, signal
+    options?: {
+        query?: Partial<
+            UseQueryOptions<Awaited<ReturnType<typeof findLocationList>>, TError, TData>
+        >;
     },
-      );
-    }
-
-
-
-
-export const getFindLocationListQueryKey = (params?: FindLocationListParams,) => {
-    return [
-    `/v1/api/locations`, ...(params ? [params] : [])
-    ] as const;
-    }
-
-
-export const getFindLocationListQueryOptions = <TData = Awaited<ReturnType<typeof findLocationList>>, TError = FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500>(params?: FindLocationListParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof findLocationList>>, TError, TData>>, }
 ) => {
+    const { query: queryOptions } = options ?? {};
 
-const {query: queryOptions} = options ?? {};
+    const queryKey = queryOptions?.queryKey ?? getFindLocationListQueryKey(params);
 
-  const queryKey =  queryOptions?.queryKey ?? getFindLocationListQueryKey(params);
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof findLocationList>>> = ({ signal }) =>
+        findLocationList(params, signal);
 
+    return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
+        Awaited<ReturnType<typeof findLocationList>>,
+        TError,
+        TData
+    > & { queryKey: DataTag<QueryKey, TData, TError> };
+};
 
+export type FindLocationListQueryResult = NonNullable<Awaited<ReturnType<typeof findLocationList>>>;
+export type FindLocationListQueryError =
+    FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500;
 
-    const queryFn: QueryFunction<Awaited<ReturnType<typeof findLocationList>>> = ({ signal }) => findLocationList(params, signal);
-
-
-
-
-
-   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof findLocationList>>, TError, TData> & { queryKey: DataTag<QueryKey, TData, TError> }
-}
-
-export type FindLocationListQueryResult = NonNullable<Awaited<ReturnType<typeof findLocationList>>>
-export type FindLocationListQueryError = FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500
-
-
-export function useFindLocationList<TData = Awaited<ReturnType<typeof findLocationList>>, TError = FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500>(
- params: undefined |  FindLocationListParams, options: { query:Partial<UseQueryOptions<Awaited<ReturnType<typeof findLocationList>>, TError, TData>> & Pick<
-        DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof findLocationList>>,
-          TError,
-          Awaited<ReturnType<typeof findLocationList>>
-        > , 'initialData'
-      >, }
- , queryClient?: QueryClient
-  ):  DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useFindLocationList<TData = Awaited<ReturnType<typeof findLocationList>>, TError = FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500>(
- params?: FindLocationListParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof findLocationList>>, TError, TData>> & Pick<
-        UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof findLocationList>>,
-          TError,
-          Awaited<ReturnType<typeof findLocationList>>
-        > , 'initialData'
-      >, }
- , queryClient?: QueryClient
-  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useFindLocationList<TData = Awaited<ReturnType<typeof findLocationList>>, TError = FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500>(
- params?: FindLocationListParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof findLocationList>>, TError, TData>>, }
- , queryClient?: QueryClient
-  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
+export function useFindLocationList<
+    TData = Awaited<ReturnType<typeof findLocationList>>,
+    TError = FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500,
+>(
+    params: undefined | FindLocationListParams,
+    options: {
+        query: Partial<
+            UseQueryOptions<Awaited<ReturnType<typeof findLocationList>>, TError, TData>
+        > &
+            Pick<
+                DefinedInitialDataOptions<
+                    Awaited<ReturnType<typeof findLocationList>>,
+                    TError,
+                    Awaited<ReturnType<typeof findLocationList>>
+                >,
+                'initialData'
+            >;
+    },
+    queryClient?: QueryClient,
+): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
+export function useFindLocationList<
+    TData = Awaited<ReturnType<typeof findLocationList>>,
+    TError = FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500,
+>(
+    params?: FindLocationListParams,
+    options?: {
+        query?: Partial<
+            UseQueryOptions<Awaited<ReturnType<typeof findLocationList>>, TError, TData>
+        > &
+            Pick<
+                UndefinedInitialDataOptions<
+                    Awaited<ReturnType<typeof findLocationList>>,
+                    TError,
+                    Awaited<ReturnType<typeof findLocationList>>
+                >,
+                'initialData'
+            >;
+    },
+    queryClient?: QueryClient,
+): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
+export function useFindLocationList<
+    TData = Awaited<ReturnType<typeof findLocationList>>,
+    TError = FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500,
+>(
+    params?: FindLocationListParams,
+    options?: {
+        query?: Partial<
+            UseQueryOptions<Awaited<ReturnType<typeof findLocationList>>, TError, TData>
+        >;
+    },
+    queryClient?: QueryClient,
+): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 /**
  * @summary Find a location list
  */
 
-export function useFindLocationList<TData = Awaited<ReturnType<typeof findLocationList>>, TError = FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500>(
- params?: FindLocationListParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof findLocationList>>, TError, TData>>, }
- , queryClient?: QueryClient
- ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
+export function useFindLocationList<
+    TData = Awaited<ReturnType<typeof findLocationList>>,
+    TError = FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500,
+>(
+    params?: FindLocationListParams,
+    options?: {
+        query?: Partial<
+            UseQueryOptions<Awaited<ReturnType<typeof findLocationList>>, TError, TData>
+        >;
+    },
+    queryClient?: QueryClient,
+): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
+    const queryOptions = getFindLocationListQueryOptions(params, options);
 
-  const queryOptions = getFindLocationListQueryOptions(params,options)
+    const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
+        queryKey: DataTag<QueryKey, TData, TError>;
+    };
 
-  const query = useQuery(queryOptions, queryClient) as  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
-
-  return withQueryKey(query, queryOptions.queryKey);
+    return withQueryKey(query, queryOptions.queryKey);
 }
-
-
-
-
-
 
 /**
  * This is for deleting a location
  * @summary Delete a location
  */
-export const deleteLocation = (
-    id: string,
- signal?: AbortSignal
-) => {
-
-
-      return customInstance<DeleteLocation200>(
-      {url: `/v1/api/locations/${id}`, method: 'DELETE', signal
-    },
-      );
-    }
-
-
-
+export const deleteLocation = (id: string, signal?: AbortSignal) => {
+    return customInstance<DeleteLocation200>({
+        url: `/v1/api/locations/${id}`,
+        method: 'DELETE',
+        signal,
+    });
+};
 
 export const getDeleteLocationMutationKey = () => ['deleteLocation'] as const;
 
-export const getDeleteLocationMutationOptions = <TError = DeleteLocation400 | DeleteLocation401 | DeleteLocation404 | DeleteLocation429 | DeleteLocation500,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof deleteLocation>>, TError,DeleteLocationMutationVariables, TContext>, }
-): UseMutationOptions<Awaited<ReturnType<typeof deleteLocation>>, TError,DeleteLocationMutationVariables, TContext> => {
-
-const mutationKey = getDeleteLocationMutationKey();
-const {mutation: mutationOptions} = options ?
-      options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey ?
-      options
-      : {...options, mutation: {...options.mutation, mutationKey}}
-      : {mutation: { mutationKey, }};
-
-
-
-
-      const mutationFn: MutationFunction<Awaited<ReturnType<typeof deleteLocation>>, DeleteLocationMutationVariables> = (props) => {
-          const {id} = props ?? {};
-
-          return  deleteLocation(id,)
-        }
-
-
-
-
-
-
-  return  { mutationFn, ...mutationOptions }}
-
-    export type DeleteLocationMutationResult = NonNullable<Awaited<ReturnType<typeof deleteLocation>>>
-
-    export type DeleteLocationMutationError = DeleteLocation400 | DeleteLocation401 | DeleteLocation404 | DeleteLocation429 | DeleteLocation500
-    export type DeleteLocationMutationVariables = {id: string}
-
-    /**
- * @summary Delete a location
- */
-export const useDeleteLocation = <TError = DeleteLocation400 | DeleteLocation401 | DeleteLocation404 | DeleteLocation429 | DeleteLocation500,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof deleteLocation>>, TError,DeleteLocationMutationVariables, TContext>, }
- , queryClient?: QueryClient): UseMutationResult<
+export const getDeleteLocationMutationOptions = <
+    TError =
+        | DeleteLocation400
+        | DeleteLocation401
+        | DeleteLocation404
+        | DeleteLocation429
+        | DeleteLocation500,
+    TContext = unknown,
+>(options?: {
+    mutation?: UseMutationOptions<
         Awaited<ReturnType<typeof deleteLocation>>,
         TError,
         DeleteLocationMutationVariables,
         TContext
-      > => {
-      return useMutation(getDeleteLocationMutationOptions(options), queryClient);
-    }
-    /**
+    >;
+}): UseMutationOptions<
+    Awaited<ReturnType<typeof deleteLocation>>,
+    TError,
+    DeleteLocationMutationVariables,
+    TContext
+> => {
+    const mutationKey = getDeleteLocationMutationKey();
+    const { mutation: mutationOptions } = options
+        ? options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey
+            ? options
+            : { ...options, mutation: { ...options.mutation, mutationKey } }
+        : { mutation: { mutationKey } };
+
+    const mutationFn: MutationFunction<
+        Awaited<ReturnType<typeof deleteLocation>>,
+        DeleteLocationMutationVariables
+    > = (props) => {
+        const { id } = props ?? {};
+
+        return deleteLocation(id);
+    };
+
+    return { mutationFn, ...mutationOptions };
+};
+
+export type DeleteLocationMutationResult = NonNullable<Awaited<ReturnType<typeof deleteLocation>>>;
+
+export type DeleteLocationMutationError =
+    | DeleteLocation400
+    | DeleteLocation401
+    | DeleteLocation404
+    | DeleteLocation429
+    | DeleteLocation500;
+export type DeleteLocationMutationVariables = { id: string };
+
+/**
+ * @summary Delete a location
+ */
+export const useDeleteLocation = <
+    TError =
+        | DeleteLocation400
+        | DeleteLocation401
+        | DeleteLocation404
+        | DeleteLocation429
+        | DeleteLocation500,
+    TContext = unknown,
+>(
+    options?: {
+        mutation?: UseMutationOptions<
+            Awaited<ReturnType<typeof deleteLocation>>,
+            TError,
+            DeleteLocationMutationVariables,
+            TContext
+        >;
+    },
+    queryClient?: QueryClient,
+): UseMutationResult<
+    Awaited<ReturnType<typeof deleteLocation>>,
+    TError,
+    DeleteLocationMutationVariables,
+    TContext
+> => {
+    return useMutation(getDeleteLocationMutationOptions(options), queryClient);
+};
+/**
  * This is for finding a location
  * @summary Find a location
  */
-export const findLocation = (
+export const findLocation = (id: string, signal?: AbortSignal) => {
+    return customInstance<FindLocation200>({
+        url: `/v1/api/locations/${id}`,
+        method: 'GET',
+        signal,
+    });
+};
+
+export const getFindLocationQueryKey = (id: string) => {
+    return [`/v1/api/locations/${id}`] as const;
+};
+
+export const getFindLocationQueryOptions = <
+    TData = Awaited<ReturnType<typeof findLocation>>,
+    TError =
+        FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500,
+>(
     id: string,
- signal?: AbortSignal
-) => {
-
-
-      return customInstance<FindLocation200>(
-      {url: `/v1/api/locations/${id}`, method: 'GET', signal
+    options?: {
+        query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findLocation>>, TError, TData>>;
     },
-      );
-    }
-
-
-
-
-export const getFindLocationQueryKey = (id: string,) => {
-    return [
-    `/v1/api/locations/${id}`
-    ] as const;
-    }
-
-
-export const getFindLocationQueryOptions = <TData = Awaited<ReturnType<typeof findLocation>>, TError = FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500>(id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof findLocation>>, TError, TData>>, }
 ) => {
+    const { query: queryOptions } = options ?? {};
 
-const {query: queryOptions} = options ?? {};
+    const queryKey = queryOptions?.queryKey ?? getFindLocationQueryKey(id);
 
-  const queryKey =  queryOptions?.queryKey ?? getFindLocationQueryKey(id);
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof findLocation>>> = ({ signal }) =>
+        findLocation(id, signal);
 
+    return {
+        queryKey,
+        queryFn,
+        enabled: id !== null && id !== undefined,
+        ...queryOptions,
+    } as UseQueryOptions<Awaited<ReturnType<typeof findLocation>>, TError, TData> & {
+        queryKey: DataTag<QueryKey, TData, TError>;
+    };
+};
 
+export type FindLocationQueryResult = NonNullable<Awaited<ReturnType<typeof findLocation>>>;
+export type FindLocationQueryError =
+    FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500;
 
-    const queryFn: QueryFunction<Awaited<ReturnType<typeof findLocation>>> = ({ signal }) => findLocation(id, signal);
-
-
-
-
-
-   return  { queryKey, queryFn, enabled: id !== null && id !== undefined, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof findLocation>>, TError, TData> & { queryKey: DataTag<QueryKey, TData, TError> }
-}
-
-export type FindLocationQueryResult = NonNullable<Awaited<ReturnType<typeof findLocation>>>
-export type FindLocationQueryError = FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500
-
-
-export function useFindLocation<TData = Awaited<ReturnType<typeof findLocation>>, TError = FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500>(
- id: string, options: { query:Partial<UseQueryOptions<Awaited<ReturnType<typeof findLocation>>, TError, TData>> & Pick<
-        DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof findLocation>>,
-          TError,
-          Awaited<ReturnType<typeof findLocation>>
-        > , 'initialData'
-      >, }
- , queryClient?: QueryClient
-  ):  DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useFindLocation<TData = Awaited<ReturnType<typeof findLocation>>, TError = FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500>(
- id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof findLocation>>, TError, TData>> & Pick<
-        UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof findLocation>>,
-          TError,
-          Awaited<ReturnType<typeof findLocation>>
-        > , 'initialData'
-      >, }
- , queryClient?: QueryClient
-  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useFindLocation<TData = Awaited<ReturnType<typeof findLocation>>, TError = FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500>(
- id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof findLocation>>, TError, TData>>, }
- , queryClient?: QueryClient
-  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
+export function useFindLocation<
+    TData = Awaited<ReturnType<typeof findLocation>>,
+    TError =
+        FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500,
+>(
+    id: string,
+    options: {
+        query: Partial<UseQueryOptions<Awaited<ReturnType<typeof findLocation>>, TError, TData>> &
+            Pick<
+                DefinedInitialDataOptions<
+                    Awaited<ReturnType<typeof findLocation>>,
+                    TError,
+                    Awaited<ReturnType<typeof findLocation>>
+                >,
+                'initialData'
+            >;
+    },
+    queryClient?: QueryClient,
+): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
+export function useFindLocation<
+    TData = Awaited<ReturnType<typeof findLocation>>,
+    TError =
+        FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500,
+>(
+    id: string,
+    options?: {
+        query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findLocation>>, TError, TData>> &
+            Pick<
+                UndefinedInitialDataOptions<
+                    Awaited<ReturnType<typeof findLocation>>,
+                    TError,
+                    Awaited<ReturnType<typeof findLocation>>
+                >,
+                'initialData'
+            >;
+    },
+    queryClient?: QueryClient,
+): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
+export function useFindLocation<
+    TData = Awaited<ReturnType<typeof findLocation>>,
+    TError =
+        FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500,
+>(
+    id: string,
+    options?: {
+        query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findLocation>>, TError, TData>>;
+    },
+    queryClient?: QueryClient,
+): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 /**
  * @summary Find a location
  */
 
-export function useFindLocation<TData = Awaited<ReturnType<typeof findLocation>>, TError = FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500>(
- id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof findLocation>>, TError, TData>>, }
- , queryClient?: QueryClient
- ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
+export function useFindLocation<
+    TData = Awaited<ReturnType<typeof findLocation>>,
+    TError =
+        FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500,
+>(
+    id: string,
+    options?: {
+        query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findLocation>>, TError, TData>>;
+    },
+    queryClient?: QueryClient,
+): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
+    const queryOptions = getFindLocationQueryOptions(id, options);
 
-  const queryOptions = getFindLocationQueryOptions(id,options)
+    const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
+        queryKey: DataTag<QueryKey, TData, TError>;
+    };
 
-  const query = useQuery(queryOptions, queryClient) as  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
-
-  return withQueryKey(query, queryOptions.queryKey);
+    return withQueryKey(query, queryOptions.queryKey);
 }
-
-
-
-
-
 
 /**
  * This is for finding the locations by searching
  * @summary Find the locations by searching
  */
-export const searchLocations = (
+export const searchLocations = (params?: SearchLocationsParams, signal?: AbortSignal) => {
+    return customInstance<SearchLocations200>({
+        url: `/v1/api/locations/search`,
+        method: 'GET',
+        params,
+        signal,
+    });
+};
+
+export const getSearchLocationsQueryKey = (params?: SearchLocationsParams) => {
+    return [`/v1/api/locations/search`, ...(params ? [params] : [])] as const;
+};
+
+export const getSearchLocationsQueryOptions = <
+    TData = Awaited<ReturnType<typeof searchLocations>>,
+    TError = SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500,
+>(
     params?: SearchLocationsParams,
- signal?: AbortSignal
-) => {
-
-
-      return customInstance<SearchLocations200>(
-      {url: `/v1/api/locations/search`, method: 'GET',
-        params, signal
+    options?: {
+        query?: Partial<
+            UseQueryOptions<Awaited<ReturnType<typeof searchLocations>>, TError, TData>
+        >;
     },
-      );
-    }
-
-
-
-
-export const getSearchLocationsQueryKey = (params?: SearchLocationsParams,) => {
-    return [
-    `/v1/api/locations/search`, ...(params ? [params] : [])
-    ] as const;
-    }
-
-
-export const getSearchLocationsQueryOptions = <TData = Awaited<ReturnType<typeof searchLocations>>, TError = SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500>(params?: SearchLocationsParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof searchLocations>>, TError, TData>>, }
 ) => {
+    const { query: queryOptions } = options ?? {};
 
-const {query: queryOptions} = options ?? {};
+    const queryKey = queryOptions?.queryKey ?? getSearchLocationsQueryKey(params);
 
-  const queryKey =  queryOptions?.queryKey ?? getSearchLocationsQueryKey(params);
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof searchLocations>>> = ({ signal }) =>
+        searchLocations(params, signal);
 
+    return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
+        Awaited<ReturnType<typeof searchLocations>>,
+        TError,
+        TData
+    > & { queryKey: DataTag<QueryKey, TData, TError> };
+};
 
+export type SearchLocationsQueryResult = NonNullable<Awaited<ReturnType<typeof searchLocations>>>;
+export type SearchLocationsQueryError =
+    SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500;
 
-    const queryFn: QueryFunction<Awaited<ReturnType<typeof searchLocations>>> = ({ signal }) => searchLocations(params, signal);
-
-
-
-
-
-   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof searchLocations>>, TError, TData> & { queryKey: DataTag<QueryKey, TData, TError> }
-}
-
-export type SearchLocationsQueryResult = NonNullable<Awaited<ReturnType<typeof searchLocations>>>
-export type SearchLocationsQueryError = SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500
-
-
-export function useSearchLocations<TData = Awaited<ReturnType<typeof searchLocations>>, TError = SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500>(
- params: undefined |  SearchLocationsParams, options: { query:Partial<UseQueryOptions<Awaited<ReturnType<typeof searchLocations>>, TError, TData>> & Pick<
-        DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof searchLocations>>,
-          TError,
-          Awaited<ReturnType<typeof searchLocations>>
-        > , 'initialData'
-      >, }
- , queryClient?: QueryClient
-  ):  DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useSearchLocations<TData = Awaited<ReturnType<typeof searchLocations>>, TError = SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500>(
- params?: SearchLocationsParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof searchLocations>>, TError, TData>> & Pick<
-        UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof searchLocations>>,
-          TError,
-          Awaited<ReturnType<typeof searchLocations>>
-        > , 'initialData'
-      >, }
- , queryClient?: QueryClient
-  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useSearchLocations<TData = Awaited<ReturnType<typeof searchLocations>>, TError = SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500>(
- params?: SearchLocationsParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof searchLocations>>, TError, TData>>, }
- , queryClient?: QueryClient
-  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
+export function useSearchLocations<
+    TData = Awaited<ReturnType<typeof searchLocations>>,
+    TError = SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500,
+>(
+    params: undefined | SearchLocationsParams,
+    options: {
+        query: Partial<
+            UseQueryOptions<Awaited<ReturnType<typeof searchLocations>>, TError, TData>
+        > &
+            Pick<
+                DefinedInitialDataOptions<
+                    Awaited<ReturnType<typeof searchLocations>>,
+                    TError,
+                    Awaited<ReturnType<typeof searchLocations>>
+                >,
+                'initialData'
+            >;
+    },
+    queryClient?: QueryClient,
+): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
+export function useSearchLocations<
+    TData = Awaited<ReturnType<typeof searchLocations>>,
+    TError = SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500,
+>(
+    params?: SearchLocationsParams,
+    options?: {
+        query?: Partial<
+            UseQueryOptions<Awaited<ReturnType<typeof searchLocations>>, TError, TData>
+        > &
+            Pick<
+                UndefinedInitialDataOptions<
+                    Awaited<ReturnType<typeof searchLocations>>,
+                    TError,
+                    Awaited<ReturnType<typeof searchLocations>>
+                >,
+                'initialData'
+            >;
+    },
+    queryClient?: QueryClient,
+): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
+export function useSearchLocations<
+    TData = Awaited<ReturnType<typeof searchLocations>>,
+    TError = SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500,
+>(
+    params?: SearchLocationsParams,
+    options?: {
+        query?: Partial<
+            UseQueryOptions<Awaited<ReturnType<typeof searchLocations>>, TError, TData>
+        >;
+    },
+    queryClient?: QueryClient,
+): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 /**
  * @summary Find the locations by searching
  */
 
-export function useSearchLocations<TData = Awaited<ReturnType<typeof searchLocations>>, TError = SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500>(
- params?: SearchLocationsParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof searchLocations>>, TError, TData>>, }
- , queryClient?: QueryClient
- ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
+export function useSearchLocations<
+    TData = Awaited<ReturnType<typeof searchLocations>>,
+    TError = SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500,
+>(
+    params?: SearchLocationsParams,
+    options?: {
+        query?: Partial<
+            UseQueryOptions<Awaited<ReturnType<typeof searchLocations>>, TError, TData>
+        >;
+    },
+    queryClient?: QueryClient,
+): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
+    const queryOptions = getSearchLocationsQueryOptions(params, options);
 
-  const queryOptions = getSearchLocationsQueryOptions(params,options)
+    const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
+        queryKey: DataTag<QueryKey, TData, TError>;
+    };
 
-  const query = useQuery(queryOptions, queryClient) as  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
-
-  return withQueryKey(query, queryOptions.queryKey);
+    return withQueryKey(query, queryOptions.queryKey);
 }
-
-
-
-
-
 
 /**
  * This is for finding the total location numbers
  * @summary Find the total location numbers
  */
-export const findTotalLocations = (
-
- signal?: AbortSignal
-) => {
-
-
-      return customInstance<FindTotalLocations200>(
-      {url: `/v1/api/locations/total`, method: 'GET', signal
-    },
-      );
-    }
-
-
-
+export const findTotalLocations = (signal?: AbortSignal) => {
+    return customInstance<FindTotalLocations200>({
+        url: `/v1/api/locations/total`,
+        method: 'GET',
+        signal,
+    });
+};
 
 export const getFindTotalLocationsQueryKey = () => {
-    return [
-    `/v1/api/locations/total`
-    ] as const;
-    }
+    return [`/v1/api/locations/total`] as const;
+};
 
+export const getFindTotalLocationsQueryOptions = <
+    TData = Awaited<ReturnType<typeof findTotalLocations>>,
+    TError =
+        | FindTotalLocations400
+        | FindTotalLocations401
+        | FindTotalLocations429
+        | FindTotalLocations500,
+>(options?: {
+    query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findTotalLocations>>, TError, TData>>;
+}) => {
+    const { query: queryOptions } = options ?? {};
 
-export const getFindTotalLocationsQueryOptions = <TData = Awaited<ReturnType<typeof findTotalLocations>>, TError = FindTotalLocations400 | FindTotalLocations401 | FindTotalLocations429 | FindTotalLocations500>( options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof findTotalLocations>>, TError, TData>>, }
-) => {
+    const queryKey = queryOptions?.queryKey ?? getFindTotalLocationsQueryKey();
 
-const {query: queryOptions} = options ?? {};
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof findTotalLocations>>> = ({ signal }) =>
+        findTotalLocations(signal);
 
-  const queryKey =  queryOptions?.queryKey ?? getFindTotalLocationsQueryKey();
+    return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
+        Awaited<ReturnType<typeof findTotalLocations>>,
+        TError,
+        TData
+    > & { queryKey: DataTag<QueryKey, TData, TError> };
+};
 
+export type FindTotalLocationsQueryResult = NonNullable<
+    Awaited<ReturnType<typeof findTotalLocations>>
+>;
+export type FindTotalLocationsQueryError =
+    FindTotalLocations400 | FindTotalLocations401 | FindTotalLocations429 | FindTotalLocations500;
 
-
-    const queryFn: QueryFunction<Awaited<ReturnType<typeof findTotalLocations>>> = ({ signal }) => findTotalLocations(signal);
-
-
-
-
-
-   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof findTotalLocations>>, TError, TData> & { queryKey: DataTag<QueryKey, TData, TError> }
-}
-
-export type FindTotalLocationsQueryResult = NonNullable<Awaited<ReturnType<typeof findTotalLocations>>>
-export type FindTotalLocationsQueryError = FindTotalLocations400 | FindTotalLocations401 | FindTotalLocations429 | FindTotalLocations500
-
-
-export function useFindTotalLocations<TData = Awaited<ReturnType<typeof findTotalLocations>>, TError = FindTotalLocations400 | FindTotalLocations401 | FindTotalLocations429 | FindTotalLocations500>(
-  options: { query:Partial<UseQueryOptions<Awaited<ReturnType<typeof findTotalLocations>>, TError, TData>> & Pick<
-        DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof findTotalLocations>>,
-          TError,
-          Awaited<ReturnType<typeof findTotalLocations>>
-        > , 'initialData'
-      >, }
- , queryClient?: QueryClient
-  ):  DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useFindTotalLocations<TData = Awaited<ReturnType<typeof findTotalLocations>>, TError = FindTotalLocations400 | FindTotalLocations401 | FindTotalLocations429 | FindTotalLocations500>(
-  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof findTotalLocations>>, TError, TData>> & Pick<
-        UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof findTotalLocations>>,
-          TError,
-          Awaited<ReturnType<typeof findTotalLocations>>
-        > , 'initialData'
-      >, }
- , queryClient?: QueryClient
-  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useFindTotalLocations<TData = Awaited<ReturnType<typeof findTotalLocations>>, TError = FindTotalLocations400 | FindTotalLocations401 | FindTotalLocations429 | FindTotalLocations500>(
-  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof findTotalLocations>>, TError, TData>>, }
- , queryClient?: QueryClient
-  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
+export function useFindTotalLocations<
+    TData = Awaited<ReturnType<typeof findTotalLocations>>,
+    TError =
+        | FindTotalLocations400
+        | FindTotalLocations401
+        | FindTotalLocations429
+        | FindTotalLocations500,
+>(
+    options: {
+        query: Partial<
+            UseQueryOptions<Awaited<ReturnType<typeof findTotalLocations>>, TError, TData>
+        > &
+            Pick<
+                DefinedInitialDataOptions<
+                    Awaited<ReturnType<typeof findTotalLocations>>,
+                    TError,
+                    Awaited<ReturnType<typeof findTotalLocations>>
+                >,
+                'initialData'
+            >;
+    },
+    queryClient?: QueryClient,
+): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
+export function useFindTotalLocations<
+    TData = Awaited<ReturnType<typeof findTotalLocations>>,
+    TError =
+        | FindTotalLocations400
+        | FindTotalLocations401
+        | FindTotalLocations429
+        | FindTotalLocations500,
+>(
+    options?: {
+        query?: Partial<
+            UseQueryOptions<Awaited<ReturnType<typeof findTotalLocations>>, TError, TData>
+        > &
+            Pick<
+                UndefinedInitialDataOptions<
+                    Awaited<ReturnType<typeof findTotalLocations>>,
+                    TError,
+                    Awaited<ReturnType<typeof findTotalLocations>>
+                >,
+                'initialData'
+            >;
+    },
+    queryClient?: QueryClient,
+): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
+export function useFindTotalLocations<
+    TData = Awaited<ReturnType<typeof findTotalLocations>>,
+    TError =
+        | FindTotalLocations400
+        | FindTotalLocations401
+        | FindTotalLocations429
+        | FindTotalLocations500,
+>(
+    options?: {
+        query?: Partial<
+            UseQueryOptions<Awaited<ReturnType<typeof findTotalLocations>>, TError, TData>
+        >;
+    },
+    queryClient?: QueryClient,
+): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 /**
  * @summary Find the total location numbers
  */
 
-export function useFindTotalLocations<TData = Awaited<ReturnType<typeof findTotalLocations>>, TError = FindTotalLocations400 | FindTotalLocations401 | FindTotalLocations429 | FindTotalLocations500>(
-  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof findTotalLocations>>, TError, TData>>, }
- , queryClient?: QueryClient
- ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
+export function useFindTotalLocations<
+    TData = Awaited<ReturnType<typeof findTotalLocations>>,
+    TError =
+        | FindTotalLocations400
+        | FindTotalLocations401
+        | FindTotalLocations429
+        | FindTotalLocations500,
+>(
+    options?: {
+        query?: Partial<
+            UseQueryOptions<Awaited<ReturnType<typeof findTotalLocations>>, TError, TData>
+        >;
+    },
+    queryClient?: QueryClient,
+): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
+    const queryOptions = getFindTotalLocationsQueryOptions(options);
 
-  const queryOptions = getFindTotalLocationsQueryOptions(options)
+    const query = useQuery(queryOptions, queryClient) as UseQueryResult<TData, TError> & {
+        queryKey: DataTag<QueryKey, TData, TError>;
+    };
 
-  const query = useQuery(queryOptions, queryClient) as  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
-
-  return withQueryKey(query, queryOptions.queryKey);
+    return withQueryKey(query, queryOptions.queryKey);
 }
-
-
-
-
-
-

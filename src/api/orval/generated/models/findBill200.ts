@@ -16,5 +16,5 @@ import type { BillResponseDto } from './billResponseDto';
 import type { HttpResponseDto } from './httpResponseDto';
 
 export type FindBill200 = HttpResponseDto & {
-  data?: BillResponseDto;
+    data?: BillResponseDto;
 };

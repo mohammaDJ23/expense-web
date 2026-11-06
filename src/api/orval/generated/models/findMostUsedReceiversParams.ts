@@ -14,5 +14,5 @@
  */
 
 export type FindMostUsedReceiversParams = {
-  limit?: number;
+    limit?: number;
 };

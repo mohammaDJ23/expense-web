@@ -13,10 +13,10 @@
  * OpenAPI spec version: 5.3.5
  */
 
-export type HealthCheckResultResponseDtoStatus = typeof HealthCheckResultResponseDtoStatus[keyof typeof HealthCheckResultResponseDtoStatus];
-
+export type HealthCheckResultResponseDtoStatus =
+    (typeof HealthCheckResultResponseDtoStatus)[keyof typeof HealthCheckResultResponseDtoStatus];
 
 export const HealthCheckResultResponseDtoStatus = {
-  ok: 'ok',
-  error: 'error',
+    ok: 'ok',
+    error: 'error',
 } as const;
