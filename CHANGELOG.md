@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/mohammaDJ23/expense-web/compare/v1.0.0...v1.0.1) (2026-11-06)
+
+### 🚀 Continuous Deployment
+
+- change the version of docker/setup-buildx-action to v3 ([6495693](https://github.com/mohammaDJ23/expense-web/commit/649569347b6a3fac14364dd5ed3007d1a138fb58))
+
 ## 1.0.0 (2026-11-06)
 
 ### 🔧 Continuous Integration
