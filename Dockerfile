@@ -48,7 +48,7 @@ ENV npm_config_ignore_scripts=true
 COPY --chown=expense-web:nodejs . .
 
 RUN pnpm run build && \
-    pnpm prune --production && \
+    CI=true pnpm prune --production && \
     rm -rf src
 
 FROM nginx:1.27-alpine AS production
