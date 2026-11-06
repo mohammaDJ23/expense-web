@@ -1,3 +1,9 @@
+## [1.0.2](https://github.com/mohammaDJ23/expense-web/compare/v1.0.1...v1.0.2) (2026-11-06)
+
+### 🔧 Chores
+
+- add CI=true to pnpm prune command ([d3255bf](https://github.com/mohammaDJ23/expense-web/commit/d3255bf3ba6a4d14fb6e02281d2d68a09b136c1a))
+
 ## [1.0.1](https://github.com/mohammaDJ23/expense-web/compare/v1.0.0...v1.0.1) (2026-11-06)
 
 ### 🚀 Continuous Deployment
