@@ -10,11 +10,11 @@
  *     • Tracking reimbursement status
  *     • Generating expense analytics and reports
  *
- * OpenAPI spec version: 5.3.5
+ * OpenAPI spec version: 5.3.8
  */
 import type { GlobalSearch200Data } from './globalSearch200Data';
 import type { HttpResponseDto } from './httpResponseDto';
 
 export type GlobalSearch200 = HttpResponseDto & {
-    data?: GlobalSearch200Data;
+    data: GlobalSearch200Data;
 };

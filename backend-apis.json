@@ -16,6 +16,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/HealthCheckResultResponseDto"
@@ -36,6 +37,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -56,6 +58,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -76,6 +79,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -117,6 +121,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": { "data": { "type": "boolean" } }
                                         }
                                     ]
@@ -133,6 +138,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -153,6 +159,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -173,6 +180,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -193,6 +201,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -213,6 +222,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -252,6 +262,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": { "data": { "type": "boolean" } }
                                         }
                                     ]
@@ -268,6 +279,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -288,6 +300,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -308,6 +321,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -328,6 +342,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -348,6 +363,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -387,6 +403,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": { "data": { "type": "boolean" } }
                                         }
                                     ]
@@ -403,6 +420,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -423,6 +441,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -443,6 +462,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -463,6 +483,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -483,6 +504,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -524,6 +546,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": { "data": { "type": "boolean" } }
                                         }
                                     ]
@@ -540,6 +563,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -560,6 +584,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -580,6 +605,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -600,6 +626,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -641,6 +668,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": { "data": { "type": "boolean" } }
                                         }
                                     ]
@@ -657,6 +685,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -677,6 +706,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -697,6 +727,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -717,6 +748,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -758,6 +790,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": { "data": { "type": "boolean" } }
                                         }
                                     ]
@@ -774,6 +807,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -794,6 +828,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -814,6 +849,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -834,6 +870,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -875,6 +912,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": { "data": { "type": "boolean" } }
                                         }
                                     ]
@@ -891,6 +929,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -911,6 +950,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -931,6 +971,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -951,6 +992,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -991,6 +1033,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1022,6 +1065,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": { "data": { "type": "boolean" } }
                                         }
                                     ]
@@ -1038,6 +1082,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1058,6 +1103,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1087,6 +1133,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1107,6 +1154,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1127,6 +1175,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1166,6 +1215,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/IdResponseDto"
@@ -1186,6 +1236,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1206,6 +1257,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1226,6 +1278,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1246,6 +1299,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1266,6 +1320,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1296,6 +1351,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/IdResponseDto"
@@ -1316,6 +1372,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1336,6 +1393,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1356,6 +1414,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1376,6 +1435,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1396,6 +1456,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1443,6 +1504,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "allOf": [
@@ -1451,6 +1513,7 @@
                                                         },
                                                         {
                                                             "type": "object",
+                                                            "required": ["items"],
                                                             "properties": {
                                                                 "items": {
                                                                     "type": "array",
@@ -1478,6 +1541,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1498,6 +1562,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1518,6 +1583,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1538,6 +1604,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1558,6 +1625,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1590,6 +1658,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/UserResponseDto"
@@ -1610,6 +1679,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1630,6 +1700,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1650,6 +1721,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1670,6 +1742,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1690,6 +1763,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1722,6 +1796,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/TotalResponseDto"
@@ -1742,6 +1817,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1762,6 +1838,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1782,6 +1859,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1802,6 +1880,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1822,6 +1901,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1864,6 +1944,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/UserResponseDto"
@@ -1884,6 +1965,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1904,6 +1986,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1924,6 +2007,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1944,6 +2028,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1964,6 +2049,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -1984,6 +2070,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2024,6 +2111,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/IdResponseDto"
@@ -2044,6 +2132,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2064,6 +2153,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2084,6 +2174,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2104,6 +2195,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2124,6 +2216,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2162,6 +2255,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/IdResponseDto"
@@ -2182,6 +2276,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2202,6 +2297,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2222,6 +2318,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2242,6 +2339,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2262,6 +2360,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2309,6 +2408,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "allOf": [
@@ -2317,6 +2417,7 @@
                                                         },
                                                         {
                                                             "type": "object",
+                                                            "required": ["items"],
                                                             "properties": {
                                                                 "items": {
                                                                     "type": "array",
@@ -2344,6 +2445,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2364,6 +2466,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2384,6 +2487,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2404,6 +2508,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2446,6 +2551,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/IdResponseDto"
@@ -2466,6 +2572,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2486,6 +2593,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2506,6 +2614,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2526,6 +2635,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2546,6 +2656,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2586,6 +2697,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/BillResponseDto"
@@ -2606,6 +2718,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2626,6 +2739,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2646,6 +2760,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2666,6 +2781,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2686,6 +2802,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2718,6 +2835,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/TotalResponseDto"
@@ -2738,6 +2856,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2758,6 +2877,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2778,6 +2898,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2798,6 +2919,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2837,6 +2959,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "type": "array",
@@ -2860,6 +2983,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2880,6 +3004,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2900,6 +3025,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2920,6 +3046,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -2959,6 +3086,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "type": "array",
@@ -2982,6 +3110,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3002,6 +3131,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3022,6 +3152,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3042,6 +3173,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3081,6 +3213,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "type": "array",
@@ -3104,6 +3237,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3124,6 +3258,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3144,6 +3279,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3164,6 +3300,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3196,6 +3333,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/FindBillsPeriodResponseDto"
@@ -3216,6 +3354,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3236,6 +3375,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3256,6 +3396,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3276,6 +3417,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3296,6 +3438,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3328,6 +3471,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/FindBillsTotalAmountResponseDto"
@@ -3348,6 +3492,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3368,6 +3513,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3388,6 +3534,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3408,6 +3555,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3428,6 +3576,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3481,6 +3630,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "type": "array",
@@ -3504,6 +3654,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3524,6 +3675,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3544,6 +3696,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3564,6 +3717,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3584,6 +3738,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3624,6 +3779,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3644,6 +3800,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3664,6 +3821,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3684,6 +3842,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3704,6 +3863,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3744,6 +3904,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/IdResponseDto"
@@ -3764,6 +3925,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3784,6 +3946,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3804,6 +3967,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3824,6 +3988,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3844,6 +4009,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3864,6 +4030,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3902,6 +4069,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/IdResponseDto"
@@ -3922,6 +4090,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3942,6 +4111,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3962,6 +4132,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -3982,6 +4153,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4002,6 +4174,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4022,6 +4195,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4069,6 +4243,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "allOf": [
@@ -4077,6 +4252,7 @@
                                                         },
                                                         {
                                                             "type": "object",
+                                                            "required": ["items"],
                                                             "properties": {
                                                                 "items": {
                                                                     "type": "array",
@@ -4104,6 +4280,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4124,6 +4301,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4144,6 +4322,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4164,6 +4343,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4206,6 +4386,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/IdResponseDto"
@@ -4226,6 +4407,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4246,6 +4428,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4266,6 +4449,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4286,6 +4470,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4306,6 +4491,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4346,6 +4532,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/LocationResponseDto"
@@ -4366,6 +4553,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4386,6 +4574,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4406,6 +4595,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4426,6 +4616,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4446,6 +4637,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4491,6 +4683,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "type": "array",
@@ -4514,6 +4707,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4534,6 +4728,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4554,6 +4749,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4574,6 +4770,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4606,6 +4803,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/TotalResponseDto"
@@ -4626,6 +4824,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4646,6 +4845,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4666,6 +4866,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4686,6 +4887,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4726,6 +4928,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/IdResponseDto"
@@ -4746,6 +4949,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4766,6 +4970,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4786,6 +4991,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4806,6 +5012,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4826,6 +5033,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4846,6 +5054,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4884,6 +5093,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/IdResponseDto"
@@ -4904,6 +5114,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4924,6 +5135,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4944,6 +5156,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4964,6 +5177,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -4984,6 +5198,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5004,6 +5219,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5051,6 +5267,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "allOf": [
@@ -5059,6 +5276,7 @@
                                                         },
                                                         {
                                                             "type": "object",
+                                                            "required": ["items"],
                                                             "properties": {
                                                                 "items": {
                                                                     "type": "array",
@@ -5086,6 +5304,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5106,6 +5325,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5126,6 +5346,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5146,6 +5367,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5188,6 +5410,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/IdResponseDto"
@@ -5208,6 +5431,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5228,6 +5452,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5248,6 +5473,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5268,6 +5494,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5288,6 +5515,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5328,6 +5556,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ConsumerResponseDto"
@@ -5348,6 +5577,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5368,6 +5598,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5388,6 +5619,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5408,6 +5640,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5428,6 +5661,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5473,6 +5707,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "type": "array",
@@ -5496,6 +5731,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5516,6 +5752,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5536,6 +5773,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5556,6 +5794,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5588,6 +5827,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/TotalResponseDto"
@@ -5608,6 +5848,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5628,6 +5869,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5648,6 +5890,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5668,6 +5911,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5708,6 +5952,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/IdResponseDto"
@@ -5728,6 +5973,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5748,6 +5994,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5768,6 +6015,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5788,6 +6036,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5808,6 +6057,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5828,6 +6078,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5866,6 +6117,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/IdResponseDto"
@@ -5886,6 +6138,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5906,6 +6159,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5926,6 +6180,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5946,6 +6201,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5966,6 +6222,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -5986,6 +6243,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6033,6 +6291,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "allOf": [
@@ -6041,6 +6300,7 @@
                                                         },
                                                         {
                                                             "type": "object",
+                                                            "required": ["items"],
                                                             "properties": {
                                                                 "items": {
                                                                     "type": "array",
@@ -6068,6 +6328,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6088,6 +6349,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6108,6 +6370,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6128,6 +6391,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6170,6 +6434,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/IdResponseDto"
@@ -6190,6 +6455,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6210,6 +6476,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6230,6 +6497,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6250,6 +6518,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6270,6 +6539,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6310,6 +6580,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ReceiverResponseDto"
@@ -6330,6 +6601,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6350,6 +6622,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6370,6 +6643,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6390,6 +6664,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6410,6 +6685,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6455,6 +6731,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "type": "array",
@@ -6478,6 +6755,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6498,6 +6776,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6518,6 +6797,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6538,6 +6818,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6570,6 +6851,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/TotalResponseDto"
@@ -6590,6 +6872,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6610,6 +6893,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6630,6 +6914,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6650,6 +6935,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6695,6 +6981,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "allOf": [
@@ -6703,6 +6990,12 @@
                                                         },
                                                         {
                                                             "type": "object",
+                                                            "required": [
+                                                                "bills",
+                                                                "receivers",
+                                                                "locations",
+                                                                "consumers"
+                                                            ],
                                                             "properties": {
                                                                 "bills": {
                                                                     "type": "array",
@@ -6748,6 +7041,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6768,6 +7062,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6788,6 +7083,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6808,6 +7104,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6840,6 +7137,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": { "data": { "type": "boolean" } }
                                         }
                                     ]
@@ -6856,6 +7154,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6876,6 +7175,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6896,6 +7196,7 @@
                                         { "$ref": "#/components/schemas/HttpResponseDto" },
                                         {
                                             "type": "object",
+                                            "required": ["data"],
                                             "properties": {
                                                 "data": {
                                                     "$ref": "#/components/schemas/ExceptionDto"
@@ -6917,7 +7218,7 @@
     "info": {
         "title": "The expense-api documentation",
         "description": "\n    The Expense API provides endpoints for:\n    • Creating and managing expense reports\n    • Uploading and attaching receipt images\n    • Submitting expenses for approval\n    • Tracking reimbursement status\n    • Generating expense analytics and reports\n",
-        "version": "5.3.5",
+        "version": "5.3.8",
         "contact": {}
     },
     "tags": [],

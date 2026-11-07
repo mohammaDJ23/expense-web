@@ -10,11 +10,11 @@
  *     • Tracking reimbursement status
  *     • Generating expense analytics and reports
  *
- * OpenAPI spec version: 5.3.5
+ * OpenAPI spec version: 5.3.8
  */
 import type { FindUserListResponseDto } from './findUserListResponseDto';
 import type { UserResponseDto } from './userResponseDto';
 
 export type FindUserList200Data = FindUserListResponseDto & {
-    items?: UserResponseDto[];
+    items: UserResponseDto[];
 };

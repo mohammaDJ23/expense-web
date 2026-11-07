@@ -10,11 +10,11 @@
  *     • Tracking reimbursement status
  *     • Generating expense analytics and reports
  *
- * OpenAPI spec version: 5.3.5
+ * OpenAPI spec version: 5.3.8
  */
 import type { ExceptionDto } from './exceptionDto';
 import type { HttpResponseDto } from './httpResponseDto';
 
 export type UpdateUser500 = HttpResponseDto & {
-    data?: ExceptionDto;
+    data: ExceptionDto;
 };
