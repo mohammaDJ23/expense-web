@@ -10,11 +10,11 @@
  *     • Tracking reimbursement status
  *     • Generating expense analytics and reports
  *
- * OpenAPI spec version: 5.3.5
+ * OpenAPI spec version: 5.3.8
  */
 import type { FindBillsPeriodResponseDto } from './findBillsPeriodResponseDto';
 import type { HttpResponseDto } from './httpResponseDto';
 
 export type FindBillsPeriod200 = HttpResponseDto & {
-    data?: FindBillsPeriodResponseDto;
+    data: FindBillsPeriodResponseDto;
 };

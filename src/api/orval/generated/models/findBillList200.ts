@@ -10,11 +10,11 @@
  *     • Tracking reimbursement status
  *     • Generating expense analytics and reports
  *
- * OpenAPI spec version: 5.3.5
+ * OpenAPI spec version: 5.3.8
  */
 import type { FindBillList200Data } from './findBillList200Data';
 import type { HttpResponseDto } from './httpResponseDto';
 
 export type FindBillList200 = HttpResponseDto & {
-    data?: FindBillList200Data;
+    data: FindBillList200Data;
 };
