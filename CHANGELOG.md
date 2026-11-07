@@ -1,3 +1,9 @@
+## [1.1.3](https://github.com/mohammaDJ23/expense-web/compare/v1.1.2...v1.1.3) (2026-11-07)
+
+### 🔧 Chores
+
+- update the version of apis added require property ([9285a71](https://github.com/mohammaDJ23/expense-web/commit/9285a71db443808fe5cb6bd11045cf72677e43c9))
+
 ## [1.1.2](https://github.com/mohammaDJ23/expense-web/compare/v1.1.1...v1.1.2) (2026-11-06)
 
 ### 🔧 Chores
