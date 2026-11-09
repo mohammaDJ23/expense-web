@@ -1,7 +1,13 @@
+import AppProvider from '@/app/providers/AppProvider';
+
 import type { ReactElement } from 'react';
 
 function App(): ReactElement {
-    return <div>Hi there</div>;
+    return (
+        <AppProvider>
+            <div>Hi there</div>
+        </AppProvider>
+    );
 }
 
 export default App;
