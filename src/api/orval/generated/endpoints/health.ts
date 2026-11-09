@@ -27,7 +27,7 @@ import type {
 
 import type { Health200, Health400, Health429, Health500 } from '../models';
 
-import { customInstance } from '../../mutator/custom-instance';
+import { customInstance } from '../../../http/customInstance';
 
 const withQueryKey = <T extends object, K>(query: T, queryKey: K): T & { queryKey: K } => {
     const result = { queryKey } as T & { queryKey: K };
