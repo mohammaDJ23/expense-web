@@ -1,1 +1,186 @@
 @import 'tailwindcss';
+
+:root {
+    color-scheme: light;
+
+    /* Background */
+    --background: #f8f8f8;
+    --surface: #ffffff;
+    --surface-secondary: #f1f3f2;
+
+    /* Primary */
+    --primary: #00a86b;
+    --primary-hover: #008f5b;
+
+    /* Typography */
+    --text: #171c19;
+    --text-secondary: #606b64;
+    --text-muted: #89928c;
+
+    /* Borders */
+    --border: #e5e9e6;
+
+    /* Forms */
+    --input: #ffffff;
+    --input-border: #dce2dd;
+    --disabled: #e9edea;
+
+    /* Feedback */
+    --success: #16834a;
+    --success-background: #eaf5ee;
+
+    --error: #dc3545;
+    --error-background: #fbecee;
+
+    --warning: #b7791f;
+    --warning-background: #fbf3e5;
+
+    --info: #2563eb;
+    --info-background: #edf3fd;
+
+    /* Overlay */
+    --overlay: #00000066;
+}
+
+.dark {
+    color-scheme: dark;
+
+    /* Background */
+    --background: #000000;
+    --surface: #111815;
+    --surface-secondary: #191f1c;
+
+    /* Primary */
+    --primary: #00a86b;
+    --primary-hover: #16bd80;
+
+    /* Typography */
+    --text: #f8f8f8;
+    --text-secondary: #a3ada6;
+    --text-muted: #77827b;
+
+    /* Borders */
+    --border: #29332d;
+
+    /* Forms */
+    --input: #111815;
+    --input-border: #354139;
+    --disabled: #252d28;
+
+    /* Feedback */
+    --success: #39c77b;
+    --success-background: #10251a;
+
+    --error: #ff6472;
+    --error-background: #30171c;
+
+    --warning: #f6c453;
+    --warning-background: #302819;
+
+    --info: #60a5fa;
+    --info-background: #17253a;
+
+    /* Overlay */
+    --overlay: #00000099;
+}
+
+@theme inline {
+    /* Font family */
+    --font-sans: 'Plus Jakarta Sans Variable', sans-serif;
+
+    /* Font sizes */
+    --text-heading-1: 1.875rem; /* 30px */
+    --text-heading-2: 1.5rem; /* 24px */
+    --text-heading-3: 1.25rem; /* 20px */
+    --text-heading-4: 1.125rem; /* 18px */
+    --text-subtitle: 1rem; /* 16px */
+    --text-body: 0.875rem; /* 14px */
+    --text-caption: 0.75rem; /* 12px */
+
+    /* Line heights */
+    --leading-heading: 1.25;
+    --leading-subtitle: 1.5;
+    --leading-body: 1.7;
+    --leading-caption: 1.5;
+
+    /* Background */
+    --color-background: var(--background);
+    --color-surface: var(--surface);
+    --color-surface-secondary: var(--surface-secondary);
+
+    /* Primary */
+    --color-primary: var(--primary);
+    --color-primary-hover: var(--primary-hover);
+
+    /* Typography */
+    --color-text: var(--text);
+    --color-text-secondary: var(--text-secondary);
+    --color-text-muted: var(--text-muted);
+
+    /* Borders */
+    --color-border: var(--border);
+
+    /* Forms */
+    --color-input: var(--input);
+    --color-input-border: var(--input-border);
+    --color-disabled: var(--disabled);
+
+    /* Feedback */
+    --color-success: var(--success);
+    --color-success-background: var(--success-background);
+
+    --color-error: var(--error);
+    --color-error-background: var(--error-background);
+
+    --color-warning: var(--warning);
+    --color-warning-background: var(--warning-background);
+
+    --color-info: var(--info);
+    --color-info-background: var(--info-background);
+
+    /* Overlay */
+    --color-overlay: var(--overlay);
+}
+
+@layer components {
+    /* Headings */
+    .heading-1 {
+        @apply text-heading-1 leading-heading font-bold text-text;
+    }
+
+    .heading-2 {
+        @apply text-heading-2 leading-heading font-semibold text-text;
+    }
+
+    .heading-3 {
+        @apply text-heading-3 leading-heading font-semibold text-text;
+    }
+
+    .heading-4 {
+        @apply text-heading-4 leading-heading font-semibold text-text;
+    }
+
+    /* Supporting text */
+    .subtitle {
+        @apply text-subtitle leading-subtitle font-medium text-text-secondary;
+    }
+
+    .body-text {
+        @apply text-body leading-body font-normal text-text;
+    }
+
+    .caption {
+        @apply text-caption leading-caption font-normal text-text-muted;
+    }
+}
+
+@layer base {
+    html,
+    body {
+        font-family: var(--font-sans);
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
