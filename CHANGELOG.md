@@ -1,3 +1,12 @@
+## [1.1.4](https://github.com/mohammaDJ23/expense-web/compare/v1.1.3...v1.1.4) (2026-11-10)
+
+### 🔧 Chores
+
+- add the query provider ([94db57e](https://github.com/mohammaDJ23/expense-web/commit/94db57ea681e9351ff4ca20b074e0e8232d96cd1))
+- add the style variables ([ab21cde](https://github.com/mohammaDJ23/expense-web/commit/ab21cdef01983ce9bb3eca05eb237f3396708e05))
+- install react-router ([d580774](https://github.com/mohammaDJ23/expense-web/commit/d580774649bdcc0c01f9fb8c09a591675eac42b7))
+- restructure the apis ([1ff1260](https://github.com/mohammaDJ23/expense-web/commit/1ff12600398b8449553fa7d506d36a5fa071f44d))
+
 ## [1.1.3](https://github.com/mohammaDJ23/expense-web/compare/v1.1.2...v1.1.3) (2026-11-07)
 
 ### 🔧 Chores
