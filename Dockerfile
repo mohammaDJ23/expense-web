@@ -40,9 +40,9 @@ COPY --chown=expense-web:nodejs . .
 
 USER expense-web
 
-EXPOSE 8585
+EXPOSE 9595
 
-CMD ["pnpm", "dev", "--host", "0.0.0.0", "--port", "8585"]
+CMD ["pnpm", "dev", "--host", "0.0.0.0", "--port", "9595"]
 
 FROM installed-packages AS build
 
