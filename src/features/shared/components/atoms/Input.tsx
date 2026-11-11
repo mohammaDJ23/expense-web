@@ -37,10 +37,10 @@ const inputVariants = tv({
     },
 });
 
-export interface IProps
+interface IProps
     extends Omit<ComponentPropsWithoutRef<'input'>, 'size'>, VariantProps<typeof inputVariants> {}
 
-export function Input({ size, className, ...props }: Readonly<IProps>): ReactElement {
+function Input({ size, className, ...props }: Readonly<IProps>): ReactElement {
     const { wrapper, input } = inputVariants({ size });
 
     return (
@@ -49,3 +49,5 @@ export function Input({ size, className, ...props }: Readonly<IProps>): ReactEle
         </div>
     );
 }
+
+export default Input;

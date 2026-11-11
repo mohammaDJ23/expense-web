@@ -1,4 +1,4 @@
-import { Spinner } from '@/features/shared/components/atoms/Spinner';
+import Spinner from '@/features/shared/components/atoms/Spinner';
 
 import type { ReactElement } from 'react';
 
