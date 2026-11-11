@@ -1,11 +1,12 @@
 import AppProvider from '@/app/providers/AppProvider';
+import RouterProvider from '@/app/providers/RouterProvider';
 
 import type { ReactElement } from 'react';
 
 function App(): ReactElement {
     return (
         <AppProvider>
-            <div>Hi there</div>
+            <RouterProvider />
         </AppProvider>
     );
 }
