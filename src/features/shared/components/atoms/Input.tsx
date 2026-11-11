@@ -31,26 +31,17 @@ const inputVariants = tv({
                 input: 'text-body',
             },
         },
-        error: {
-            true: {
-                wrapper: 'border-error focus-within:border-error focus-within:ring-error/15',
-            },
-        },
     },
     defaultVariants: {
         size: 'md',
-        error: false,
     },
 });
 
 export interface IProps
     extends Omit<ComponentPropsWithoutRef<'input'>, 'size'>, VariantProps<typeof inputVariants> {}
 
-export function Input({ size, className, error, ...props }: Readonly<IProps>): ReactElement {
-    const { wrapper, input } = inputVariants({
-        size,
-        error,
-    });
+export function Input({ size, className, ...props }: Readonly<IProps>): ReactElement {
+    const { wrapper, input } = inputVariants({ size });
 
     return (
         <div className={cx(wrapper(), className)}>
