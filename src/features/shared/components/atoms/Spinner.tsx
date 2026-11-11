@@ -19,7 +19,7 @@ const spinnerVariants = tv({
 
 interface IProps extends ComponentPropsWithoutRef<'span'>, VariantProps<typeof spinnerVariants> {}
 
-export function Spinner({ size, className, ...props }: Readonly<IProps>): ReactElement {
+function Spinner({ size, className, ...props }: Readonly<IProps>): ReactElement {
     return (
         <span
             role="status"
@@ -29,3 +29,5 @@ export function Spinner({ size, className, ...props }: Readonly<IProps>): ReactE
         />
     );
 }
+
+export default Spinner;
