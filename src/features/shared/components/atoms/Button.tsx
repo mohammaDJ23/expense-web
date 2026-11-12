@@ -4,8 +4,8 @@ import type { ComponentPropsWithoutRef, ReactElement } from 'react';
 
 const buttonVariants = tv({
     base: [
-        'inline-flex shrink-0 items-center justify-center gap-2',
-        'rounded-lg whitespace-nowrap',
+        'inline-flex shrink-0 items-center justify-center gap-2 overflow-hidden',
+        'rounded-lg whitespace-wrap',
         'transition-colors duration-150',
         'cursor-pointer',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30',
@@ -20,9 +20,9 @@ const buttonVariants = tv({
             danger: 'bg-error text-white hover:bg-error/90',
         },
         size: {
-            sm: 'h-8 px-3 caption',
-            md: 'h-10 px-4 body-text',
-            lg: 'h-12 px-5 subtitle',
+            sm: 'px-3 py-1 caption',
+            md: 'px-4 py-1.5 body-text',
+            lg: 'px-5 py-2 subtitle',
         },
         fullWidth: {
             true: 'w-full',
