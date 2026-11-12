@@ -71,6 +71,7 @@ import type {
 } from '../models';
 
 import { customInstance } from '../../../http/customInstance';
+import type { ErrorType } from '../../../http/customInstance';
 
 const withQueryKey = <T extends object, K>(query: T, queryKey: K): T & { queryKey: K } => {
     const result = { queryKey } as T & { queryKey: K };
@@ -104,7 +105,9 @@ export const updateUser = (updateUserRequestDto: UpdateUserRequestDto, signal?: 
 export const getUpdateUserMutationKey = () => ['updateUser'] as const;
 
 export const getUpdateUserMutationOptions = <
-    TError = UpdateUser400 | UpdateUser401 | UpdateUser404 | UpdateUser429 | UpdateUser500,
+    TError = ErrorType<
+        UpdateUser400 | UpdateUser401 | UpdateUser404 | UpdateUser429 | UpdateUser500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -140,15 +143,18 @@ export const getUpdateUserMutationOptions = <
 
 export type UpdateUserMutationResult = NonNullable<Awaited<ReturnType<typeof updateUser>>>;
 export type UpdateUserMutationBody = UpdateUserRequestDto;
-export type UpdateUserMutationError =
-    UpdateUser400 | UpdateUser401 | UpdateUser404 | UpdateUser429 | UpdateUser500;
+export type UpdateUserMutationError = ErrorType<
+    UpdateUser400 | UpdateUser401 | UpdateUser404 | UpdateUser429 | UpdateUser500
+>;
 export type UpdateUserMutationVariables = { data: UpdateUserRequestDto };
 
 /**
  * @summary Update a user
  */
 export const useUpdateUser = <
-    TError = UpdateUser400 | UpdateUser401 | UpdateUser404 | UpdateUser429 | UpdateUser500,
+    TError = ErrorType<
+        UpdateUser400 | UpdateUser401 | UpdateUser404 | UpdateUser429 | UpdateUser500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -179,7 +185,9 @@ export const deleteUser = (signal?: AbortSignal) => {
 export const getDeleteUserMutationKey = () => ['deleteUser'] as const;
 
 export const getDeleteUserMutationOptions = <
-    TError = DeleteUser400 | DeleteUser401 | DeleteUser404 | DeleteUser429 | DeleteUser500,
+    TError = ErrorType<
+        DeleteUser400 | DeleteUser401 | DeleteUser404 | DeleteUser429 | DeleteUser500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<Awaited<ReturnType<typeof deleteUser>>, TError, void, TContext>;
@@ -200,14 +208,17 @@ export const getDeleteUserMutationOptions = <
 
 export type DeleteUserMutationResult = NonNullable<Awaited<ReturnType<typeof deleteUser>>>;
 
-export type DeleteUserMutationError =
-    DeleteUser400 | DeleteUser401 | DeleteUser404 | DeleteUser429 | DeleteUser500;
+export type DeleteUserMutationError = ErrorType<
+    DeleteUser400 | DeleteUser401 | DeleteUser404 | DeleteUser429 | DeleteUser500
+>;
 
 /**
  * @summary Delete a user
  */
 export const useDeleteUser = <
-    TError = DeleteUser400 | DeleteUser401 | DeleteUser404 | DeleteUser429 | DeleteUser500,
+    TError = ErrorType<
+        DeleteUser400 | DeleteUser401 | DeleteUser404 | DeleteUser429 | DeleteUser500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -236,8 +247,9 @@ export const getFindUserListQueryKey = (params?: FindUserListParams) => {
 
 export const getFindUserListQueryOptions = <
     TData = Awaited<ReturnType<typeof findUserList>>,
-    TError =
-        FindUserList400 | FindUserList401 | FindUserList403 | FindUserList429 | FindUserList500,
+    TError = ErrorType<
+        FindUserList400 | FindUserList401 | FindUserList403 | FindUserList429 | FindUserList500
+    >,
 >(
     params?: FindUserListParams,
     options?: {
@@ -259,13 +271,15 @@ export const getFindUserListQueryOptions = <
 };
 
 export type FindUserListQueryResult = NonNullable<Awaited<ReturnType<typeof findUserList>>>;
-export type FindUserListQueryError =
-    FindUserList400 | FindUserList401 | FindUserList403 | FindUserList429 | FindUserList500;
+export type FindUserListQueryError = ErrorType<
+    FindUserList400 | FindUserList401 | FindUserList403 | FindUserList429 | FindUserList500
+>;
 
 export function useFindUserList<
     TData = Awaited<ReturnType<typeof findUserList>>,
-    TError =
-        FindUserList400 | FindUserList401 | FindUserList403 | FindUserList429 | FindUserList500,
+    TError = ErrorType<
+        FindUserList400 | FindUserList401 | FindUserList403 | FindUserList429 | FindUserList500
+    >,
 >(
     params: undefined | FindUserListParams,
     options: {
@@ -283,8 +297,9 @@ export function useFindUserList<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindUserList<
     TData = Awaited<ReturnType<typeof findUserList>>,
-    TError =
-        FindUserList400 | FindUserList401 | FindUserList403 | FindUserList429 | FindUserList500,
+    TError = ErrorType<
+        FindUserList400 | FindUserList401 | FindUserList403 | FindUserList429 | FindUserList500
+    >,
 >(
     params?: FindUserListParams,
     options?: {
@@ -302,8 +317,9 @@ export function useFindUserList<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindUserList<
     TData = Awaited<ReturnType<typeof findUserList>>,
-    TError =
-        FindUserList400 | FindUserList401 | FindUserList403 | FindUserList429 | FindUserList500,
+    TError = ErrorType<
+        FindUserList400 | FindUserList401 | FindUserList403 | FindUserList429 | FindUserList500
+    >,
 >(
     params?: FindUserListParams,
     options?: {
@@ -317,8 +333,9 @@ export function useFindUserList<
 
 export function useFindUserList<
     TData = Awaited<ReturnType<typeof findUserList>>,
-    TError =
-        FindUserList400 | FindUserList401 | FindUserList403 | FindUserList429 | FindUserList500,
+    TError = ErrorType<
+        FindUserList400 | FindUserList401 | FindUserList403 | FindUserList429 | FindUserList500
+    >,
 >(
     params?: FindUserListParams,
     options?: {
@@ -349,7 +366,7 @@ export const getFindMeQueryKey = () => {
 
 export const getFindMeQueryOptions = <
     TData = Awaited<ReturnType<typeof findMe>>,
-    TError = FindMe400 | FindMe401 | FindMe404 | FindMe429 | FindMe500,
+    TError = ErrorType<FindMe400 | FindMe401 | FindMe404 | FindMe429 | FindMe500>,
 >(options?: {
     query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findMe>>, TError, TData>>;
 }) => {
@@ -368,11 +385,11 @@ export const getFindMeQueryOptions = <
 };
 
 export type FindMeQueryResult = NonNullable<Awaited<ReturnType<typeof findMe>>>;
-export type FindMeQueryError = FindMe400 | FindMe401 | FindMe404 | FindMe429 | FindMe500;
+export type FindMeQueryError = ErrorType<FindMe400 | FindMe401 | FindMe404 | FindMe429 | FindMe500>;
 
 export function useFindMe<
     TData = Awaited<ReturnType<typeof findMe>>,
-    TError = FindMe400 | FindMe401 | FindMe404 | FindMe429 | FindMe500,
+    TError = ErrorType<FindMe400 | FindMe401 | FindMe404 | FindMe429 | FindMe500>,
 >(
     options: {
         query: Partial<UseQueryOptions<Awaited<ReturnType<typeof findMe>>, TError, TData>> &
@@ -389,7 +406,7 @@ export function useFindMe<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindMe<
     TData = Awaited<ReturnType<typeof findMe>>,
-    TError = FindMe400 | FindMe401 | FindMe404 | FindMe429 | FindMe500,
+    TError = ErrorType<FindMe400 | FindMe401 | FindMe404 | FindMe429 | FindMe500>,
 >(
     options?: {
         query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findMe>>, TError, TData>> &
@@ -406,7 +423,7 @@ export function useFindMe<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindMe<
     TData = Awaited<ReturnType<typeof findMe>>,
-    TError = FindMe400 | FindMe401 | FindMe404 | FindMe429 | FindMe500,
+    TError = ErrorType<FindMe400 | FindMe401 | FindMe404 | FindMe429 | FindMe500>,
 >(
     options?: {
         query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findMe>>, TError, TData>>;
@@ -419,7 +436,7 @@ export function useFindMe<
 
 export function useFindMe<
     TData = Awaited<ReturnType<typeof findMe>>,
-    TError = FindMe400 | FindMe401 | FindMe404 | FindMe429 | FindMe500,
+    TError = ErrorType<FindMe400 | FindMe401 | FindMe404 | FindMe429 | FindMe500>,
 >(
     options?: {
         query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findMe>>, TError, TData>>;
@@ -449,12 +466,13 @@ export const getFindTotalUsersQueryKey = () => {
 
 export const getFindTotalUsersQueryOptions = <
     TData = Awaited<ReturnType<typeof findTotalUsers>>,
-    TError =
+    TError = ErrorType<
         | FindTotalUsers400
         | FindTotalUsers401
         | FindTotalUsers403
         | FindTotalUsers429
-        | FindTotalUsers500,
+        | FindTotalUsers500
+    >,
 >(options?: {
     query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findTotalUsers>>, TError, TData>>;
 }) => {
@@ -473,21 +491,23 @@ export const getFindTotalUsersQueryOptions = <
 };
 
 export type FindTotalUsersQueryResult = NonNullable<Awaited<ReturnType<typeof findTotalUsers>>>;
-export type FindTotalUsersQueryError =
+export type FindTotalUsersQueryError = ErrorType<
     | FindTotalUsers400
     | FindTotalUsers401
     | FindTotalUsers403
     | FindTotalUsers429
-    | FindTotalUsers500;
+    | FindTotalUsers500
+>;
 
 export function useFindTotalUsers<
     TData = Awaited<ReturnType<typeof findTotalUsers>>,
-    TError =
+    TError = ErrorType<
         | FindTotalUsers400
         | FindTotalUsers401
         | FindTotalUsers403
         | FindTotalUsers429
-        | FindTotalUsers500,
+        | FindTotalUsers500
+    >,
 >(
     options: {
         query: Partial<UseQueryOptions<Awaited<ReturnType<typeof findTotalUsers>>, TError, TData>> &
@@ -504,12 +524,13 @@ export function useFindTotalUsers<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindTotalUsers<
     TData = Awaited<ReturnType<typeof findTotalUsers>>,
-    TError =
+    TError = ErrorType<
         | FindTotalUsers400
         | FindTotalUsers401
         | FindTotalUsers403
         | FindTotalUsers429
-        | FindTotalUsers500,
+        | FindTotalUsers500
+    >,
 >(
     options?: {
         query?: Partial<
@@ -528,12 +549,13 @@ export function useFindTotalUsers<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindTotalUsers<
     TData = Awaited<ReturnType<typeof findTotalUsers>>,
-    TError =
+    TError = ErrorType<
         | FindTotalUsers400
         | FindTotalUsers401
         | FindTotalUsers403
         | FindTotalUsers429
-        | FindTotalUsers500,
+        | FindTotalUsers500
+    >,
 >(
     options?: {
         query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findTotalUsers>>, TError, TData>>;
@@ -546,12 +568,13 @@ export function useFindTotalUsers<
 
 export function useFindTotalUsers<
     TData = Awaited<ReturnType<typeof findTotalUsers>>,
-    TError =
+    TError = ErrorType<
         | FindTotalUsers400
         | FindTotalUsers401
         | FindTotalUsers403
         | FindTotalUsers429
-        | FindTotalUsers500,
+        | FindTotalUsers500
+    >,
 >(
     options?: {
         query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findTotalUsers>>, TError, TData>>;
@@ -581,7 +604,9 @@ export const getFindUserQueryKey = (id: string) => {
 
 export const getFindUserQueryOptions = <
     TData = Awaited<ReturnType<typeof findUser>>,
-    TError = FindUser400 | FindUser401 | FindUser403 | FindUser404 | FindUser429 | FindUser500,
+    TError = ErrorType<
+        FindUser400 | FindUser401 | FindUser403 | FindUser404 | FindUser429 | FindUser500
+    >,
 >(
     id: string,
     options?: {
@@ -606,12 +631,15 @@ export const getFindUserQueryOptions = <
 };
 
 export type FindUserQueryResult = NonNullable<Awaited<ReturnType<typeof findUser>>>;
-export type FindUserQueryError =
-    FindUser400 | FindUser401 | FindUser403 | FindUser404 | FindUser429 | FindUser500;
+export type FindUserQueryError = ErrorType<
+    FindUser400 | FindUser401 | FindUser403 | FindUser404 | FindUser429 | FindUser500
+>;
 
 export function useFindUser<
     TData = Awaited<ReturnType<typeof findUser>>,
-    TError = FindUser400 | FindUser401 | FindUser403 | FindUser404 | FindUser429 | FindUser500,
+    TError = ErrorType<
+        FindUser400 | FindUser401 | FindUser403 | FindUser404 | FindUser429 | FindUser500
+    >,
 >(
     id: string,
     options: {
@@ -629,7 +657,9 @@ export function useFindUser<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindUser<
     TData = Awaited<ReturnType<typeof findUser>>,
-    TError = FindUser400 | FindUser401 | FindUser403 | FindUser404 | FindUser429 | FindUser500,
+    TError = ErrorType<
+        FindUser400 | FindUser401 | FindUser403 | FindUser404 | FindUser429 | FindUser500
+    >,
 >(
     id: string,
     options?: {
@@ -647,7 +677,9 @@ export function useFindUser<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindUser<
     TData = Awaited<ReturnType<typeof findUser>>,
-    TError = FindUser400 | FindUser401 | FindUser403 | FindUser404 | FindUser429 | FindUser500,
+    TError = ErrorType<
+        FindUser400 | FindUser401 | FindUser403 | FindUser404 | FindUser429 | FindUser500
+    >,
 >(
     id: string,
     options?: {
@@ -661,7 +693,9 @@ export function useFindUser<
 
 export function useFindUser<
     TData = Awaited<ReturnType<typeof findUser>>,
-    TError = FindUser400 | FindUser401 | FindUser403 | FindUser404 | FindUser429 | FindUser500,
+    TError = ErrorType<
+        FindUser400 | FindUser401 | FindUser403 | FindUser404 | FindUser429 | FindUser500
+    >,
 >(
     id: string,
     options?: {

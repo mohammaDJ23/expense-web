@@ -42,6 +42,7 @@ import type {
 } from '../models';
 
 import { customInstance } from '../../../http/customInstance';
+import type { ErrorType } from '../../../http/customInstance';
 
 const withQueryKey = <T extends object, K>(query: T, queryKey: K): T & { queryKey: K } => {
     const result = { queryKey } as T & { queryKey: K };
@@ -77,7 +78,7 @@ export const getGlobalSearchQueryKey = (params?: GlobalSearchParams) => {
 
 export const getGlobalSearchQueryOptions = <
     TData = Awaited<ReturnType<typeof globalSearch>>,
-    TError = GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500,
+    TError = ErrorType<GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500>,
 >(
     params?: GlobalSearchParams,
     options?: {
@@ -99,12 +100,13 @@ export const getGlobalSearchQueryOptions = <
 };
 
 export type GlobalSearchQueryResult = NonNullable<Awaited<ReturnType<typeof globalSearch>>>;
-export type GlobalSearchQueryError =
-    GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500;
+export type GlobalSearchQueryError = ErrorType<
+    GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500
+>;
 
 export function useGlobalSearch<
     TData = Awaited<ReturnType<typeof globalSearch>>,
-    TError = GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500,
+    TError = ErrorType<GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500>,
 >(
     params: undefined | GlobalSearchParams,
     options: {
@@ -122,7 +124,7 @@ export function useGlobalSearch<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useGlobalSearch<
     TData = Awaited<ReturnType<typeof globalSearch>>,
-    TError = GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500,
+    TError = ErrorType<GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500>,
 >(
     params?: GlobalSearchParams,
     options?: {
@@ -140,7 +142,7 @@ export function useGlobalSearch<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useGlobalSearch<
     TData = Awaited<ReturnType<typeof globalSearch>>,
-    TError = GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500,
+    TError = ErrorType<GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500>,
 >(
     params?: GlobalSearchParams,
     options?: {
@@ -154,7 +156,7 @@ export function useGlobalSearch<
 
 export function useGlobalSearch<
     TData = Awaited<ReturnType<typeof globalSearch>>,
-    TError = GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500,
+    TError = ErrorType<GlobalSearch400 | GlobalSearch401 | GlobalSearch429 | GlobalSearch500>,
 >(
     params?: GlobalSearchParams,
     options?: {
@@ -186,7 +188,7 @@ export const syncGlobalSearch = (signal?: AbortSignal) => {
 export const getSyncGlobalSearchMutationKey = () => ['syncGlobalSearch'] as const;
 
 export const getSyncGlobalSearchMutationOptions = <
-    TError = SyncGlobalSearch400 | SyncGlobalSearch429 | SyncGlobalSearch500,
+    TError = ErrorType<SyncGlobalSearch400 | SyncGlobalSearch429 | SyncGlobalSearch500>,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -214,14 +216,15 @@ export type SyncGlobalSearchMutationResult = NonNullable<
     Awaited<ReturnType<typeof syncGlobalSearch>>
 >;
 
-export type SyncGlobalSearchMutationError =
-    SyncGlobalSearch400 | SyncGlobalSearch429 | SyncGlobalSearch500;
+export type SyncGlobalSearchMutationError = ErrorType<
+    SyncGlobalSearch400 | SyncGlobalSearch429 | SyncGlobalSearch500
+>;
 
 /**
  * @summary Search syncing
  */
 export const useSyncGlobalSearch = <
-    TError = SyncGlobalSearch400 | SyncGlobalSearch429 | SyncGlobalSearch500,
+    TError = ErrorType<SyncGlobalSearch400 | SyncGlobalSearch429 | SyncGlobalSearch500>,
     TContext = unknown,
 >(
     options?: {

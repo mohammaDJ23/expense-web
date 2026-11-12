@@ -77,6 +77,7 @@ import type {
 } from '../models';
 
 import { customInstance } from '../../../http/customInstance';
+import type { ErrorType } from '../../../http/customInstance';
 
 const withQueryKey = <T extends object, K>(query: T, queryKey: K): T & { queryKey: K } => {
     const result = { queryKey } as T & { queryKey: K };
@@ -113,13 +114,14 @@ export const createReceiver = (
 export const getCreateReceiverMutationKey = () => ['createReceiver'] as const;
 
 export const getCreateReceiverMutationOptions = <
-    TError =
+    TError = ErrorType<
         | CreateReceiver400
         | CreateReceiver401
         | CreateReceiver404
         | CreateReceiver409
         | CreateReceiver429
-        | CreateReceiver500,
+        | CreateReceiver500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -155,26 +157,28 @@ export const getCreateReceiverMutationOptions = <
 
 export type CreateReceiverMutationResult = NonNullable<Awaited<ReturnType<typeof createReceiver>>>;
 export type CreateReceiverMutationBody = CreateReceiverRequestDto;
-export type CreateReceiverMutationError =
+export type CreateReceiverMutationError = ErrorType<
     | CreateReceiver400
     | CreateReceiver401
     | CreateReceiver404
     | CreateReceiver409
     | CreateReceiver429
-    | CreateReceiver500;
+    | CreateReceiver500
+>;
 export type CreateReceiverMutationVariables = { data: CreateReceiverRequestDto };
 
 /**
  * @summary Create a receiver
  */
 export const useCreateReceiver = <
-    TError =
+    TError = ErrorType<
         | CreateReceiver400
         | CreateReceiver401
         | CreateReceiver404
         | CreateReceiver409
         | CreateReceiver429
-        | CreateReceiver500,
+        | CreateReceiver500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -214,13 +218,14 @@ export const updateReceiver = (
 export const getUpdateReceiverMutationKey = () => ['updateReceiver'] as const;
 
 export const getUpdateReceiverMutationOptions = <
-    TError =
+    TError = ErrorType<
         | UpdateReceiver400
         | UpdateReceiver401
         | UpdateReceiver404
         | UpdateReceiver409
         | UpdateReceiver429
-        | UpdateReceiver500,
+        | UpdateReceiver500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -256,26 +261,28 @@ export const getUpdateReceiverMutationOptions = <
 
 export type UpdateReceiverMutationResult = NonNullable<Awaited<ReturnType<typeof updateReceiver>>>;
 export type UpdateReceiverMutationBody = UpdateReceiverRequestDto;
-export type UpdateReceiverMutationError =
+export type UpdateReceiverMutationError = ErrorType<
     | UpdateReceiver400
     | UpdateReceiver401
     | UpdateReceiver404
     | UpdateReceiver409
     | UpdateReceiver429
-    | UpdateReceiver500;
+    | UpdateReceiver500
+>;
 export type UpdateReceiverMutationVariables = { data: UpdateReceiverRequestDto };
 
 /**
  * @summary Update a receiver
  */
 export const useUpdateReceiver = <
-    TError =
+    TError = ErrorType<
         | UpdateReceiver400
         | UpdateReceiver401
         | UpdateReceiver404
         | UpdateReceiver409
         | UpdateReceiver429
-        | UpdateReceiver500,
+        | UpdateReceiver500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -314,7 +321,9 @@ export const getFindReceiverListQueryKey = (params?: FindReceiverListParams) => 
 
 export const getFindReceiverListQueryOptions = <
     TData = Awaited<ReturnType<typeof findReceiverList>>,
-    TError = FindReceiverList400 | FindReceiverList401 | FindReceiverList429 | FindReceiverList500,
+    TError = ErrorType<
+        FindReceiverList400 | FindReceiverList401 | FindReceiverList429 | FindReceiverList500
+    >,
 >(
     params?: FindReceiverListParams,
     options?: {
@@ -338,12 +347,15 @@ export const getFindReceiverListQueryOptions = <
 };
 
 export type FindReceiverListQueryResult = NonNullable<Awaited<ReturnType<typeof findReceiverList>>>;
-export type FindReceiverListQueryError =
-    FindReceiverList400 | FindReceiverList401 | FindReceiverList429 | FindReceiverList500;
+export type FindReceiverListQueryError = ErrorType<
+    FindReceiverList400 | FindReceiverList401 | FindReceiverList429 | FindReceiverList500
+>;
 
 export function useFindReceiverList<
     TData = Awaited<ReturnType<typeof findReceiverList>>,
-    TError = FindReceiverList400 | FindReceiverList401 | FindReceiverList429 | FindReceiverList500,
+    TError = ErrorType<
+        FindReceiverList400 | FindReceiverList401 | FindReceiverList429 | FindReceiverList500
+    >,
 >(
     params: undefined | FindReceiverListParams,
     options: {
@@ -363,7 +375,9 @@ export function useFindReceiverList<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindReceiverList<
     TData = Awaited<ReturnType<typeof findReceiverList>>,
-    TError = FindReceiverList400 | FindReceiverList401 | FindReceiverList429 | FindReceiverList500,
+    TError = ErrorType<
+        FindReceiverList400 | FindReceiverList401 | FindReceiverList429 | FindReceiverList500
+    >,
 >(
     params?: FindReceiverListParams,
     options?: {
@@ -383,7 +397,9 @@ export function useFindReceiverList<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindReceiverList<
     TData = Awaited<ReturnType<typeof findReceiverList>>,
-    TError = FindReceiverList400 | FindReceiverList401 | FindReceiverList429 | FindReceiverList500,
+    TError = ErrorType<
+        FindReceiverList400 | FindReceiverList401 | FindReceiverList429 | FindReceiverList500
+    >,
 >(
     params?: FindReceiverListParams,
     options?: {
@@ -399,7 +415,9 @@ export function useFindReceiverList<
 
 export function useFindReceiverList<
     TData = Awaited<ReturnType<typeof findReceiverList>>,
-    TError = FindReceiverList400 | FindReceiverList401 | FindReceiverList429 | FindReceiverList500,
+    TError = ErrorType<
+        FindReceiverList400 | FindReceiverList401 | FindReceiverList429 | FindReceiverList500
+    >,
 >(
     params?: FindReceiverListParams,
     options?: {
@@ -433,12 +451,13 @@ export const deleteReceiver = (id: string, signal?: AbortSignal) => {
 export const getDeleteReceiverMutationKey = () => ['deleteReceiver'] as const;
 
 export const getDeleteReceiverMutationOptions = <
-    TError =
+    TError = ErrorType<
         | DeleteReceiver400
         | DeleteReceiver401
         | DeleteReceiver404
         | DeleteReceiver429
-        | DeleteReceiver500,
+        | DeleteReceiver500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -474,24 +493,26 @@ export const getDeleteReceiverMutationOptions = <
 
 export type DeleteReceiverMutationResult = NonNullable<Awaited<ReturnType<typeof deleteReceiver>>>;
 
-export type DeleteReceiverMutationError =
+export type DeleteReceiverMutationError = ErrorType<
     | DeleteReceiver400
     | DeleteReceiver401
     | DeleteReceiver404
     | DeleteReceiver429
-    | DeleteReceiver500;
+    | DeleteReceiver500
+>;
 export type DeleteReceiverMutationVariables = { id: string };
 
 /**
  * @summary Delete a receiver
  */
 export const useDeleteReceiver = <
-    TError =
+    TError = ErrorType<
         | DeleteReceiver400
         | DeleteReceiver401
         | DeleteReceiver404
         | DeleteReceiver429
-        | DeleteReceiver500,
+        | DeleteReceiver500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -529,8 +550,9 @@ export const getFindReceiverQueryKey = (id: string) => {
 
 export const getFindReceiverQueryOptions = <
     TData = Awaited<ReturnType<typeof findReceiver>>,
-    TError =
-        FindReceiver400 | FindReceiver401 | FindReceiver404 | FindReceiver429 | FindReceiver500,
+    TError = ErrorType<
+        FindReceiver400 | FindReceiver401 | FindReceiver404 | FindReceiver429 | FindReceiver500
+    >,
 >(
     id: string,
     options?: {
@@ -555,13 +577,15 @@ export const getFindReceiverQueryOptions = <
 };
 
 export type FindReceiverQueryResult = NonNullable<Awaited<ReturnType<typeof findReceiver>>>;
-export type FindReceiverQueryError =
-    FindReceiver400 | FindReceiver401 | FindReceiver404 | FindReceiver429 | FindReceiver500;
+export type FindReceiverQueryError = ErrorType<
+    FindReceiver400 | FindReceiver401 | FindReceiver404 | FindReceiver429 | FindReceiver500
+>;
 
 export function useFindReceiver<
     TData = Awaited<ReturnType<typeof findReceiver>>,
-    TError =
-        FindReceiver400 | FindReceiver401 | FindReceiver404 | FindReceiver429 | FindReceiver500,
+    TError = ErrorType<
+        FindReceiver400 | FindReceiver401 | FindReceiver404 | FindReceiver429 | FindReceiver500
+    >,
 >(
     id: string,
     options: {
@@ -579,8 +603,9 @@ export function useFindReceiver<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindReceiver<
     TData = Awaited<ReturnType<typeof findReceiver>>,
-    TError =
-        FindReceiver400 | FindReceiver401 | FindReceiver404 | FindReceiver429 | FindReceiver500,
+    TError = ErrorType<
+        FindReceiver400 | FindReceiver401 | FindReceiver404 | FindReceiver429 | FindReceiver500
+    >,
 >(
     id: string,
     options?: {
@@ -598,8 +623,9 @@ export function useFindReceiver<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindReceiver<
     TData = Awaited<ReturnType<typeof findReceiver>>,
-    TError =
-        FindReceiver400 | FindReceiver401 | FindReceiver404 | FindReceiver429 | FindReceiver500,
+    TError = ErrorType<
+        FindReceiver400 | FindReceiver401 | FindReceiver404 | FindReceiver429 | FindReceiver500
+    >,
 >(
     id: string,
     options?: {
@@ -613,8 +639,9 @@ export function useFindReceiver<
 
 export function useFindReceiver<
     TData = Awaited<ReturnType<typeof findReceiver>>,
-    TError =
-        FindReceiver400 | FindReceiver401 | FindReceiver404 | FindReceiver429 | FindReceiver500,
+    TError = ErrorType<
+        FindReceiver400 | FindReceiver401 | FindReceiver404 | FindReceiver429 | FindReceiver500
+    >,
 >(
     id: string,
     options?: {
@@ -650,7 +677,9 @@ export const getSearchReceiversQueryKey = (params?: SearchReceiversParams) => {
 
 export const getSearchReceiversQueryOptions = <
     TData = Awaited<ReturnType<typeof searchReceivers>>,
-    TError = SearchReceivers400 | SearchReceivers401 | SearchReceivers429 | SearchReceivers500,
+    TError = ErrorType<
+        SearchReceivers400 | SearchReceivers401 | SearchReceivers429 | SearchReceivers500
+    >,
 >(
     params?: SearchReceiversParams,
     options?: {
@@ -674,12 +703,15 @@ export const getSearchReceiversQueryOptions = <
 };
 
 export type SearchReceiversQueryResult = NonNullable<Awaited<ReturnType<typeof searchReceivers>>>;
-export type SearchReceiversQueryError =
-    SearchReceivers400 | SearchReceivers401 | SearchReceivers429 | SearchReceivers500;
+export type SearchReceiversQueryError = ErrorType<
+    SearchReceivers400 | SearchReceivers401 | SearchReceivers429 | SearchReceivers500
+>;
 
 export function useSearchReceivers<
     TData = Awaited<ReturnType<typeof searchReceivers>>,
-    TError = SearchReceivers400 | SearchReceivers401 | SearchReceivers429 | SearchReceivers500,
+    TError = ErrorType<
+        SearchReceivers400 | SearchReceivers401 | SearchReceivers429 | SearchReceivers500
+    >,
 >(
     params: undefined | SearchReceiversParams,
     options: {
@@ -699,7 +731,9 @@ export function useSearchReceivers<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useSearchReceivers<
     TData = Awaited<ReturnType<typeof searchReceivers>>,
-    TError = SearchReceivers400 | SearchReceivers401 | SearchReceivers429 | SearchReceivers500,
+    TError = ErrorType<
+        SearchReceivers400 | SearchReceivers401 | SearchReceivers429 | SearchReceivers500
+    >,
 >(
     params?: SearchReceiversParams,
     options?: {
@@ -719,7 +753,9 @@ export function useSearchReceivers<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useSearchReceivers<
     TData = Awaited<ReturnType<typeof searchReceivers>>,
-    TError = SearchReceivers400 | SearchReceivers401 | SearchReceivers429 | SearchReceivers500,
+    TError = ErrorType<
+        SearchReceivers400 | SearchReceivers401 | SearchReceivers429 | SearchReceivers500
+    >,
 >(
     params?: SearchReceiversParams,
     options?: {
@@ -735,7 +771,9 @@ export function useSearchReceivers<
 
 export function useSearchReceivers<
     TData = Awaited<ReturnType<typeof searchReceivers>>,
-    TError = SearchReceivers400 | SearchReceivers401 | SearchReceivers429 | SearchReceivers500,
+    TError = ErrorType<
+        SearchReceivers400 | SearchReceivers401 | SearchReceivers429 | SearchReceivers500
+    >,
 >(
     params?: SearchReceiversParams,
     options?: {
@@ -772,11 +810,12 @@ export const getFindTotalReceiversQueryKey = () => {
 
 export const getFindTotalReceiversQueryOptions = <
     TData = Awaited<ReturnType<typeof findTotalReceivers>>,
-    TError =
+    TError = ErrorType<
         | FindTotalReceivers400
         | FindTotalReceivers401
         | FindTotalReceivers429
-        | FindTotalReceivers500,
+        | FindTotalReceivers500
+    >,
 >(options?: {
     query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findTotalReceivers>>, TError, TData>>;
 }) => {
@@ -797,16 +836,18 @@ export const getFindTotalReceiversQueryOptions = <
 export type FindTotalReceiversQueryResult = NonNullable<
     Awaited<ReturnType<typeof findTotalReceivers>>
 >;
-export type FindTotalReceiversQueryError =
-    FindTotalReceivers400 | FindTotalReceivers401 | FindTotalReceivers429 | FindTotalReceivers500;
+export type FindTotalReceiversQueryError = ErrorType<
+    FindTotalReceivers400 | FindTotalReceivers401 | FindTotalReceivers429 | FindTotalReceivers500
+>;
 
 export function useFindTotalReceivers<
     TData = Awaited<ReturnType<typeof findTotalReceivers>>,
-    TError =
+    TError = ErrorType<
         | FindTotalReceivers400
         | FindTotalReceivers401
         | FindTotalReceivers429
-        | FindTotalReceivers500,
+        | FindTotalReceivers500
+    >,
 >(
     options: {
         query: Partial<
@@ -825,11 +866,12 @@ export function useFindTotalReceivers<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindTotalReceivers<
     TData = Awaited<ReturnType<typeof findTotalReceivers>>,
-    TError =
+    TError = ErrorType<
         | FindTotalReceivers400
         | FindTotalReceivers401
         | FindTotalReceivers429
-        | FindTotalReceivers500,
+        | FindTotalReceivers500
+    >,
 >(
     options?: {
         query?: Partial<
@@ -848,11 +890,12 @@ export function useFindTotalReceivers<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindTotalReceivers<
     TData = Awaited<ReturnType<typeof findTotalReceivers>>,
-    TError =
+    TError = ErrorType<
         | FindTotalReceivers400
         | FindTotalReceivers401
         | FindTotalReceivers429
-        | FindTotalReceivers500,
+        | FindTotalReceivers500
+    >,
 >(
     options?: {
         query?: Partial<
@@ -867,11 +910,12 @@ export function useFindTotalReceivers<
 
 export function useFindTotalReceivers<
     TData = Awaited<ReturnType<typeof findTotalReceivers>>,
-    TError =
+    TError = ErrorType<
         | FindTotalReceivers400
         | FindTotalReceivers401
         | FindTotalReceivers429
-        | FindTotalReceivers500,
+        | FindTotalReceivers500
+    >,
 >(
     options?: {
         query?: Partial<
