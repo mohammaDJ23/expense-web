@@ -77,6 +77,7 @@ import type {
 } from '../models';
 
 import { customInstance } from '../../../http/customInstance';
+import type { ErrorType } from '../../../http/customInstance';
 
 const withQueryKey = <T extends object, K>(query: T, queryKey: K): T & { queryKey: K } => {
     const result = { queryKey } as T & { queryKey: K };
@@ -113,13 +114,14 @@ export const createConsumer = (
 export const getCreateConsumerMutationKey = () => ['createConsumer'] as const;
 
 export const getCreateConsumerMutationOptions = <
-    TError =
+    TError = ErrorType<
         | CreateConsumer400
         | CreateConsumer401
         | CreateConsumer404
         | CreateConsumer409
         | CreateConsumer429
-        | CreateConsumer500,
+        | CreateConsumer500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -155,26 +157,28 @@ export const getCreateConsumerMutationOptions = <
 
 export type CreateConsumerMutationResult = NonNullable<Awaited<ReturnType<typeof createConsumer>>>;
 export type CreateConsumerMutationBody = CreateConsumerRequestDto;
-export type CreateConsumerMutationError =
+export type CreateConsumerMutationError = ErrorType<
     | CreateConsumer400
     | CreateConsumer401
     | CreateConsumer404
     | CreateConsumer409
     | CreateConsumer429
-    | CreateConsumer500;
+    | CreateConsumer500
+>;
 export type CreateConsumerMutationVariables = { data: CreateConsumerRequestDto };
 
 /**
  * @summary Create a consumer
  */
 export const useCreateConsumer = <
-    TError =
+    TError = ErrorType<
         | CreateConsumer400
         | CreateConsumer401
         | CreateConsumer404
         | CreateConsumer409
         | CreateConsumer429
-        | CreateConsumer500,
+        | CreateConsumer500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -214,13 +218,14 @@ export const updateConsumer = (
 export const getUpdateConsumerMutationKey = () => ['updateConsumer'] as const;
 
 export const getUpdateConsumerMutationOptions = <
-    TError =
+    TError = ErrorType<
         | UpdateConsumer400
         | UpdateConsumer401
         | UpdateConsumer404
         | UpdateConsumer409
         | UpdateConsumer429
-        | UpdateConsumer500,
+        | UpdateConsumer500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -256,26 +261,28 @@ export const getUpdateConsumerMutationOptions = <
 
 export type UpdateConsumerMutationResult = NonNullable<Awaited<ReturnType<typeof updateConsumer>>>;
 export type UpdateConsumerMutationBody = UpdateConsumerRequestDto;
-export type UpdateConsumerMutationError =
+export type UpdateConsumerMutationError = ErrorType<
     | UpdateConsumer400
     | UpdateConsumer401
     | UpdateConsumer404
     | UpdateConsumer409
     | UpdateConsumer429
-    | UpdateConsumer500;
+    | UpdateConsumer500
+>;
 export type UpdateConsumerMutationVariables = { data: UpdateConsumerRequestDto };
 
 /**
  * @summary Update a consumer
  */
 export const useUpdateConsumer = <
-    TError =
+    TError = ErrorType<
         | UpdateConsumer400
         | UpdateConsumer401
         | UpdateConsumer404
         | UpdateConsumer409
         | UpdateConsumer429
-        | UpdateConsumer500,
+        | UpdateConsumer500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -314,7 +321,9 @@ export const getFindConsumerListQueryKey = (params?: FindConsumerListParams) => 
 
 export const getFindConsumerListQueryOptions = <
     TData = Awaited<ReturnType<typeof findConsumerList>>,
-    TError = FindConsumerList400 | FindConsumerList401 | FindConsumerList429 | FindConsumerList500,
+    TError = ErrorType<
+        FindConsumerList400 | FindConsumerList401 | FindConsumerList429 | FindConsumerList500
+    >,
 >(
     params?: FindConsumerListParams,
     options?: {
@@ -338,12 +347,15 @@ export const getFindConsumerListQueryOptions = <
 };
 
 export type FindConsumerListQueryResult = NonNullable<Awaited<ReturnType<typeof findConsumerList>>>;
-export type FindConsumerListQueryError =
-    FindConsumerList400 | FindConsumerList401 | FindConsumerList429 | FindConsumerList500;
+export type FindConsumerListQueryError = ErrorType<
+    FindConsumerList400 | FindConsumerList401 | FindConsumerList429 | FindConsumerList500
+>;
 
 export function useFindConsumerList<
     TData = Awaited<ReturnType<typeof findConsumerList>>,
-    TError = FindConsumerList400 | FindConsumerList401 | FindConsumerList429 | FindConsumerList500,
+    TError = ErrorType<
+        FindConsumerList400 | FindConsumerList401 | FindConsumerList429 | FindConsumerList500
+    >,
 >(
     params: undefined | FindConsumerListParams,
     options: {
@@ -363,7 +375,9 @@ export function useFindConsumerList<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindConsumerList<
     TData = Awaited<ReturnType<typeof findConsumerList>>,
-    TError = FindConsumerList400 | FindConsumerList401 | FindConsumerList429 | FindConsumerList500,
+    TError = ErrorType<
+        FindConsumerList400 | FindConsumerList401 | FindConsumerList429 | FindConsumerList500
+    >,
 >(
     params?: FindConsumerListParams,
     options?: {
@@ -383,7 +397,9 @@ export function useFindConsumerList<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindConsumerList<
     TData = Awaited<ReturnType<typeof findConsumerList>>,
-    TError = FindConsumerList400 | FindConsumerList401 | FindConsumerList429 | FindConsumerList500,
+    TError = ErrorType<
+        FindConsumerList400 | FindConsumerList401 | FindConsumerList429 | FindConsumerList500
+    >,
 >(
     params?: FindConsumerListParams,
     options?: {
@@ -399,7 +415,9 @@ export function useFindConsumerList<
 
 export function useFindConsumerList<
     TData = Awaited<ReturnType<typeof findConsumerList>>,
-    TError = FindConsumerList400 | FindConsumerList401 | FindConsumerList429 | FindConsumerList500,
+    TError = ErrorType<
+        FindConsumerList400 | FindConsumerList401 | FindConsumerList429 | FindConsumerList500
+    >,
 >(
     params?: FindConsumerListParams,
     options?: {
@@ -433,12 +451,13 @@ export const deleteConsumer = (id: string, signal?: AbortSignal) => {
 export const getDeleteConsumerMutationKey = () => ['deleteConsumer'] as const;
 
 export const getDeleteConsumerMutationOptions = <
-    TError =
+    TError = ErrorType<
         | DeleteConsumer400
         | DeleteConsumer401
         | DeleteConsumer404
         | DeleteConsumer429
-        | DeleteConsumer500,
+        | DeleteConsumer500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -474,24 +493,26 @@ export const getDeleteConsumerMutationOptions = <
 
 export type DeleteConsumerMutationResult = NonNullable<Awaited<ReturnType<typeof deleteConsumer>>>;
 
-export type DeleteConsumerMutationError =
+export type DeleteConsumerMutationError = ErrorType<
     | DeleteConsumer400
     | DeleteConsumer401
     | DeleteConsumer404
     | DeleteConsumer429
-    | DeleteConsumer500;
+    | DeleteConsumer500
+>;
 export type DeleteConsumerMutationVariables = { id: string };
 
 /**
  * @summary Delete a consumer
  */
 export const useDeleteConsumer = <
-    TError =
+    TError = ErrorType<
         | DeleteConsumer400
         | DeleteConsumer401
         | DeleteConsumer404
         | DeleteConsumer429
-        | DeleteConsumer500,
+        | DeleteConsumer500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -529,8 +550,9 @@ export const getFindConsumerQueryKey = (id: string) => {
 
 export const getFindConsumerQueryOptions = <
     TData = Awaited<ReturnType<typeof findConsumer>>,
-    TError =
-        FindConsumer400 | FindConsumer401 | FindConsumer404 | FindConsumer429 | FindConsumer500,
+    TError = ErrorType<
+        FindConsumer400 | FindConsumer401 | FindConsumer404 | FindConsumer429 | FindConsumer500
+    >,
 >(
     id: string,
     options?: {
@@ -555,13 +577,15 @@ export const getFindConsumerQueryOptions = <
 };
 
 export type FindConsumerQueryResult = NonNullable<Awaited<ReturnType<typeof findConsumer>>>;
-export type FindConsumerQueryError =
-    FindConsumer400 | FindConsumer401 | FindConsumer404 | FindConsumer429 | FindConsumer500;
+export type FindConsumerQueryError = ErrorType<
+    FindConsumer400 | FindConsumer401 | FindConsumer404 | FindConsumer429 | FindConsumer500
+>;
 
 export function useFindConsumer<
     TData = Awaited<ReturnType<typeof findConsumer>>,
-    TError =
-        FindConsumer400 | FindConsumer401 | FindConsumer404 | FindConsumer429 | FindConsumer500,
+    TError = ErrorType<
+        FindConsumer400 | FindConsumer401 | FindConsumer404 | FindConsumer429 | FindConsumer500
+    >,
 >(
     id: string,
     options: {
@@ -579,8 +603,9 @@ export function useFindConsumer<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindConsumer<
     TData = Awaited<ReturnType<typeof findConsumer>>,
-    TError =
-        FindConsumer400 | FindConsumer401 | FindConsumer404 | FindConsumer429 | FindConsumer500,
+    TError = ErrorType<
+        FindConsumer400 | FindConsumer401 | FindConsumer404 | FindConsumer429 | FindConsumer500
+    >,
 >(
     id: string,
     options?: {
@@ -598,8 +623,9 @@ export function useFindConsumer<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindConsumer<
     TData = Awaited<ReturnType<typeof findConsumer>>,
-    TError =
-        FindConsumer400 | FindConsumer401 | FindConsumer404 | FindConsumer429 | FindConsumer500,
+    TError = ErrorType<
+        FindConsumer400 | FindConsumer401 | FindConsumer404 | FindConsumer429 | FindConsumer500
+    >,
 >(
     id: string,
     options?: {
@@ -613,8 +639,9 @@ export function useFindConsumer<
 
 export function useFindConsumer<
     TData = Awaited<ReturnType<typeof findConsumer>>,
-    TError =
-        FindConsumer400 | FindConsumer401 | FindConsumer404 | FindConsumer429 | FindConsumer500,
+    TError = ErrorType<
+        FindConsumer400 | FindConsumer401 | FindConsumer404 | FindConsumer429 | FindConsumer500
+    >,
 >(
     id: string,
     options?: {
@@ -650,7 +677,9 @@ export const getSearchConsumersQueryKey = (params?: SearchConsumersParams) => {
 
 export const getSearchConsumersQueryOptions = <
     TData = Awaited<ReturnType<typeof searchConsumers>>,
-    TError = SearchConsumers400 | SearchConsumers401 | SearchConsumers429 | SearchConsumers500,
+    TError = ErrorType<
+        SearchConsumers400 | SearchConsumers401 | SearchConsumers429 | SearchConsumers500
+    >,
 >(
     params?: SearchConsumersParams,
     options?: {
@@ -674,12 +703,15 @@ export const getSearchConsumersQueryOptions = <
 };
 
 export type SearchConsumersQueryResult = NonNullable<Awaited<ReturnType<typeof searchConsumers>>>;
-export type SearchConsumersQueryError =
-    SearchConsumers400 | SearchConsumers401 | SearchConsumers429 | SearchConsumers500;
+export type SearchConsumersQueryError = ErrorType<
+    SearchConsumers400 | SearchConsumers401 | SearchConsumers429 | SearchConsumers500
+>;
 
 export function useSearchConsumers<
     TData = Awaited<ReturnType<typeof searchConsumers>>,
-    TError = SearchConsumers400 | SearchConsumers401 | SearchConsumers429 | SearchConsumers500,
+    TError = ErrorType<
+        SearchConsumers400 | SearchConsumers401 | SearchConsumers429 | SearchConsumers500
+    >,
 >(
     params: undefined | SearchConsumersParams,
     options: {
@@ -699,7 +731,9 @@ export function useSearchConsumers<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useSearchConsumers<
     TData = Awaited<ReturnType<typeof searchConsumers>>,
-    TError = SearchConsumers400 | SearchConsumers401 | SearchConsumers429 | SearchConsumers500,
+    TError = ErrorType<
+        SearchConsumers400 | SearchConsumers401 | SearchConsumers429 | SearchConsumers500
+    >,
 >(
     params?: SearchConsumersParams,
     options?: {
@@ -719,7 +753,9 @@ export function useSearchConsumers<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useSearchConsumers<
     TData = Awaited<ReturnType<typeof searchConsumers>>,
-    TError = SearchConsumers400 | SearchConsumers401 | SearchConsumers429 | SearchConsumers500,
+    TError = ErrorType<
+        SearchConsumers400 | SearchConsumers401 | SearchConsumers429 | SearchConsumers500
+    >,
 >(
     params?: SearchConsumersParams,
     options?: {
@@ -735,7 +771,9 @@ export function useSearchConsumers<
 
 export function useSearchConsumers<
     TData = Awaited<ReturnType<typeof searchConsumers>>,
-    TError = SearchConsumers400 | SearchConsumers401 | SearchConsumers429 | SearchConsumers500,
+    TError = ErrorType<
+        SearchConsumers400 | SearchConsumers401 | SearchConsumers429 | SearchConsumers500
+    >,
 >(
     params?: SearchConsumersParams,
     options?: {
@@ -772,11 +810,12 @@ export const getFindTotalConsumersQueryKey = () => {
 
 export const getFindTotalConsumersQueryOptions = <
     TData = Awaited<ReturnType<typeof findTotalConsumers>>,
-    TError =
+    TError = ErrorType<
         | FindTotalConsumers400
         | FindTotalConsumers401
         | FindTotalConsumers429
-        | FindTotalConsumers500,
+        | FindTotalConsumers500
+    >,
 >(options?: {
     query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findTotalConsumers>>, TError, TData>>;
 }) => {
@@ -797,16 +836,18 @@ export const getFindTotalConsumersQueryOptions = <
 export type FindTotalConsumersQueryResult = NonNullable<
     Awaited<ReturnType<typeof findTotalConsumers>>
 >;
-export type FindTotalConsumersQueryError =
-    FindTotalConsumers400 | FindTotalConsumers401 | FindTotalConsumers429 | FindTotalConsumers500;
+export type FindTotalConsumersQueryError = ErrorType<
+    FindTotalConsumers400 | FindTotalConsumers401 | FindTotalConsumers429 | FindTotalConsumers500
+>;
 
 export function useFindTotalConsumers<
     TData = Awaited<ReturnType<typeof findTotalConsumers>>,
-    TError =
+    TError = ErrorType<
         | FindTotalConsumers400
         | FindTotalConsumers401
         | FindTotalConsumers429
-        | FindTotalConsumers500,
+        | FindTotalConsumers500
+    >,
 >(
     options: {
         query: Partial<
@@ -825,11 +866,12 @@ export function useFindTotalConsumers<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindTotalConsumers<
     TData = Awaited<ReturnType<typeof findTotalConsumers>>,
-    TError =
+    TError = ErrorType<
         | FindTotalConsumers400
         | FindTotalConsumers401
         | FindTotalConsumers429
-        | FindTotalConsumers500,
+        | FindTotalConsumers500
+    >,
 >(
     options?: {
         query?: Partial<
@@ -848,11 +890,12 @@ export function useFindTotalConsumers<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindTotalConsumers<
     TData = Awaited<ReturnType<typeof findTotalConsumers>>,
-    TError =
+    TError = ErrorType<
         | FindTotalConsumers400
         | FindTotalConsumers401
         | FindTotalConsumers429
-        | FindTotalConsumers500,
+        | FindTotalConsumers500
+    >,
 >(
     options?: {
         query?: Partial<
@@ -867,11 +910,12 @@ export function useFindTotalConsumers<
 
 export function useFindTotalConsumers<
     TData = Awaited<ReturnType<typeof findTotalConsumers>>,
-    TError =
+    TError = ErrorType<
         | FindTotalConsumers400
         | FindTotalConsumers401
         | FindTotalConsumers429
-        | FindTotalConsumers500,
+        | FindTotalConsumers500
+    >,
 >(
     options?: {
         query?: Partial<

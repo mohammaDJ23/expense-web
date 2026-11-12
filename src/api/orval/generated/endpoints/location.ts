@@ -77,6 +77,7 @@ import type {
 } from '../models';
 
 import { customInstance } from '../../../http/customInstance';
+import type { ErrorType } from '../../../http/customInstance';
 
 const withQueryKey = <T extends object, K>(query: T, queryKey: K): T & { queryKey: K } => {
     const result = { queryKey } as T & { queryKey: K };
@@ -113,13 +114,14 @@ export const createLocation = (
 export const getCreateLocationMutationKey = () => ['createLocation'] as const;
 
 export const getCreateLocationMutationOptions = <
-    TError =
+    TError = ErrorType<
         | CreateLocation400
         | CreateLocation401
         | CreateLocation404
         | CreateLocation409
         | CreateLocation429
-        | CreateLocation500,
+        | CreateLocation500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -155,26 +157,28 @@ export const getCreateLocationMutationOptions = <
 
 export type CreateLocationMutationResult = NonNullable<Awaited<ReturnType<typeof createLocation>>>;
 export type CreateLocationMutationBody = CreateLocationRequestDto;
-export type CreateLocationMutationError =
+export type CreateLocationMutationError = ErrorType<
     | CreateLocation400
     | CreateLocation401
     | CreateLocation404
     | CreateLocation409
     | CreateLocation429
-    | CreateLocation500;
+    | CreateLocation500
+>;
 export type CreateLocationMutationVariables = { data: CreateLocationRequestDto };
 
 /**
  * @summary Create a location
  */
 export const useCreateLocation = <
-    TError =
+    TError = ErrorType<
         | CreateLocation400
         | CreateLocation401
         | CreateLocation404
         | CreateLocation409
         | CreateLocation429
-        | CreateLocation500,
+        | CreateLocation500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -214,13 +218,14 @@ export const updateLocation = (
 export const getUpdateLocationMutationKey = () => ['updateLocation'] as const;
 
 export const getUpdateLocationMutationOptions = <
-    TError =
+    TError = ErrorType<
         | UpdateLocation400
         | UpdateLocation401
         | UpdateLocation404
         | UpdateLocation409
         | UpdateLocation429
-        | UpdateLocation500,
+        | UpdateLocation500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -256,26 +261,28 @@ export const getUpdateLocationMutationOptions = <
 
 export type UpdateLocationMutationResult = NonNullable<Awaited<ReturnType<typeof updateLocation>>>;
 export type UpdateLocationMutationBody = UpdateLocationRequestDto;
-export type UpdateLocationMutationError =
+export type UpdateLocationMutationError = ErrorType<
     | UpdateLocation400
     | UpdateLocation401
     | UpdateLocation404
     | UpdateLocation409
     | UpdateLocation429
-    | UpdateLocation500;
+    | UpdateLocation500
+>;
 export type UpdateLocationMutationVariables = { data: UpdateLocationRequestDto };
 
 /**
  * @summary Update a location
  */
 export const useUpdateLocation = <
-    TError =
+    TError = ErrorType<
         | UpdateLocation400
         | UpdateLocation401
         | UpdateLocation404
         | UpdateLocation409
         | UpdateLocation429
-        | UpdateLocation500,
+        | UpdateLocation500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -314,7 +321,9 @@ export const getFindLocationListQueryKey = (params?: FindLocationListParams) => 
 
 export const getFindLocationListQueryOptions = <
     TData = Awaited<ReturnType<typeof findLocationList>>,
-    TError = FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500,
+    TError = ErrorType<
+        FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500
+    >,
 >(
     params?: FindLocationListParams,
     options?: {
@@ -338,12 +347,15 @@ export const getFindLocationListQueryOptions = <
 };
 
 export type FindLocationListQueryResult = NonNullable<Awaited<ReturnType<typeof findLocationList>>>;
-export type FindLocationListQueryError =
-    FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500;
+export type FindLocationListQueryError = ErrorType<
+    FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500
+>;
 
 export function useFindLocationList<
     TData = Awaited<ReturnType<typeof findLocationList>>,
-    TError = FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500,
+    TError = ErrorType<
+        FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500
+    >,
 >(
     params: undefined | FindLocationListParams,
     options: {
@@ -363,7 +375,9 @@ export function useFindLocationList<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindLocationList<
     TData = Awaited<ReturnType<typeof findLocationList>>,
-    TError = FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500,
+    TError = ErrorType<
+        FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500
+    >,
 >(
     params?: FindLocationListParams,
     options?: {
@@ -383,7 +397,9 @@ export function useFindLocationList<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindLocationList<
     TData = Awaited<ReturnType<typeof findLocationList>>,
-    TError = FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500,
+    TError = ErrorType<
+        FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500
+    >,
 >(
     params?: FindLocationListParams,
     options?: {
@@ -399,7 +415,9 @@ export function useFindLocationList<
 
 export function useFindLocationList<
     TData = Awaited<ReturnType<typeof findLocationList>>,
-    TError = FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500,
+    TError = ErrorType<
+        FindLocationList400 | FindLocationList401 | FindLocationList429 | FindLocationList500
+    >,
 >(
     params?: FindLocationListParams,
     options?: {
@@ -433,12 +451,13 @@ export const deleteLocation = (id: string, signal?: AbortSignal) => {
 export const getDeleteLocationMutationKey = () => ['deleteLocation'] as const;
 
 export const getDeleteLocationMutationOptions = <
-    TError =
+    TError = ErrorType<
         | DeleteLocation400
         | DeleteLocation401
         | DeleteLocation404
         | DeleteLocation429
-        | DeleteLocation500,
+        | DeleteLocation500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -474,24 +493,26 @@ export const getDeleteLocationMutationOptions = <
 
 export type DeleteLocationMutationResult = NonNullable<Awaited<ReturnType<typeof deleteLocation>>>;
 
-export type DeleteLocationMutationError =
+export type DeleteLocationMutationError = ErrorType<
     | DeleteLocation400
     | DeleteLocation401
     | DeleteLocation404
     | DeleteLocation429
-    | DeleteLocation500;
+    | DeleteLocation500
+>;
 export type DeleteLocationMutationVariables = { id: string };
 
 /**
  * @summary Delete a location
  */
 export const useDeleteLocation = <
-    TError =
+    TError = ErrorType<
         | DeleteLocation400
         | DeleteLocation401
         | DeleteLocation404
         | DeleteLocation429
-        | DeleteLocation500,
+        | DeleteLocation500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -529,8 +550,9 @@ export const getFindLocationQueryKey = (id: string) => {
 
 export const getFindLocationQueryOptions = <
     TData = Awaited<ReturnType<typeof findLocation>>,
-    TError =
-        FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500,
+    TError = ErrorType<
+        FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500
+    >,
 >(
     id: string,
     options?: {
@@ -555,13 +577,15 @@ export const getFindLocationQueryOptions = <
 };
 
 export type FindLocationQueryResult = NonNullable<Awaited<ReturnType<typeof findLocation>>>;
-export type FindLocationQueryError =
-    FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500;
+export type FindLocationQueryError = ErrorType<
+    FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500
+>;
 
 export function useFindLocation<
     TData = Awaited<ReturnType<typeof findLocation>>,
-    TError =
-        FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500,
+    TError = ErrorType<
+        FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500
+    >,
 >(
     id: string,
     options: {
@@ -579,8 +603,9 @@ export function useFindLocation<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindLocation<
     TData = Awaited<ReturnType<typeof findLocation>>,
-    TError =
-        FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500,
+    TError = ErrorType<
+        FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500
+    >,
 >(
     id: string,
     options?: {
@@ -598,8 +623,9 @@ export function useFindLocation<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindLocation<
     TData = Awaited<ReturnType<typeof findLocation>>,
-    TError =
-        FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500,
+    TError = ErrorType<
+        FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500
+    >,
 >(
     id: string,
     options?: {
@@ -613,8 +639,9 @@ export function useFindLocation<
 
 export function useFindLocation<
     TData = Awaited<ReturnType<typeof findLocation>>,
-    TError =
-        FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500,
+    TError = ErrorType<
+        FindLocation400 | FindLocation401 | FindLocation404 | FindLocation429 | FindLocation500
+    >,
 >(
     id: string,
     options?: {
@@ -650,7 +677,9 @@ export const getSearchLocationsQueryKey = (params?: SearchLocationsParams) => {
 
 export const getSearchLocationsQueryOptions = <
     TData = Awaited<ReturnType<typeof searchLocations>>,
-    TError = SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500,
+    TError = ErrorType<
+        SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500
+    >,
 >(
     params?: SearchLocationsParams,
     options?: {
@@ -674,12 +703,15 @@ export const getSearchLocationsQueryOptions = <
 };
 
 export type SearchLocationsQueryResult = NonNullable<Awaited<ReturnType<typeof searchLocations>>>;
-export type SearchLocationsQueryError =
-    SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500;
+export type SearchLocationsQueryError = ErrorType<
+    SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500
+>;
 
 export function useSearchLocations<
     TData = Awaited<ReturnType<typeof searchLocations>>,
-    TError = SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500,
+    TError = ErrorType<
+        SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500
+    >,
 >(
     params: undefined | SearchLocationsParams,
     options: {
@@ -699,7 +731,9 @@ export function useSearchLocations<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useSearchLocations<
     TData = Awaited<ReturnType<typeof searchLocations>>,
-    TError = SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500,
+    TError = ErrorType<
+        SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500
+    >,
 >(
     params?: SearchLocationsParams,
     options?: {
@@ -719,7 +753,9 @@ export function useSearchLocations<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useSearchLocations<
     TData = Awaited<ReturnType<typeof searchLocations>>,
-    TError = SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500,
+    TError = ErrorType<
+        SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500
+    >,
 >(
     params?: SearchLocationsParams,
     options?: {
@@ -735,7 +771,9 @@ export function useSearchLocations<
 
 export function useSearchLocations<
     TData = Awaited<ReturnType<typeof searchLocations>>,
-    TError = SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500,
+    TError = ErrorType<
+        SearchLocations400 | SearchLocations401 | SearchLocations429 | SearchLocations500
+    >,
 >(
     params?: SearchLocationsParams,
     options?: {
@@ -772,11 +810,12 @@ export const getFindTotalLocationsQueryKey = () => {
 
 export const getFindTotalLocationsQueryOptions = <
     TData = Awaited<ReturnType<typeof findTotalLocations>>,
-    TError =
+    TError = ErrorType<
         | FindTotalLocations400
         | FindTotalLocations401
         | FindTotalLocations429
-        | FindTotalLocations500,
+        | FindTotalLocations500
+    >,
 >(options?: {
     query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findTotalLocations>>, TError, TData>>;
 }) => {
@@ -797,16 +836,18 @@ export const getFindTotalLocationsQueryOptions = <
 export type FindTotalLocationsQueryResult = NonNullable<
     Awaited<ReturnType<typeof findTotalLocations>>
 >;
-export type FindTotalLocationsQueryError =
-    FindTotalLocations400 | FindTotalLocations401 | FindTotalLocations429 | FindTotalLocations500;
+export type FindTotalLocationsQueryError = ErrorType<
+    FindTotalLocations400 | FindTotalLocations401 | FindTotalLocations429 | FindTotalLocations500
+>;
 
 export function useFindTotalLocations<
     TData = Awaited<ReturnType<typeof findTotalLocations>>,
-    TError =
+    TError = ErrorType<
         | FindTotalLocations400
         | FindTotalLocations401
         | FindTotalLocations429
-        | FindTotalLocations500,
+        | FindTotalLocations500
+    >,
 >(
     options: {
         query: Partial<
@@ -825,11 +866,12 @@ export function useFindTotalLocations<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindTotalLocations<
     TData = Awaited<ReturnType<typeof findTotalLocations>>,
-    TError =
+    TError = ErrorType<
         | FindTotalLocations400
         | FindTotalLocations401
         | FindTotalLocations429
-        | FindTotalLocations500,
+        | FindTotalLocations500
+    >,
 >(
     options?: {
         query?: Partial<
@@ -848,11 +890,12 @@ export function useFindTotalLocations<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindTotalLocations<
     TData = Awaited<ReturnType<typeof findTotalLocations>>,
-    TError =
+    TError = ErrorType<
         | FindTotalLocations400
         | FindTotalLocations401
         | FindTotalLocations429
-        | FindTotalLocations500,
+        | FindTotalLocations500
+    >,
 >(
     options?: {
         query?: Partial<
@@ -867,11 +910,12 @@ export function useFindTotalLocations<
 
 export function useFindTotalLocations<
     TData = Awaited<ReturnType<typeof findTotalLocations>>,
-    TError =
+    TError = ErrorType<
         | FindTotalLocations400
         | FindTotalLocations401
         | FindTotalLocations429
-        | FindTotalLocations500,
+        | FindTotalLocations500
+    >,
 >(
     options?: {
         query?: Partial<

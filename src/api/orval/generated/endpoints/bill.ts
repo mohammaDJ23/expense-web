@@ -111,6 +111,7 @@ import type {
 } from '../models';
 
 import { customInstance } from '../../../http/customInstance';
+import type { ErrorType } from '../../../http/customInstance';
 
 const withQueryKey = <T extends object, K>(query: T, queryKey: K): T & { queryKey: K } => {
     const result = { queryKey } as T & { queryKey: K };
@@ -144,7 +145,9 @@ export const createBill = (createBillRequestDto: CreateBillRequestDto, signal?: 
 export const getCreateBillMutationKey = () => ['createBill'] as const;
 
 export const getCreateBillMutationOptions = <
-    TError = CreateBill400 | CreateBill401 | CreateBill404 | CreateBill429 | CreateBill500,
+    TError = ErrorType<
+        CreateBill400 | CreateBill401 | CreateBill404 | CreateBill429 | CreateBill500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -180,15 +183,18 @@ export const getCreateBillMutationOptions = <
 
 export type CreateBillMutationResult = NonNullable<Awaited<ReturnType<typeof createBill>>>;
 export type CreateBillMutationBody = CreateBillRequestDto;
-export type CreateBillMutationError =
-    CreateBill400 | CreateBill401 | CreateBill404 | CreateBill429 | CreateBill500;
+export type CreateBillMutationError = ErrorType<
+    CreateBill400 | CreateBill401 | CreateBill404 | CreateBill429 | CreateBill500
+>;
 export type CreateBillMutationVariables = { data: CreateBillRequestDto };
 
 /**
  * @summary Create a bill
  */
 export const useCreateBill = <
-    TError = CreateBill400 | CreateBill401 | CreateBill404 | CreateBill429 | CreateBill500,
+    TError = ErrorType<
+        CreateBill400 | CreateBill401 | CreateBill404 | CreateBill429 | CreateBill500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -225,7 +231,9 @@ export const updateBill = (updateBillRequestDto: UpdateBillRequestDto, signal?: 
 export const getUpdateBillMutationKey = () => ['updateBill'] as const;
 
 export const getUpdateBillMutationOptions = <
-    TError = UpdateBill400 | UpdateBill401 | UpdateBill404 | UpdateBill429 | UpdateBill500,
+    TError = ErrorType<
+        UpdateBill400 | UpdateBill401 | UpdateBill404 | UpdateBill429 | UpdateBill500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -261,15 +269,18 @@ export const getUpdateBillMutationOptions = <
 
 export type UpdateBillMutationResult = NonNullable<Awaited<ReturnType<typeof updateBill>>>;
 export type UpdateBillMutationBody = UpdateBillRequestDto;
-export type UpdateBillMutationError =
-    UpdateBill400 | UpdateBill401 | UpdateBill404 | UpdateBill429 | UpdateBill500;
+export type UpdateBillMutationError = ErrorType<
+    UpdateBill400 | UpdateBill401 | UpdateBill404 | UpdateBill429 | UpdateBill500
+>;
 export type UpdateBillMutationVariables = { data: UpdateBillRequestDto };
 
 /**
  * @summary Update a bill
  */
 export const useUpdateBill = <
-    TError = UpdateBill400 | UpdateBill401 | UpdateBill404 | UpdateBill429 | UpdateBill500,
+    TError = ErrorType<
+        UpdateBill400 | UpdateBill401 | UpdateBill404 | UpdateBill429 | UpdateBill500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -303,7 +314,7 @@ export const getFindBillListQueryKey = (params?: FindBillListParams) => {
 
 export const getFindBillListQueryOptions = <
     TData = Awaited<ReturnType<typeof findBillList>>,
-    TError = FindBillList400 | FindBillList401 | FindBillList429 | FindBillList500,
+    TError = ErrorType<FindBillList400 | FindBillList401 | FindBillList429 | FindBillList500>,
 >(
     params?: FindBillListParams,
     options?: {
@@ -325,12 +336,13 @@ export const getFindBillListQueryOptions = <
 };
 
 export type FindBillListQueryResult = NonNullable<Awaited<ReturnType<typeof findBillList>>>;
-export type FindBillListQueryError =
-    FindBillList400 | FindBillList401 | FindBillList429 | FindBillList500;
+export type FindBillListQueryError = ErrorType<
+    FindBillList400 | FindBillList401 | FindBillList429 | FindBillList500
+>;
 
 export function useFindBillList<
     TData = Awaited<ReturnType<typeof findBillList>>,
-    TError = FindBillList400 | FindBillList401 | FindBillList429 | FindBillList500,
+    TError = ErrorType<FindBillList400 | FindBillList401 | FindBillList429 | FindBillList500>,
 >(
     params: undefined | FindBillListParams,
     options: {
@@ -348,7 +360,7 @@ export function useFindBillList<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindBillList<
     TData = Awaited<ReturnType<typeof findBillList>>,
-    TError = FindBillList400 | FindBillList401 | FindBillList429 | FindBillList500,
+    TError = ErrorType<FindBillList400 | FindBillList401 | FindBillList429 | FindBillList500>,
 >(
     params?: FindBillListParams,
     options?: {
@@ -366,7 +378,7 @@ export function useFindBillList<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindBillList<
     TData = Awaited<ReturnType<typeof findBillList>>,
-    TError = FindBillList400 | FindBillList401 | FindBillList429 | FindBillList500,
+    TError = ErrorType<FindBillList400 | FindBillList401 | FindBillList429 | FindBillList500>,
 >(
     params?: FindBillListParams,
     options?: {
@@ -380,7 +392,7 @@ export function useFindBillList<
 
 export function useFindBillList<
     TData = Awaited<ReturnType<typeof findBillList>>,
-    TError = FindBillList400 | FindBillList401 | FindBillList429 | FindBillList500,
+    TError = ErrorType<FindBillList400 | FindBillList401 | FindBillList429 | FindBillList500>,
 >(
     params?: FindBillListParams,
     options?: {
@@ -408,7 +420,9 @@ export const deleteBill = (id: string, signal?: AbortSignal) => {
 export const getDeleteBillMutationKey = () => ['deleteBill'] as const;
 
 export const getDeleteBillMutationOptions = <
-    TError = DeleteBill400 | DeleteBill401 | DeleteBill404 | DeleteBill429 | DeleteBill500,
+    TError = ErrorType<
+        DeleteBill400 | DeleteBill401 | DeleteBill404 | DeleteBill429 | DeleteBill500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -444,15 +458,18 @@ export const getDeleteBillMutationOptions = <
 
 export type DeleteBillMutationResult = NonNullable<Awaited<ReturnType<typeof deleteBill>>>;
 
-export type DeleteBillMutationError =
-    DeleteBill400 | DeleteBill401 | DeleteBill404 | DeleteBill429 | DeleteBill500;
+export type DeleteBillMutationError = ErrorType<
+    DeleteBill400 | DeleteBill401 | DeleteBill404 | DeleteBill429 | DeleteBill500
+>;
 export type DeleteBillMutationVariables = { id: string };
 
 /**
  * @summary Delete a bill
  */
 export const useDeleteBill = <
-    TError = DeleteBill400 | DeleteBill401 | DeleteBill404 | DeleteBill429 | DeleteBill500,
+    TError = ErrorType<
+        DeleteBill400 | DeleteBill401 | DeleteBill404 | DeleteBill429 | DeleteBill500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -486,7 +503,7 @@ export const getFindBillQueryKey = (id: string) => {
 
 export const getFindBillQueryOptions = <
     TData = Awaited<ReturnType<typeof findBill>>,
-    TError = FindBill400 | FindBill401 | FindBill404 | FindBill429 | FindBill500,
+    TError = ErrorType<FindBill400 | FindBill401 | FindBill404 | FindBill429 | FindBill500>,
 >(
     id: string,
     options?: {
@@ -511,12 +528,13 @@ export const getFindBillQueryOptions = <
 };
 
 export type FindBillQueryResult = NonNullable<Awaited<ReturnType<typeof findBill>>>;
-export type FindBillQueryError =
-    FindBill400 | FindBill401 | FindBill404 | FindBill429 | FindBill500;
+export type FindBillQueryError = ErrorType<
+    FindBill400 | FindBill401 | FindBill404 | FindBill429 | FindBill500
+>;
 
 export function useFindBill<
     TData = Awaited<ReturnType<typeof findBill>>,
-    TError = FindBill400 | FindBill401 | FindBill404 | FindBill429 | FindBill500,
+    TError = ErrorType<FindBill400 | FindBill401 | FindBill404 | FindBill429 | FindBill500>,
 >(
     id: string,
     options: {
@@ -534,7 +552,7 @@ export function useFindBill<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindBill<
     TData = Awaited<ReturnType<typeof findBill>>,
-    TError = FindBill400 | FindBill401 | FindBill404 | FindBill429 | FindBill500,
+    TError = ErrorType<FindBill400 | FindBill401 | FindBill404 | FindBill429 | FindBill500>,
 >(
     id: string,
     options?: {
@@ -552,7 +570,7 @@ export function useFindBill<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindBill<
     TData = Awaited<ReturnType<typeof findBill>>,
-    TError = FindBill400 | FindBill401 | FindBill404 | FindBill429 | FindBill500,
+    TError = ErrorType<FindBill400 | FindBill401 | FindBill404 | FindBill429 | FindBill500>,
 >(
     id: string,
     options?: {
@@ -566,7 +584,7 @@ export function useFindBill<
 
 export function useFindBill<
     TData = Awaited<ReturnType<typeof findBill>>,
-    TError = FindBill400 | FindBill401 | FindBill404 | FindBill429 | FindBill500,
+    TError = ErrorType<FindBill400 | FindBill401 | FindBill404 | FindBill429 | FindBill500>,
 >(
     id: string,
     options?: {
@@ -597,7 +615,9 @@ export const getFindTotalBillsQueryKey = () => {
 
 export const getFindTotalBillsQueryOptions = <
     TData = Awaited<ReturnType<typeof findTotalBills>>,
-    TError = FindTotalBills400 | FindTotalBills401 | FindTotalBills429 | FindTotalBills500,
+    TError = ErrorType<
+        FindTotalBills400 | FindTotalBills401 | FindTotalBills429 | FindTotalBills500
+    >,
 >(options?: {
     query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findTotalBills>>, TError, TData>>;
 }) => {
@@ -616,12 +636,15 @@ export const getFindTotalBillsQueryOptions = <
 };
 
 export type FindTotalBillsQueryResult = NonNullable<Awaited<ReturnType<typeof findTotalBills>>>;
-export type FindTotalBillsQueryError =
-    FindTotalBills400 | FindTotalBills401 | FindTotalBills429 | FindTotalBills500;
+export type FindTotalBillsQueryError = ErrorType<
+    FindTotalBills400 | FindTotalBills401 | FindTotalBills429 | FindTotalBills500
+>;
 
 export function useFindTotalBills<
     TData = Awaited<ReturnType<typeof findTotalBills>>,
-    TError = FindTotalBills400 | FindTotalBills401 | FindTotalBills429 | FindTotalBills500,
+    TError = ErrorType<
+        FindTotalBills400 | FindTotalBills401 | FindTotalBills429 | FindTotalBills500
+    >,
 >(
     options: {
         query: Partial<UseQueryOptions<Awaited<ReturnType<typeof findTotalBills>>, TError, TData>> &
@@ -638,7 +661,9 @@ export function useFindTotalBills<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindTotalBills<
     TData = Awaited<ReturnType<typeof findTotalBills>>,
-    TError = FindTotalBills400 | FindTotalBills401 | FindTotalBills429 | FindTotalBills500,
+    TError = ErrorType<
+        FindTotalBills400 | FindTotalBills401 | FindTotalBills429 | FindTotalBills500
+    >,
 >(
     options?: {
         query?: Partial<
@@ -657,7 +682,9 @@ export function useFindTotalBills<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindTotalBills<
     TData = Awaited<ReturnType<typeof findTotalBills>>,
-    TError = FindTotalBills400 | FindTotalBills401 | FindTotalBills429 | FindTotalBills500,
+    TError = ErrorType<
+        FindTotalBills400 | FindTotalBills401 | FindTotalBills429 | FindTotalBills500
+    >,
 >(
     options?: {
         query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findTotalBills>>, TError, TData>>;
@@ -670,7 +697,9 @@ export function useFindTotalBills<
 
 export function useFindTotalBills<
     TData = Awaited<ReturnType<typeof findTotalBills>>,
-    TError = FindTotalBills400 | FindTotalBills401 | FindTotalBills429 | FindTotalBills500,
+    TError = ErrorType<
+        FindTotalBills400 | FindTotalBills401 | FindTotalBills429 | FindTotalBills500
+    >,
 >(
     options?: {
         query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findTotalBills>>, TError, TData>>;
@@ -708,11 +737,12 @@ export const getFindMostUsedLocationsQueryKey = (params?: FindMostUsedLocationsP
 
 export const getFindMostUsedLocationsQueryOptions = <
     TData = Awaited<ReturnType<typeof findMostUsedLocations>>,
-    TError =
+    TError = ErrorType<
         | FindMostUsedLocations400
         | FindMostUsedLocations401
         | FindMostUsedLocations429
-        | FindMostUsedLocations500,
+        | FindMostUsedLocations500
+    >,
 >(
     params?: FindMostUsedLocationsParams,
     options?: {
@@ -739,19 +769,21 @@ export const getFindMostUsedLocationsQueryOptions = <
 export type FindMostUsedLocationsQueryResult = NonNullable<
     Awaited<ReturnType<typeof findMostUsedLocations>>
 >;
-export type FindMostUsedLocationsQueryError =
+export type FindMostUsedLocationsQueryError = ErrorType<
     | FindMostUsedLocations400
     | FindMostUsedLocations401
     | FindMostUsedLocations429
-    | FindMostUsedLocations500;
+    | FindMostUsedLocations500
+>;
 
 export function useFindMostUsedLocations<
     TData = Awaited<ReturnType<typeof findMostUsedLocations>>,
-    TError =
+    TError = ErrorType<
         | FindMostUsedLocations400
         | FindMostUsedLocations401
         | FindMostUsedLocations429
-        | FindMostUsedLocations500,
+        | FindMostUsedLocations500
+    >,
 >(
     params: undefined | FindMostUsedLocationsParams,
     options: {
@@ -771,11 +803,12 @@ export function useFindMostUsedLocations<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindMostUsedLocations<
     TData = Awaited<ReturnType<typeof findMostUsedLocations>>,
-    TError =
+    TError = ErrorType<
         | FindMostUsedLocations400
         | FindMostUsedLocations401
         | FindMostUsedLocations429
-        | FindMostUsedLocations500,
+        | FindMostUsedLocations500
+    >,
 >(
     params?: FindMostUsedLocationsParams,
     options?: {
@@ -795,11 +828,12 @@ export function useFindMostUsedLocations<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindMostUsedLocations<
     TData = Awaited<ReturnType<typeof findMostUsedLocations>>,
-    TError =
+    TError = ErrorType<
         | FindMostUsedLocations400
         | FindMostUsedLocations401
         | FindMostUsedLocations429
-        | FindMostUsedLocations500,
+        | FindMostUsedLocations500
+    >,
 >(
     params?: FindMostUsedLocationsParams,
     options?: {
@@ -815,11 +849,12 @@ export function useFindMostUsedLocations<
 
 export function useFindMostUsedLocations<
     TData = Awaited<ReturnType<typeof findMostUsedLocations>>,
-    TError =
+    TError = ErrorType<
         | FindMostUsedLocations400
         | FindMostUsedLocations401
         | FindMostUsedLocations429
-        | FindMostUsedLocations500,
+        | FindMostUsedLocations500
+    >,
 >(
     params?: FindMostUsedLocationsParams,
     options?: {
@@ -860,11 +895,12 @@ export const getFindMostUsedReceiversQueryKey = (params?: FindMostUsedReceiversP
 
 export const getFindMostUsedReceiversQueryOptions = <
     TData = Awaited<ReturnType<typeof findMostUsedReceivers>>,
-    TError =
+    TError = ErrorType<
         | FindMostUsedReceivers400
         | FindMostUsedReceivers401
         | FindMostUsedReceivers429
-        | FindMostUsedReceivers500,
+        | FindMostUsedReceivers500
+    >,
 >(
     params?: FindMostUsedReceiversParams,
     options?: {
@@ -891,19 +927,21 @@ export const getFindMostUsedReceiversQueryOptions = <
 export type FindMostUsedReceiversQueryResult = NonNullable<
     Awaited<ReturnType<typeof findMostUsedReceivers>>
 >;
-export type FindMostUsedReceiversQueryError =
+export type FindMostUsedReceiversQueryError = ErrorType<
     | FindMostUsedReceivers400
     | FindMostUsedReceivers401
     | FindMostUsedReceivers429
-    | FindMostUsedReceivers500;
+    | FindMostUsedReceivers500
+>;
 
 export function useFindMostUsedReceivers<
     TData = Awaited<ReturnType<typeof findMostUsedReceivers>>,
-    TError =
+    TError = ErrorType<
         | FindMostUsedReceivers400
         | FindMostUsedReceivers401
         | FindMostUsedReceivers429
-        | FindMostUsedReceivers500,
+        | FindMostUsedReceivers500
+    >,
 >(
     params: undefined | FindMostUsedReceiversParams,
     options: {
@@ -923,11 +961,12 @@ export function useFindMostUsedReceivers<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindMostUsedReceivers<
     TData = Awaited<ReturnType<typeof findMostUsedReceivers>>,
-    TError =
+    TError = ErrorType<
         | FindMostUsedReceivers400
         | FindMostUsedReceivers401
         | FindMostUsedReceivers429
-        | FindMostUsedReceivers500,
+        | FindMostUsedReceivers500
+    >,
 >(
     params?: FindMostUsedReceiversParams,
     options?: {
@@ -947,11 +986,12 @@ export function useFindMostUsedReceivers<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindMostUsedReceivers<
     TData = Awaited<ReturnType<typeof findMostUsedReceivers>>,
-    TError =
+    TError = ErrorType<
         | FindMostUsedReceivers400
         | FindMostUsedReceivers401
         | FindMostUsedReceivers429
-        | FindMostUsedReceivers500,
+        | FindMostUsedReceivers500
+    >,
 >(
     params?: FindMostUsedReceiversParams,
     options?: {
@@ -967,11 +1007,12 @@ export function useFindMostUsedReceivers<
 
 export function useFindMostUsedReceivers<
     TData = Awaited<ReturnType<typeof findMostUsedReceivers>>,
-    TError =
+    TError = ErrorType<
         | FindMostUsedReceivers400
         | FindMostUsedReceivers401
         | FindMostUsedReceivers429
-        | FindMostUsedReceivers500,
+        | FindMostUsedReceivers500
+    >,
 >(
     params?: FindMostUsedReceiversParams,
     options?: {
@@ -1012,11 +1053,12 @@ export const getFindMostUsedConsumersQueryKey = (params?: FindMostUsedConsumersP
 
 export const getFindMostUsedConsumersQueryOptions = <
     TData = Awaited<ReturnType<typeof findMostUsedConsumers>>,
-    TError =
+    TError = ErrorType<
         | FindMostUsedConsumers400
         | FindMostUsedConsumers401
         | FindMostUsedConsumers429
-        | FindMostUsedConsumers500,
+        | FindMostUsedConsumers500
+    >,
 >(
     params?: FindMostUsedConsumersParams,
     options?: {
@@ -1043,19 +1085,21 @@ export const getFindMostUsedConsumersQueryOptions = <
 export type FindMostUsedConsumersQueryResult = NonNullable<
     Awaited<ReturnType<typeof findMostUsedConsumers>>
 >;
-export type FindMostUsedConsumersQueryError =
+export type FindMostUsedConsumersQueryError = ErrorType<
     | FindMostUsedConsumers400
     | FindMostUsedConsumers401
     | FindMostUsedConsumers429
-    | FindMostUsedConsumers500;
+    | FindMostUsedConsumers500
+>;
 
 export function useFindMostUsedConsumers<
     TData = Awaited<ReturnType<typeof findMostUsedConsumers>>,
-    TError =
+    TError = ErrorType<
         | FindMostUsedConsumers400
         | FindMostUsedConsumers401
         | FindMostUsedConsumers429
-        | FindMostUsedConsumers500,
+        | FindMostUsedConsumers500
+    >,
 >(
     params: undefined | FindMostUsedConsumersParams,
     options: {
@@ -1075,11 +1119,12 @@ export function useFindMostUsedConsumers<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindMostUsedConsumers<
     TData = Awaited<ReturnType<typeof findMostUsedConsumers>>,
-    TError =
+    TError = ErrorType<
         | FindMostUsedConsumers400
         | FindMostUsedConsumers401
         | FindMostUsedConsumers429
-        | FindMostUsedConsumers500,
+        | FindMostUsedConsumers500
+    >,
 >(
     params?: FindMostUsedConsumersParams,
     options?: {
@@ -1099,11 +1144,12 @@ export function useFindMostUsedConsumers<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindMostUsedConsumers<
     TData = Awaited<ReturnType<typeof findMostUsedConsumers>>,
-    TError =
+    TError = ErrorType<
         | FindMostUsedConsumers400
         | FindMostUsedConsumers401
         | FindMostUsedConsumers429
-        | FindMostUsedConsumers500,
+        | FindMostUsedConsumers500
+    >,
 >(
     params?: FindMostUsedConsumersParams,
     options?: {
@@ -1119,11 +1165,12 @@ export function useFindMostUsedConsumers<
 
 export function useFindMostUsedConsumers<
     TData = Awaited<ReturnType<typeof findMostUsedConsumers>>,
-    TError =
+    TError = ErrorType<
         | FindMostUsedConsumers400
         | FindMostUsedConsumers401
         | FindMostUsedConsumers429
-        | FindMostUsedConsumers500,
+        | FindMostUsedConsumers500
+    >,
 >(
     params?: FindMostUsedConsumersParams,
     options?: {
@@ -1160,12 +1207,13 @@ export const getFindBillsPeriodQueryKey = () => {
 
 export const getFindBillsPeriodQueryOptions = <
     TData = Awaited<ReturnType<typeof findBillsPeriod>>,
-    TError =
+    TError = ErrorType<
         | FindBillsPeriod400
         | FindBillsPeriod401
         | FindBillsPeriod404
         | FindBillsPeriod429
-        | FindBillsPeriod500,
+        | FindBillsPeriod500
+    >,
 >(options?: {
     query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof findBillsPeriod>>, TError, TData>>;
 }) => {
@@ -1184,21 +1232,23 @@ export const getFindBillsPeriodQueryOptions = <
 };
 
 export type FindBillsPeriodQueryResult = NonNullable<Awaited<ReturnType<typeof findBillsPeriod>>>;
-export type FindBillsPeriodQueryError =
+export type FindBillsPeriodQueryError = ErrorType<
     | FindBillsPeriod400
     | FindBillsPeriod401
     | FindBillsPeriod404
     | FindBillsPeriod429
-    | FindBillsPeriod500;
+    | FindBillsPeriod500
+>;
 
 export function useFindBillsPeriod<
     TData = Awaited<ReturnType<typeof findBillsPeriod>>,
-    TError =
+    TError = ErrorType<
         | FindBillsPeriod400
         | FindBillsPeriod401
         | FindBillsPeriod404
         | FindBillsPeriod429
-        | FindBillsPeriod500,
+        | FindBillsPeriod500
+    >,
 >(
     options: {
         query: Partial<
@@ -1217,12 +1267,13 @@ export function useFindBillsPeriod<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindBillsPeriod<
     TData = Awaited<ReturnType<typeof findBillsPeriod>>,
-    TError =
+    TError = ErrorType<
         | FindBillsPeriod400
         | FindBillsPeriod401
         | FindBillsPeriod404
         | FindBillsPeriod429
-        | FindBillsPeriod500,
+        | FindBillsPeriod500
+    >,
 >(
     options?: {
         query?: Partial<
@@ -1241,12 +1292,13 @@ export function useFindBillsPeriod<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindBillsPeriod<
     TData = Awaited<ReturnType<typeof findBillsPeriod>>,
-    TError =
+    TError = ErrorType<
         | FindBillsPeriod400
         | FindBillsPeriod401
         | FindBillsPeriod404
         | FindBillsPeriod429
-        | FindBillsPeriod500,
+        | FindBillsPeriod500
+    >,
 >(
     options?: {
         query?: Partial<
@@ -1261,12 +1313,13 @@ export function useFindBillsPeriod<
 
 export function useFindBillsPeriod<
     TData = Awaited<ReturnType<typeof findBillsPeriod>>,
-    TError =
+    TError = ErrorType<
         | FindBillsPeriod400
         | FindBillsPeriod401
         | FindBillsPeriod404
         | FindBillsPeriod429
-        | FindBillsPeriod500,
+        | FindBillsPeriod500
+    >,
 >(
     options?: {
         query?: Partial<
@@ -1302,12 +1355,13 @@ export const getFindBillsTotalAmountQueryKey = () => {
 
 export const getFindBillsTotalAmountQueryOptions = <
     TData = Awaited<ReturnType<typeof findBillsTotalAmount>>,
-    TError =
+    TError = ErrorType<
         | FindBillsTotalAmount400
         | FindBillsTotalAmount401
         | FindBillsTotalAmount404
         | FindBillsTotalAmount429
-        | FindBillsTotalAmount500,
+        | FindBillsTotalAmount500
+    >,
 >(options?: {
     query?: Partial<
         UseQueryOptions<Awaited<ReturnType<typeof findBillsTotalAmount>>, TError, TData>
@@ -1330,21 +1384,23 @@ export const getFindBillsTotalAmountQueryOptions = <
 export type FindBillsTotalAmountQueryResult = NonNullable<
     Awaited<ReturnType<typeof findBillsTotalAmount>>
 >;
-export type FindBillsTotalAmountQueryError =
+export type FindBillsTotalAmountQueryError = ErrorType<
     | FindBillsTotalAmount400
     | FindBillsTotalAmount401
     | FindBillsTotalAmount404
     | FindBillsTotalAmount429
-    | FindBillsTotalAmount500;
+    | FindBillsTotalAmount500
+>;
 
 export function useFindBillsTotalAmount<
     TData = Awaited<ReturnType<typeof findBillsTotalAmount>>,
-    TError =
+    TError = ErrorType<
         | FindBillsTotalAmount400
         | FindBillsTotalAmount401
         | FindBillsTotalAmount404
         | FindBillsTotalAmount429
-        | FindBillsTotalAmount500,
+        | FindBillsTotalAmount500
+    >,
 >(
     options: {
         query: Partial<
@@ -1363,12 +1419,13 @@ export function useFindBillsTotalAmount<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindBillsTotalAmount<
     TData = Awaited<ReturnType<typeof findBillsTotalAmount>>,
-    TError =
+    TError = ErrorType<
         | FindBillsTotalAmount400
         | FindBillsTotalAmount401
         | FindBillsTotalAmount404
         | FindBillsTotalAmount429
-        | FindBillsTotalAmount500,
+        | FindBillsTotalAmount500
+    >,
 >(
     options?: {
         query?: Partial<
@@ -1387,12 +1444,13 @@ export function useFindBillsTotalAmount<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindBillsTotalAmount<
     TData = Awaited<ReturnType<typeof findBillsTotalAmount>>,
-    TError =
+    TError = ErrorType<
         | FindBillsTotalAmount400
         | FindBillsTotalAmount401
         | FindBillsTotalAmount404
         | FindBillsTotalAmount429
-        | FindBillsTotalAmount500,
+        | FindBillsTotalAmount500
+    >,
 >(
     options?: {
         query?: Partial<
@@ -1407,12 +1465,13 @@ export function useFindBillsTotalAmount<
 
 export function useFindBillsTotalAmount<
     TData = Awaited<ReturnType<typeof findBillsTotalAmount>>,
-    TError =
+    TError = ErrorType<
         | FindBillsTotalAmount400
         | FindBillsTotalAmount401
         | FindBillsTotalAmount404
         | FindBillsTotalAmount429
-        | FindBillsTotalAmount500,
+        | FindBillsTotalAmount500
+    >,
 >(
     options?: {
         query?: Partial<
@@ -1449,12 +1508,13 @@ export const getFindBillsTimelineQueryKey = (params?: FindBillsTimelineParams) =
 
 export const getFindBillsTimelineQueryOptions = <
     TData = Awaited<ReturnType<typeof findBillsTimeline>>,
-    TError =
+    TError = ErrorType<
         | FindBillsTimeline400
         | FindBillsTimeline401
         | FindBillsTimeline404
         | FindBillsTimeline429
-        | FindBillsTimeline500,
+        | FindBillsTimeline500
+    >,
 >(
     params?: FindBillsTimelineParams,
     options?: {
@@ -1480,21 +1540,23 @@ export const getFindBillsTimelineQueryOptions = <
 export type FindBillsTimelineQueryResult = NonNullable<
     Awaited<ReturnType<typeof findBillsTimeline>>
 >;
-export type FindBillsTimelineQueryError =
+export type FindBillsTimelineQueryError = ErrorType<
     | FindBillsTimeline400
     | FindBillsTimeline401
     | FindBillsTimeline404
     | FindBillsTimeline429
-    | FindBillsTimeline500;
+    | FindBillsTimeline500
+>;
 
 export function useFindBillsTimeline<
     TData = Awaited<ReturnType<typeof findBillsTimeline>>,
-    TError =
+    TError = ErrorType<
         | FindBillsTimeline400
         | FindBillsTimeline401
         | FindBillsTimeline404
         | FindBillsTimeline429
-        | FindBillsTimeline500,
+        | FindBillsTimeline500
+    >,
 >(
     params: undefined | FindBillsTimelineParams,
     options: {
@@ -1514,12 +1576,13 @@ export function useFindBillsTimeline<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindBillsTimeline<
     TData = Awaited<ReturnType<typeof findBillsTimeline>>,
-    TError =
+    TError = ErrorType<
         | FindBillsTimeline400
         | FindBillsTimeline401
         | FindBillsTimeline404
         | FindBillsTimeline429
-        | FindBillsTimeline500,
+        | FindBillsTimeline500
+    >,
 >(
     params?: FindBillsTimelineParams,
     options?: {
@@ -1539,12 +1602,13 @@ export function useFindBillsTimeline<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useFindBillsTimeline<
     TData = Awaited<ReturnType<typeof findBillsTimeline>>,
-    TError =
+    TError = ErrorType<
         | FindBillsTimeline400
         | FindBillsTimeline401
         | FindBillsTimeline404
         | FindBillsTimeline429
-        | FindBillsTimeline500,
+        | FindBillsTimeline500
+    >,
 >(
     params?: FindBillsTimelineParams,
     options?: {
@@ -1560,12 +1624,13 @@ export function useFindBillsTimeline<
 
 export function useFindBillsTimeline<
     TData = Awaited<ReturnType<typeof findBillsTimeline>>,
-    TError =
+    TError = ErrorType<
         | FindBillsTimeline400
         | FindBillsTimeline401
         | FindBillsTimeline404
         | FindBillsTimeline429
-        | FindBillsTimeline500,
+        | FindBillsTimeline500
+    >,
 >(
     params?: FindBillsTimelineParams,
     options?: {
@@ -1603,12 +1668,13 @@ export const getExportBillsExcelQueryKey = () => {
 
 export const getExportBillsExcelQueryOptions = <
     TData = Awaited<ReturnType<typeof exportBillsExcel>>,
-    TError =
+    TError = ErrorType<
         | ExportBillsExcel400
         | ExportBillsExcel401
         | ExportBillsExcel404
         | ExportBillsExcel429
-        | ExportBillsExcel500,
+        | ExportBillsExcel500
+    >,
 >(options?: {
     query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof exportBillsExcel>>, TError, TData>>;
 }) => {
@@ -1627,21 +1693,23 @@ export const getExportBillsExcelQueryOptions = <
 };
 
 export type ExportBillsExcelQueryResult = NonNullable<Awaited<ReturnType<typeof exportBillsExcel>>>;
-export type ExportBillsExcelQueryError =
+export type ExportBillsExcelQueryError = ErrorType<
     | ExportBillsExcel400
     | ExportBillsExcel401
     | ExportBillsExcel404
     | ExportBillsExcel429
-    | ExportBillsExcel500;
+    | ExportBillsExcel500
+>;
 
 export function useExportBillsExcel<
     TData = Awaited<ReturnType<typeof exportBillsExcel>>,
-    TError =
+    TError = ErrorType<
         | ExportBillsExcel400
         | ExportBillsExcel401
         | ExportBillsExcel404
         | ExportBillsExcel429
-        | ExportBillsExcel500,
+        | ExportBillsExcel500
+    >,
 >(
     options: {
         query: Partial<
@@ -1660,12 +1728,13 @@ export function useExportBillsExcel<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useExportBillsExcel<
     TData = Awaited<ReturnType<typeof exportBillsExcel>>,
-    TError =
+    TError = ErrorType<
         | ExportBillsExcel400
         | ExportBillsExcel401
         | ExportBillsExcel404
         | ExportBillsExcel429
-        | ExportBillsExcel500,
+        | ExportBillsExcel500
+    >,
 >(
     options?: {
         query?: Partial<
@@ -1684,12 +1753,13 @@ export function useExportBillsExcel<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useExportBillsExcel<
     TData = Awaited<ReturnType<typeof exportBillsExcel>>,
-    TError =
+    TError = ErrorType<
         | ExportBillsExcel400
         | ExportBillsExcel401
         | ExportBillsExcel404
         | ExportBillsExcel429
-        | ExportBillsExcel500,
+        | ExportBillsExcel500
+    >,
 >(
     options?: {
         query?: Partial<
@@ -1704,12 +1774,13 @@ export function useExportBillsExcel<
 
 export function useExportBillsExcel<
     TData = Awaited<ReturnType<typeof exportBillsExcel>>,
-    TError =
+    TError = ErrorType<
         | ExportBillsExcel400
         | ExportBillsExcel401
         | ExportBillsExcel404
         | ExportBillsExcel429
-        | ExportBillsExcel500,
+        | ExportBillsExcel500
+    >,
 >(
     options?: {
         query?: Partial<

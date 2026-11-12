@@ -84,6 +84,7 @@ import type {
 } from '../models';
 
 import { customInstance } from '../../../http/customInstance';
+import type { ErrorType } from '../../../http/customInstance';
 
 const withQueryKey = <T extends object, K>(query: T, queryKey: K): T & { queryKey: K } => {
     const result = { queryKey } as T & { queryKey: K };
@@ -120,12 +121,13 @@ export const localSignupInitiation = (
 export const getLocalSignupInitiationMutationKey = () => ['localSignupInitiation'] as const;
 
 export const getLocalSignupInitiationMutationOptions = <
-    TError =
+    TError = ErrorType<
         | LocalSignupInitiation400
         | LocalSignupInitiation404
         | LocalSignupInitiation409
         | LocalSignupInitiation429
-        | LocalSignupInitiation500,
+        | LocalSignupInitiation500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -163,24 +165,26 @@ export type LocalSignupInitiationMutationResult = NonNullable<
     Awaited<ReturnType<typeof localSignupInitiation>>
 >;
 export type LocalSignupInitiationMutationBody = LocalSignupInitiationRequestDto;
-export type LocalSignupInitiationMutationError =
+export type LocalSignupInitiationMutationError = ErrorType<
     | LocalSignupInitiation400
     | LocalSignupInitiation404
     | LocalSignupInitiation409
     | LocalSignupInitiation429
-    | LocalSignupInitiation500;
+    | LocalSignupInitiation500
+>;
 export type LocalSignupInitiationMutationVariables = { data: LocalSignupInitiationRequestDto };
 
 /**
  * @summary Local signup initialization
  */
 export const useLocalSignupInitiation = <
-    TError =
+    TError = ErrorType<
         | LocalSignupInitiation400
         | LocalSignupInitiation404
         | LocalSignupInitiation409
         | LocalSignupInitiation429
-        | LocalSignupInitiation500,
+        | LocalSignupInitiation500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -217,7 +221,9 @@ export const localSignup = (localSignupRequestDto: LocalSignupRequestDto, signal
 export const getLocalSignupMutationKey = () => ['localSignup'] as const;
 
 export const getLocalSignupMutationOptions = <
-    TError = LocalSignup400 | LocalSignup404 | LocalSignup409 | LocalSignup429 | LocalSignup500,
+    TError = ErrorType<
+        LocalSignup400 | LocalSignup404 | LocalSignup409 | LocalSignup429 | LocalSignup500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -253,15 +259,18 @@ export const getLocalSignupMutationOptions = <
 
 export type LocalSignupMutationResult = NonNullable<Awaited<ReturnType<typeof localSignup>>>;
 export type LocalSignupMutationBody = LocalSignupRequestDto;
-export type LocalSignupMutationError =
-    LocalSignup400 | LocalSignup404 | LocalSignup409 | LocalSignup429 | LocalSignup500;
+export type LocalSignupMutationError = ErrorType<
+    LocalSignup400 | LocalSignup404 | LocalSignup409 | LocalSignup429 | LocalSignup500
+>;
 export type LocalSignupMutationVariables = { data: LocalSignupRequestDto };
 
 /**
  * @summary Local signup
  */
 export const useLocalSignup = <
-    TError = LocalSignup400 | LocalSignup404 | LocalSignup409 | LocalSignup429 | LocalSignup500,
+    TError = ErrorType<
+        LocalSignup400 | LocalSignup404 | LocalSignup409 | LocalSignup429 | LocalSignup500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -298,7 +307,9 @@ export const localLogin = (localLoginRequestDto: LocalLoginRequestDto, signal?: 
 export const getLocalLoginMutationKey = () => ['localLogin'] as const;
 
 export const getLocalLoginMutationOptions = <
-    TError = LocalLogin400 | LocalLogin403 | LocalLogin404 | LocalLogin429 | LocalLogin500,
+    TError = ErrorType<
+        LocalLogin400 | LocalLogin403 | LocalLogin404 | LocalLogin429 | LocalLogin500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -334,15 +345,18 @@ export const getLocalLoginMutationOptions = <
 
 export type LocalLoginMutationResult = NonNullable<Awaited<ReturnType<typeof localLogin>>>;
 export type LocalLoginMutationBody = LocalLoginRequestDto;
-export type LocalLoginMutationError =
-    LocalLogin400 | LocalLogin403 | LocalLogin404 | LocalLogin429 | LocalLogin500;
+export type LocalLoginMutationError = ErrorType<
+    LocalLogin400 | LocalLogin403 | LocalLogin404 | LocalLogin429 | LocalLogin500
+>;
 export type LocalLoginMutationVariables = { data: LocalLoginRequestDto };
 
 /**
  * @summary Local login
  */
 export const useLocalLogin = <
-    TError = LocalLogin400 | LocalLogin403 | LocalLogin404 | LocalLogin429 | LocalLogin500,
+    TError = ErrorType<
+        LocalLogin400 | LocalLogin403 | LocalLogin404 | LocalLogin429 | LocalLogin500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -382,11 +396,12 @@ export const localForgotPassword = (
 export const getLocalForgotPasswordMutationKey = () => ['localForgotPassword'] as const;
 
 export const getLocalForgotPasswordMutationOptions = <
-    TError =
+    TError = ErrorType<
         | LocalForgotPassword400
         | LocalForgotPassword404
         | LocalForgotPassword429
-        | LocalForgotPassword500,
+        | LocalForgotPassword500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -424,22 +439,24 @@ export type LocalForgotPasswordMutationResult = NonNullable<
     Awaited<ReturnType<typeof localForgotPassword>>
 >;
 export type LocalForgotPasswordMutationBody = LocalForgotPasswordRequestDto;
-export type LocalForgotPasswordMutationError =
+export type LocalForgotPasswordMutationError = ErrorType<
     | LocalForgotPassword400
     | LocalForgotPassword404
     | LocalForgotPassword429
-    | LocalForgotPassword500;
+    | LocalForgotPassword500
+>;
 export type LocalForgotPasswordMutationVariables = { data: LocalForgotPasswordRequestDto };
 
 /**
  * @summary Local forgot password
  */
 export const useLocalForgotPassword = <
-    TError =
+    TError = ErrorType<
         | LocalForgotPassword400
         | LocalForgotPassword404
         | LocalForgotPassword429
-        | LocalForgotPassword500,
+        | LocalForgotPassword500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -479,11 +496,12 @@ export const localResetPassword = (
 export const getLocalResetPasswordMutationKey = () => ['localResetPassword'] as const;
 
 export const getLocalResetPasswordMutationOptions = <
-    TError =
+    TError = ErrorType<
         | LocalResetPassword400
         | LocalResetPassword404
         | LocalResetPassword429
-        | LocalResetPassword500,
+        | LocalResetPassword500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -521,19 +539,21 @@ export type LocalResetPasswordMutationResult = NonNullable<
     Awaited<ReturnType<typeof localResetPassword>>
 >;
 export type LocalResetPasswordMutationBody = LocalResetPasswordRequestDto;
-export type LocalResetPasswordMutationError =
-    LocalResetPassword400 | LocalResetPassword404 | LocalResetPassword429 | LocalResetPassword500;
+export type LocalResetPasswordMutationError = ErrorType<
+    LocalResetPassword400 | LocalResetPassword404 | LocalResetPassword429 | LocalResetPassword500
+>;
 export type LocalResetPasswordMutationVariables = { data: LocalResetPasswordRequestDto };
 
 /**
  * @summary Local reset password
  */
 export const useLocalResetPassword = <
-    TError =
+    TError = ErrorType<
         | LocalResetPassword400
         | LocalResetPassword404
         | LocalResetPassword429
-        | LocalResetPassword500,
+        | LocalResetPassword500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -573,11 +593,12 @@ export const localAccountInitiation = (
 export const getLocalAccountInitiationMutationKey = () => ['localAccountInitiation'] as const;
 
 export const getLocalAccountInitiationMutationOptions = <
-    TError =
+    TError = ErrorType<
         | LocalAccountInitiation400
         | LocalAccountInitiation404
         | LocalAccountInitiation429
-        | LocalAccountInitiation500,
+        | LocalAccountInitiation500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -615,22 +636,24 @@ export type LocalAccountInitiationMutationResult = NonNullable<
     Awaited<ReturnType<typeof localAccountInitiation>>
 >;
 export type LocalAccountInitiationMutationBody = LocalAccountInitiationRequestDto;
-export type LocalAccountInitiationMutationError =
+export type LocalAccountInitiationMutationError = ErrorType<
     | LocalAccountInitiation400
     | LocalAccountInitiation404
     | LocalAccountInitiation429
-    | LocalAccountInitiation500;
+    | LocalAccountInitiation500
+>;
 export type LocalAccountInitiationMutationVariables = { data: LocalAccountInitiationRequestDto };
 
 /**
  * @summary Local account initiation
  */
 export const useLocalAccountInitiation = <
-    TError =
+    TError = ErrorType<
         | LocalAccountInitiation400
         | LocalAccountInitiation404
         | LocalAccountInitiation429
-        | LocalAccountInitiation500,
+        | LocalAccountInitiation500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -670,11 +693,12 @@ export const localAccountCreation = (
 export const getLocalAccountCreationMutationKey = () => ['localAccountCreation'] as const;
 
 export const getLocalAccountCreationMutationOptions = <
-    TError =
+    TError = ErrorType<
         | LocalAccountCreation400
         | LocalAccountCreation404
         | LocalAccountCreation429
-        | LocalAccountCreation500,
+        | LocalAccountCreation500
+    >,
     TContext = unknown,
 >(options?: {
     mutation?: UseMutationOptions<
@@ -712,22 +736,24 @@ export type LocalAccountCreationMutationResult = NonNullable<
     Awaited<ReturnType<typeof localAccountCreation>>
 >;
 export type LocalAccountCreationMutationBody = LocalAccountCreationRequestDto;
-export type LocalAccountCreationMutationError =
+export type LocalAccountCreationMutationError = ErrorType<
     | LocalAccountCreation400
     | LocalAccountCreation404
     | LocalAccountCreation429
-    | LocalAccountCreation500;
+    | LocalAccountCreation500
+>;
 export type LocalAccountCreationMutationVariables = { data: LocalAccountCreationRequestDto };
 
 /**
  * @summary Local account creation
  */
 export const useLocalAccountCreation = <
-    TError =
+    TError = ErrorType<
         | LocalAccountCreation400
         | LocalAccountCreation404
         | LocalAccountCreation429
-        | LocalAccountCreation500,
+        | LocalAccountCreation500
+    >,
     TContext = unknown,
 >(
     options?: {
@@ -761,7 +787,7 @@ export const getGoogleQueryKey = () => {
 
 export const getGoogleQueryOptions = <
     TData = Awaited<ReturnType<typeof google>>,
-    TError = string | Google429,
+    TError = ErrorType<string | Google429>,
 >(options?: {
     query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof google>>, TError, TData>>;
 }) => {
@@ -780,9 +806,12 @@ export const getGoogleQueryOptions = <
 };
 
 export type GoogleQueryResult = NonNullable<Awaited<ReturnType<typeof google>>>;
-export type GoogleQueryError = string | Google429;
+export type GoogleQueryError = ErrorType<string | Google429>;
 
-export function useGoogle<TData = Awaited<ReturnType<typeof google>>, TError = string | Google429>(
+export function useGoogle<
+    TData = Awaited<ReturnType<typeof google>>,
+    TError = ErrorType<string | Google429>,
+>(
     options: {
         query: Partial<UseQueryOptions<Awaited<ReturnType<typeof google>>, TError, TData>> &
             Pick<
@@ -796,7 +825,10 @@ export function useGoogle<TData = Awaited<ReturnType<typeof google>>, TError = s
     },
     queryClient?: QueryClient,
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
-export function useGoogle<TData = Awaited<ReturnType<typeof google>>, TError = string | Google429>(
+export function useGoogle<
+    TData = Awaited<ReturnType<typeof google>>,
+    TError = ErrorType<string | Google429>,
+>(
     options?: {
         query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof google>>, TError, TData>> &
             Pick<
@@ -810,7 +842,10 @@ export function useGoogle<TData = Awaited<ReturnType<typeof google>>, TError = s
     },
     queryClient?: QueryClient,
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
-export function useGoogle<TData = Awaited<ReturnType<typeof google>>, TError = string | Google429>(
+export function useGoogle<
+    TData = Awaited<ReturnType<typeof google>>,
+    TError = ErrorType<string | Google429>,
+>(
     options?: {
         query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof google>>, TError, TData>>;
     },
@@ -820,7 +855,10 @@ export function useGoogle<TData = Awaited<ReturnType<typeof google>>, TError = s
  * @summary Google login or signup
  */
 
-export function useGoogle<TData = Awaited<ReturnType<typeof google>>, TError = string | Google429>(
+export function useGoogle<
+    TData = Awaited<ReturnType<typeof google>>,
+    TError = ErrorType<string | Google429>,
+>(
     options?: {
         query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof google>>, TError, TData>>;
     },
@@ -853,8 +891,9 @@ export const getGoogleLoginQueryKey = () => {
 
 export const getGoogleLoginQueryOptions = <
     TData = Awaited<ReturnType<typeof googleLogin>>,
-    TError =
-        GoogleLogin400 | GoogleLogin401 | string | GoogleLogin404 | GoogleLogin429 | GoogleLogin500,
+    TError = ErrorType<
+        GoogleLogin400 | GoogleLogin401 | string | GoogleLogin404 | GoogleLogin429 | GoogleLogin500
+    >,
 >(options?: {
     query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof googleLogin>>, TError, TData>>;
 }) => {
@@ -873,13 +912,15 @@ export const getGoogleLoginQueryOptions = <
 };
 
 export type GoogleLoginQueryResult = NonNullable<Awaited<ReturnType<typeof googleLogin>>>;
-export type GoogleLoginQueryError =
-    GoogleLogin400 | GoogleLogin401 | string | GoogleLogin404 | GoogleLogin429 | GoogleLogin500;
+export type GoogleLoginQueryError = ErrorType<
+    GoogleLogin400 | GoogleLogin401 | string | GoogleLogin404 | GoogleLogin429 | GoogleLogin500
+>;
 
 export function useGoogleLogin<
     TData = Awaited<ReturnType<typeof googleLogin>>,
-    TError =
-        GoogleLogin400 | GoogleLogin401 | string | GoogleLogin404 | GoogleLogin429 | GoogleLogin500,
+    TError = ErrorType<
+        GoogleLogin400 | GoogleLogin401 | string | GoogleLogin404 | GoogleLogin429 | GoogleLogin500
+    >,
 >(
     options: {
         query: Partial<UseQueryOptions<Awaited<ReturnType<typeof googleLogin>>, TError, TData>> &
@@ -896,8 +937,9 @@ export function useGoogleLogin<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useGoogleLogin<
     TData = Awaited<ReturnType<typeof googleLogin>>,
-    TError =
-        GoogleLogin400 | GoogleLogin401 | string | GoogleLogin404 | GoogleLogin429 | GoogleLogin500,
+    TError = ErrorType<
+        GoogleLogin400 | GoogleLogin401 | string | GoogleLogin404 | GoogleLogin429 | GoogleLogin500
+    >,
 >(
     options?: {
         query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof googleLogin>>, TError, TData>> &
@@ -914,8 +956,9 @@ export function useGoogleLogin<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useGoogleLogin<
     TData = Awaited<ReturnType<typeof googleLogin>>,
-    TError =
-        GoogleLogin400 | GoogleLogin401 | string | GoogleLogin404 | GoogleLogin429 | GoogleLogin500,
+    TError = ErrorType<
+        GoogleLogin400 | GoogleLogin401 | string | GoogleLogin404 | GoogleLogin429 | GoogleLogin500
+    >,
 >(
     options?: {
         query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof googleLogin>>, TError, TData>>;
@@ -928,8 +971,9 @@ export function useGoogleLogin<
 
 export function useGoogleLogin<
     TData = Awaited<ReturnType<typeof googleLogin>>,
-    TError =
-        GoogleLogin400 | GoogleLogin401 | string | GoogleLogin404 | GoogleLogin429 | GoogleLogin500,
+    TError = ErrorType<
+        GoogleLogin400 | GoogleLogin401 | string | GoogleLogin404 | GoogleLogin429 | GoogleLogin500
+    >,
 >(
     options?: {
         query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof googleLogin>>, TError, TData>>;

@@ -28,6 +28,7 @@ import type {
 import type { Health200, Health400, Health429, Health500 } from '../models';
 
 import { customInstance } from '../../../http/customInstance';
+import type { ErrorType } from '../../../http/customInstance';
 
 const withQueryKey = <T extends object, K>(query: T, queryKey: K): T & { queryKey: K } => {
     const result = { queryKey } as T & { queryKey: K };
@@ -58,7 +59,7 @@ export const getHealthQueryKey = () => {
 
 export const getHealthQueryOptions = <
     TData = Awaited<ReturnType<typeof health>>,
-    TError = Health400 | Health429 | Health500,
+    TError = ErrorType<Health400 | Health429 | Health500>,
 >(options?: {
     query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof health>>, TError, TData>>;
 }) => {
@@ -77,11 +78,11 @@ export const getHealthQueryOptions = <
 };
 
 export type HealthQueryResult = NonNullable<Awaited<ReturnType<typeof health>>>;
-export type HealthQueryError = Health400 | Health429 | Health500;
+export type HealthQueryError = ErrorType<Health400 | Health429 | Health500>;
 
 export function useHealth<
     TData = Awaited<ReturnType<typeof health>>,
-    TError = Health400 | Health429 | Health500,
+    TError = ErrorType<Health400 | Health429 | Health500>,
 >(
     options: {
         query: Partial<UseQueryOptions<Awaited<ReturnType<typeof health>>, TError, TData>> &
@@ -98,7 +99,7 @@ export function useHealth<
 ): DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useHealth<
     TData = Awaited<ReturnType<typeof health>>,
-    TError = Health400 | Health429 | Health500,
+    TError = ErrorType<Health400 | Health429 | Health500>,
 >(
     options?: {
         query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof health>>, TError, TData>> &
@@ -115,7 +116,7 @@ export function useHealth<
 ): UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 export function useHealth<
     TData = Awaited<ReturnType<typeof health>>,
-    TError = Health400 | Health429 | Health500,
+    TError = ErrorType<Health400 | Health429 | Health500>,
 >(
     options?: {
         query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof health>>, TError, TData>>;
@@ -128,7 +129,7 @@ export function useHealth<
 
 export function useHealth<
     TData = Awaited<ReturnType<typeof health>>,
-    TError = Health400 | Health429 | Health500,
+    TError = ErrorType<Health400 | Health429 | Health500>,
 >(
     options?: {
         query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof health>>, TError, TData>>;
