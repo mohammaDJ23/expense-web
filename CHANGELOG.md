@@ -1,3 +1,14 @@
+## [1.4.0](https://github.com/mohammaDJ23/expense-web/compare/v1.3.0...v1.4.0) (2026-11-13)
+
+### ✨ Features
+
+- add the not-found page ([e9a9154](https://github.com/mohammaDJ23/expense-web/commit/e9a915415e19745884d4ea2bd72320a34f0431df))
+
+### 🔧 Chores
+
+- change the style ([4bb253c](https://github.com/mohammaDJ23/expense-web/commit/4bb253c8c87ed8b4bc1d720f4db6cd9243f2808e))
+- move & rename some files ([e6eac66](https://github.com/mohammaDJ23/expense-web/commit/e6eac66e0666babe61f64597125d40afb894d13b))
+
 ## [1.3.0](https://github.com/mohammaDJ23/expense-web/compare/v1.2.0...v1.3.0) (2026-11-13)
 
 ### ✨ Features
