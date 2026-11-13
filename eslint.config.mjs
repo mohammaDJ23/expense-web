@@ -338,6 +338,7 @@ export default defineConfig([
                     leadingUnderscore: 'allow',
                 },
             ],
+            '@typescript-eslint/no-confusing-void-expression': 'off',
         },
     },
     {
