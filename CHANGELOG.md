@@ -2,6 +2,23 @@
 
 ### ✨ Features
 
+- add the Login page ([46207a9](https://github.com/mohammaDJ23/expense-web/commit/46207a9123e3fe2e6a26382ddf7a2af72abf4272))
+- add the not-found page ([e9a9154](https://github.com/mohammaDJ23/expense-web/commit/e9a915415e19745884d4ea2bd72320a34f0431df))
+
+### 🔧 Chores
+
+- add HydrateFallback to the not found page ([ba8cace](https://github.com/mohammaDJ23/expense-web/commit/ba8cace9230ec85512cd2ff9d663b5fd923a9bcc))
+- change the style ([4bb253c](https://github.com/mohammaDJ23/expense-web/commit/4bb253c8c87ed8b4bc1d720f4db6cd9243f2808e))
+- move & rename some files ([e6eac66](https://github.com/mohammaDJ23/expense-web/commit/e6eac66e0666babe61f64597125d40afb894d13b))
+
+### ⏪ Release
+
+- 1.4.0 [skip ci] (minor) ([ca8bd52](https://github.com/mohammaDJ23/expense-web/commit/ca8bd524f42dbed1b13803299749a5876cdeb906))
+
+## [1.4.0](https://github.com/mohammaDJ23/expense-web/compare/v1.3.0...v1.4.0) (2026-11-13)
+
+### ✨ Features
+
 - add the not-found page ([e9a9154](https://github.com/mohammaDJ23/expense-web/commit/e9a915415e19745884d4ea2bd72320a34f0431df))
 
 ### 🔧 Chores
