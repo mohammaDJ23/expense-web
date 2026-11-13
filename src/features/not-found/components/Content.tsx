@@ -16,7 +16,7 @@ function Content(): ReactElement {
                 <h1 className="heading-1 text-primary">404</h1>
                 <div className="flex flex-col gap-2">
                     <p className="heading-3">Page not found</p>
-                    <p className="text-caption">
+                    <p className="body-text">
                         The page you're looking for doesn't exist or has been moved.
                     </p>
                 </div>
