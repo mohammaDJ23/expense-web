@@ -1,3 +1,32 @@
+## [1.2.0](https://github.com/mohammaDJ23/expense-web/compare/v1.1.4...v1.2.0) (2026-11-13)
+
+### ✨ Features
+
+- add the base path of signup initiation ([188bd13](https://github.com/mohammaDJ23/expense-web/commit/188bd135129c295af77444563210571817a509c8))
+- add the layout of authentication ([429b6a2](https://github.com/mohammaDJ23/expense-web/commit/429b6a2f3fdcbc73cacd5a850d0ad77144eb7cee))
+- add the signup initiation page ([e930623](https://github.com/mohammaDJ23/expense-web/commit/e93062383bf8dd2f05f01df38ac7017941424e35))
+
+### 🔧 Chores
+
+- add getApiErrorMessage ([32bf1c2](https://github.com/mohammaDJ23/expense-web/commit/32bf1c2c108a64d25c11c3d09d5a5f4c2a18aa3c))
+- add Spinner and PageSpinner ([4a6e4ed](https://github.com/mohammaDJ23/expense-web/commit/4a6e4ed945170d5100e211eefafb5be0fdeca203))
+- add tailwind-variants ([b99f4f3](https://github.com/mohammaDJ23/expense-web/commit/b99f4f3e0284dfe3f11364dd91f96d066d30e574))
+- add the Button componnet ([b5f6aa0](https://github.com/mohammaDJ23/expense-web/commit/b5f6aa02543a46588cac2fc90258c6cb874878a1))
+- add the Input component ([107d459](https://github.com/mohammaDJ23/expense-web/commit/107d4593ac77120ce9b081fb2ad01080c4963831))
+- add the Message component ([d77d1f8](https://github.com/mohammaDJ23/expense-web/commit/d77d1f8862313bdcbe9951e365fdc3d4aeaee5f5))
+- add the zod packages ([126936f](https://github.com/mohammaDJ23/expense-web/commit/126936feab4752de5a2a448f63641b3454309532))
+- apply the loading of apis and messages ([2ccbc7b](https://github.com/mohammaDJ23/expense-web/commit/2ccbc7b17d4735ee07dff46d24ff0befad48552d))
+- configure the router ([7008380](https://github.com/mohammaDJ23/expense-web/commit/7008380695f0d99faa5566940385795a1ff346b9))
+- generate the error type correctly since axios is been used ([caa716f](https://github.com/mohammaDJ23/expense-web/commit/caa716fc7b106c8c2fcb1f9b2d94d886d3ba6a04))
+- put the app name at the card ([854d4e7](https://github.com/mohammaDJ23/expense-web/commit/854d4e7f09b624e5e51246942ad1ecec6eee68ac))
+- remove error attr ([28293bb](https://github.com/mohammaDJ23/expense-web/commit/28293bb82d6316d6f3074e98e9098573ff8af7b4))
+- remove google api ([53c01fc](https://github.com/mohammaDJ23/expense-web/commit/53c01fc1eaeb7b396bd6eb354990d41ca9610322))
+- remove the height of button ([4b96b25](https://github.com/mohammaDJ23/expense-web/commit/4b96b25cd5fad11dfb79d73e5d61f16e9487e71b))
+- update the apis ([7e59402](https://github.com/mohammaDJ23/expense-web/commit/7e5940274367d91ced746356d3e0e78a3a88542b))
+- update the lock file ([2acb89e](https://github.com/mohammaDJ23/expense-web/commit/2acb89e41ab6a20f4c124a14f5a63690ebbe0950))
+- update the port ([2b0f258](https://github.com/mohammaDJ23/expense-web/commit/2b0f258f4acfa58245fcebb14696c4f5dc52b405))
+- use export default ([f42f489](https://github.com/mohammaDJ23/expense-web/commit/f42f489bd9c22addafcb17a6b60ec5a2afd69e1a))
+
 ## [1.1.4](https://github.com/mohammaDJ23/expense-web/compare/v1.1.3...v1.1.4) (2026-11-10)
 
 ### 🔧 Chores
