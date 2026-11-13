@@ -8,4 +8,12 @@ export const router = createBrowserRouter([
         HydrateFallback: PageSpinner,
         children: [authenticationRoutes],
     },
+    {
+        path: '*',
+        lazy: async () => {
+            const { default: Page } = await import('@/features/not-found/Page');
+
+            return { Component: Page };
+        },
+    },
 ]);
