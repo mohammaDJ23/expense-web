@@ -10,6 +10,7 @@ export const router = createBrowserRouter([
     },
     {
         path: '*',
+        HydrateFallback: PageSpinner,
         lazy: async () => {
             const { default: Page } = await import('@/features/not-found/Page');
 
