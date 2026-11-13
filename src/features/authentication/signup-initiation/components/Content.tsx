@@ -1,14 +1,9 @@
 import { memo, useCallback, type ReactElement, type SubmitEvent } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useQueryClient } from '@tanstack/react-query';
 import { Controller, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 
-import {
-    getGoogleQueryKey,
-    useGoogle,
-    useLocalSignupInitiation,
-} from '@/api/orval/generated/endpoints/authentication';
+import { useLocalSignupInitiation } from '@/api/orval/generated/endpoints/authentication';
 import {
     signupInitiationSchema,
     type TSignupInitiationSchema,
@@ -20,14 +15,6 @@ import { getApiErrorMessage } from '@/features/shared/utils/getApiErrorMessage';
 
 function Content(): ReactElement {
     const navigate = useNavigate();
-    const queryClient = useQueryClient();
-
-    const googleRequest = useGoogle({
-        query: {
-            enabled: false,
-        },
-    });
-    const isGoogleFetching = googleRequest.isFetching;
 
     const localSignupInitiationRequest = useLocalSignupInitiation();
     const isLocalSignupInitiationPending = localSignupInitiationRequest.isPending;
@@ -40,14 +27,6 @@ function Content(): ReactElement {
         },
     });
 
-    const resetApis = useCallback(() => {
-        localSignupInitiationRequest.reset();
-
-        return queryClient.resetQueries({
-            queryKey: getGoogleQueryKey(),
-        });
-    }, [queryClient, localSignupInitiationRequest]);
-
     const onSubmit = (event: SubmitEvent<HTMLFormElement>) => {
         event.preventDefault();
 
@@ -55,29 +34,30 @@ function Content(): ReactElement {
             return;
         }
 
-        resetApis().then(() => {
-            form.handleSubmit((data) => {
-                localSignupInitiationRequest.mutateAsync({ data });
-            })();
-        });
+        localSignupInitiationRequest.reset();
+
+        form.handleSubmit((data) => {
+            localSignupInitiationRequest.mutateAsync({ data }).then(() => {
+                form.reset();
+            });
+        })();
     };
 
     const onGoogleLoginClick = useCallback(() => {
-        if (isGoogleFetching) {
-            return;
-        }
+        form.reset();
+        localSignupInitiationRequest.reset();
 
-        resetApis().then(() => {
-            googleRequest.refetch();
-        });
-    }, [googleRequest, isGoogleFetching, resetApis]);
+        window.location.href = `${import.meta.env.VITE_API_URL}/v1/api/authentication/google`;
+    }, [localSignupInitiationRequest, form]);
 
     const onSigninClick = () => {
+        form.reset();
+        localSignupInitiationRequest.reset();
+
         navigate('/authentication/login');
     };
 
     const localSignupInitiationSuccessMessage = localSignupInitiationRequest.data?.data?.message;
-    const googleErrorMessage = getApiErrorMessage(googleRequest.error);
     const localSignupInitiationErrorMessage = getApiErrorMessage(
         localSignupInitiationRequest.error,
     );
@@ -131,15 +111,9 @@ function Content(): ReactElement {
                 <hr className="border-surface-secondary border w-100" />
             </div>
             <div className="flex flex-col gap-4">
-                <Button
-                    fullWidth
-                    onClick={onGoogleLoginClick}
-                    disabled={isGoogleFetching}
-                    variant="secondary"
-                >
+                <Button fullWidth onClick={onGoogleLoginClick} variant="secondary">
                     Continue with Google
                 </Button>
-                <Message message={googleErrorMessage} variant="error" />
                 <p className="text-body text-center text-text-muted">
                     Already have an account?{' '}
                     <span className="text-primary cursor-pointer" onClick={onSigninClick}>
