@@ -1,0 +1,149 @@
+import { memo, useCallback, type ReactElement, type SubmitEvent } from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Controller, useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router';
+
+import { useLocalLogin } from '@/api/orval/generated/endpoints/authentication';
+import {
+    loginSchema,
+    type TLoginSchema,
+} from '@/features/authentication/login/schemas/signupSchema';
+import Button from '@/features/shared/components/atoms/Button';
+import Input from '@/features/shared/components/atoms/Input';
+import Message from '@/features/shared/components/atoms/Message';
+import { getApiErrorMessage } from '@/features/shared/utils/getApiErrorMessage';
+import { getGoogleLoginLink } from '@/features/shared/utils/getGoogleLoginLink';
+
+function Content(): ReactElement {
+    const navigate = useNavigate();
+
+    const localLoginRequest = useLocalLogin();
+    const isLocalLoginPending = localLoginRequest.isPending;
+
+    const form = useForm<TLoginSchema>({
+        resolver: zodResolver(loginSchema),
+        mode: 'onChange',
+        defaultValues: {
+            email: '',
+            password: '',
+        },
+    });
+
+    const onSubmit = (event: SubmitEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        if (isLocalLoginPending) {
+            return;
+        }
+
+        localLoginRequest.reset();
+
+        form.handleSubmit((data) => {
+            localLoginRequest
+                .mutateAsync({ data })
+                .then(() => form.reset())
+                .then(() => localLoginRequest.reset())
+                .then(() => navigate('/dashboard'));
+        })();
+    };
+
+    const onGoogleLoginClick = useCallback(() => {
+        form.reset();
+        localLoginRequest.reset();
+
+        window.location.href = getGoogleLoginLink();
+    }, [localLoginRequest, form]);
+
+    const onSignupClick = () => {
+        form.reset();
+        localLoginRequest.reset();
+
+        navigate('/authentication/signup-initiation');
+    };
+
+    const localLoginErrorMessage = getApiErrorMessage(localLoginRequest.error);
+
+    return (
+        <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-7">
+                <div className="flex flex-col gap-1">
+                    <p className="heading-3 text-center">Welcome Back</p>
+                    <p className="caption text-center">Sign in to your account</p>
+                </div>
+                <form onSubmit={onSubmit} className="flex flex-col gap-4">
+                    <Controller
+                        name="email"
+                        control={form.control}
+                        render={({ field, formState }) => {
+                            const errorMessage = formState.errors.email?.message;
+
+                            return (
+                                <div className="flex flex-col gap-1">
+                                    <Input
+                                        placeholder="email"
+                                        name="email"
+                                        onChange={isLocalLoginPending ? () => {} : field.onChange}
+                                        value={field.value}
+                                        disabled={isLocalLoginPending}
+                                    />
+                                    {errorMessage && (
+                                        <p className="caption text-error">
+                                            {errorMessage as string}
+                                        </p>
+                                    )}
+                                </div>
+                            );
+                        }}
+                    />
+                    <Controller
+                        name="password"
+                        control={form.control}
+                        render={({ field, formState }) => {
+                            const errorMessage = formState.errors.password?.message;
+
+                            return (
+                                <div className="flex flex-col gap-1">
+                                    <Input
+                                        type="password"
+                                        placeholder="password"
+                                        name="password"
+                                        onChange={isLocalLoginPending ? () => {} : field.onChange}
+                                        value={field.value}
+                                        disabled={isLocalLoginPending}
+                                    />
+                                    {errorMessage && (
+                                        <p className="caption text-error">
+                                            {errorMessage as string}
+                                        </p>
+                                    )}
+                                </div>
+                            );
+                        }}
+                    />
+                    <Button fullWidth type="submit" disabled={isLocalLoginPending}>
+                        Sign In
+                    </Button>
+                    <Message message={localLoginErrorMessage} variant="error" />
+                </form>
+            </div>
+            <div className="flex items-center gap-4">
+                <hr className="border-surface-secondary border  w-100" />
+                <p className="text-body">or</p>
+                <hr className="border-surface-secondary border w-100" />
+            </div>
+            <div className="flex flex-col gap-4">
+                <Button fullWidth onClick={onGoogleLoginClick} variant="secondary">
+                    Continue with Google
+                </Button>
+                <p className="text-body text-center text-text-muted">
+                    Don't have an account?{' '}
+                    <span className="text-primary cursor-pointer" onClick={onSignupClick}>
+                        Sign up
+                    </span>
+                </p>
+            </div>
+        </div>
+    );
+}
+
+export default memo(Content);

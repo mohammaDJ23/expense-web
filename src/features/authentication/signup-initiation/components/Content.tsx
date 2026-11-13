@@ -12,6 +12,7 @@ import Button from '@/features/shared/components/atoms/Button';
 import Input from '@/features/shared/components/atoms/Input';
 import Message from '@/features/shared/components/atoms/Message';
 import { getApiErrorMessage } from '@/features/shared/utils/getApiErrorMessage';
+import { getGoogleLoginLink } from '@/features/shared/utils/getGoogleLoginLink';
 
 function Content(): ReactElement {
     const navigate = useNavigate();
@@ -47,7 +48,7 @@ function Content(): ReactElement {
         form.reset();
         localSignupInitiationRequest.reset();
 
-        window.location.href = `${import.meta.env.VITE_API_URL}/v1/api/authentication/google`;
+        window.location.href = getGoogleLoginLink();
     }, [localSignupInitiationRequest, form]);
 
     const onSigninClick = () => {
