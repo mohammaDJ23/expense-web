@@ -1,3 +1,4 @@
+import { signupRoute } from '@/features/authentication/signup/route';
 import { signupInitiationRoute } from '@/features/authentication/signup-initiation/route';
 
 import type { RouteObject } from 'react-router';
@@ -9,5 +10,5 @@ export const authenticationRoutes: RouteObject = {
 
         return { Component: Page };
     },
-    children: [signupInitiationRoute],
+    children: [signupInitiationRoute, signupRoute],
 };
