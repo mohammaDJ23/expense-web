@@ -10,7 +10,7 @@
  *     • Tracking reimbursement status
  *     • Generating expense analytics and reports
  *
- * OpenAPI spec version: 5.3.8
+ * OpenAPI spec version: 5.3.10
  */
 import { useMutation, useQuery } from '@tanstack/react-query';
 import type {
@@ -30,7 +30,6 @@ import type {
 
 import type {
     Google429,
-    GoogleLogin200,
     GoogleLogin400,
     GoogleLogin401,
     GoogleLogin404,
@@ -878,7 +877,7 @@ export function useGoogle<
  * @summary Google callback
  */
 export const googleLogin = (signal?: AbortSignal) => {
-    return customInstance<GoogleLogin200>({
+    return customInstance<unknown>({
         url: `/v1/api/authentication/google/callback`,
         method: 'GET',
         signal,
@@ -892,7 +891,13 @@ export const getGoogleLoginQueryKey = () => {
 export const getGoogleLoginQueryOptions = <
     TData = Awaited<ReturnType<typeof googleLogin>>,
     TError = ErrorType<
-        GoogleLogin400 | GoogleLogin401 | string | GoogleLogin404 | GoogleLogin429 | GoogleLogin500
+        | void
+        | GoogleLogin400
+        | GoogleLogin401
+        | string
+        | GoogleLogin404
+        | GoogleLogin429
+        | GoogleLogin500
     >,
 >(options?: {
     query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof googleLogin>>, TError, TData>>;
@@ -913,13 +918,25 @@ export const getGoogleLoginQueryOptions = <
 
 export type GoogleLoginQueryResult = NonNullable<Awaited<ReturnType<typeof googleLogin>>>;
 export type GoogleLoginQueryError = ErrorType<
-    GoogleLogin400 | GoogleLogin401 | string | GoogleLogin404 | GoogleLogin429 | GoogleLogin500
+    | void
+    | GoogleLogin400
+    | GoogleLogin401
+    | string
+    | GoogleLogin404
+    | GoogleLogin429
+    | GoogleLogin500
 >;
 
 export function useGoogleLogin<
     TData = Awaited<ReturnType<typeof googleLogin>>,
     TError = ErrorType<
-        GoogleLogin400 | GoogleLogin401 | string | GoogleLogin404 | GoogleLogin429 | GoogleLogin500
+        | void
+        | GoogleLogin400
+        | GoogleLogin401
+        | string
+        | GoogleLogin404
+        | GoogleLogin429
+        | GoogleLogin500
     >,
 >(
     options: {
@@ -938,7 +955,13 @@ export function useGoogleLogin<
 export function useGoogleLogin<
     TData = Awaited<ReturnType<typeof googleLogin>>,
     TError = ErrorType<
-        GoogleLogin400 | GoogleLogin401 | string | GoogleLogin404 | GoogleLogin429 | GoogleLogin500
+        | void
+        | GoogleLogin400
+        | GoogleLogin401
+        | string
+        | GoogleLogin404
+        | GoogleLogin429
+        | GoogleLogin500
     >,
 >(
     options?: {
@@ -957,7 +980,13 @@ export function useGoogleLogin<
 export function useGoogleLogin<
     TData = Awaited<ReturnType<typeof googleLogin>>,
     TError = ErrorType<
-        GoogleLogin400 | GoogleLogin401 | string | GoogleLogin404 | GoogleLogin429 | GoogleLogin500
+        | void
+        | GoogleLogin400
+        | GoogleLogin401
+        | string
+        | GoogleLogin404
+        | GoogleLogin429
+        | GoogleLogin500
     >,
 >(
     options?: {
@@ -972,7 +1001,13 @@ export function useGoogleLogin<
 export function useGoogleLogin<
     TData = Awaited<ReturnType<typeof googleLogin>>,
     TError = ErrorType<
-        GoogleLogin400 | GoogleLogin401 | string | GoogleLogin404 | GoogleLogin429 | GoogleLogin500
+        | void
+        | GoogleLogin400
+        | GoogleLogin401
+        | string
+        | GoogleLogin404
+        | GoogleLogin429
+        | GoogleLogin500
     >,
 >(
     options?: {
