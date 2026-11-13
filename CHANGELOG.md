@@ -1,3 +1,14 @@
+## [1.3.0](https://github.com/mohammaDJ23/expense-web/compare/v1.2.0...v1.3.0) (2026-11-13)
+
+### ✨ Features
+
+- add the signup page ([808d74b](https://github.com/mohammaDJ23/expense-web/commit/808d74b57f141f6651928084d6278d4909e6897e))
+
+### 🔧 Chores
+
+- enhance the error handling ([4917245](https://github.com/mohammaDJ23/expense-web/commit/49172457edbfb0ed905c6e1997b9ae28048b2c46))
+- turn off '@typescript-eslint/no-confusing-void-expression' rule ([16876dc](https://github.com/mohammaDJ23/expense-web/commit/16876dc0e67035d29a4237070faef045d4ddce6b))
+
 ## [1.2.0](https://github.com/mohammaDJ23/expense-web/compare/v1.1.4...v1.2.0) (2026-11-13)
 
 ### ✨ Features
