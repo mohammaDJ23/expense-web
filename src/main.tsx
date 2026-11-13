@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import '@fontsource-variable/plus-jakarta-sans';
 
 import App from '@/app/App.tsx';
-import '@/app/styles/index.css';
+import '@/app/index.css';
 
 const element = document.getElementById('root');
 
