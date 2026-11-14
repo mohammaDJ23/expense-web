@@ -11,6 +11,7 @@ import {
 import Button from '@/features/shared/components/atoms/Button';
 import Input from '@/features/shared/components/atoms/Input';
 import Message from '@/features/shared/components/atoms/Message';
+import Typography from '@/features/shared/components/atoms/Typography';
 import { getApiErrorMessage } from '@/features/shared/utils/getApiErrorMessage';
 
 function Content(): ReactElement {
@@ -57,10 +58,12 @@ function Content(): ReactElement {
         <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-7">
                 <div className="flex flex-col gap-1">
-                    <p className="heading-3 text-center">Create Your Local Account</p>
-                    <p className="caption text-center">
+                    <Typography variant="heading-3" className="text-center">
+                        Create Your Local Account
+                    </Typography>
+                    <Typography variant="caption" className=" text-center">
                         You already have none local account. Let's create a local account for you.
-                    </p>
+                    </Typography>
                 </div>
                 <form onSubmit={onSubmit} className="flex flex-col gap-4">
                     <Controller
@@ -83,9 +86,9 @@ function Content(): ReactElement {
                                         disabled={isLocalAccountInitiationPending}
                                     />
                                     {errorMessage && (
-                                        <p className="caption text-error">
+                                        <Typography variant="caption" className="text-error">
                                             {errorMessage as string}
-                                        </p>
+                                        </Typography>
                                     )}
                                 </div>
                             );
@@ -98,12 +101,9 @@ function Content(): ReactElement {
                     <Message message={localAccountInitiationSuccessMessage} variant="success" />
                 </form>
             </div>
-            <p
-                onClick={onSigninClick}
-                className="text-body text-center text-primary cursor-pointer"
-            >
+            <Typography onClick={onSigninClick} className="text-center text-primary cursor-pointer">
                 Back to Sign in
-            </p>
+            </Typography>
         </div>
     );
 }

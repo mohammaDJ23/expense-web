@@ -11,6 +11,7 @@ import {
 import Button from '@/features/shared/components/atoms/Button';
 import Input from '@/features/shared/components/atoms/Input';
 import Message from '@/features/shared/components/atoms/Message';
+import Typography from '@/features/shared/components/atoms/Typography';
 import { getApiErrorMessage } from '@/features/shared/utils/getApiErrorMessage';
 
 function Content(): ReactElement {
@@ -67,8 +68,12 @@ function Content(): ReactElement {
         <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-7">
                 <div className="flex flex-col gap-1">
-                    <p className="heading-3 text-center">Reset Password</p>
-                    <p className="caption text-center">Enter your new password</p>
+                    <Typography variant="heading-3" className="text-center">
+                        Reset Password
+                    </Typography>
+                    <Typography variant="caption" className="text-center">
+                        Enter your new password
+                    </Typography>
                 </div>
                 <form onSubmit={onSubmit} className="flex flex-col gap-4">
                     <Controller
@@ -91,7 +96,9 @@ function Content(): ReactElement {
                                         disabled={true}
                                     />
                                     {errorMessage && (
-                                        <p className="caption text-error">{errorMessage}</p>
+                                        <Typography variant="caption" className="text-error">
+                                            {errorMessage}
+                                        </Typography>
                                     )}
                                 </div>
                             );
@@ -116,7 +123,9 @@ function Content(): ReactElement {
                                         disabled={isLocalResetPasswordPending}
                                     />
                                     {errorMessage && (
-                                        <p className="caption text-error">{errorMessage}</p>
+                                        <Typography variant="caption" className="text-error">
+                                            {errorMessage}
+                                        </Typography>
                                     )}
                                 </div>
                             );
@@ -128,12 +137,9 @@ function Content(): ReactElement {
                     <Message message={localResetPasswordErrorMessage} variant="error" />
                 </form>
             </div>
-            <p
-                onClick={onSigninClick}
-                className="text-body text-center text-primary cursor-pointer"
-            >
+            <Typography onClick={onSigninClick} className="text-center text-primary cursor-pointer">
                 Back to Sign in
-            </p>
+            </Typography>
         </div>
     );
 }
