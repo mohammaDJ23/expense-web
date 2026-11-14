@@ -1,5 +1,6 @@
 import { forgotPasswordRoute } from '@/features/authentication/forgot-password/route';
 import { loginRoute } from '@/features/authentication/login/route';
+import { resetPasswordRoute } from '@/features/authentication/reset-password/route';
 import { signupRoute } from '@/features/authentication/signup/route';
 import { signupInitiationRoute } from '@/features/authentication/signup-initiation/route';
 
@@ -12,5 +13,11 @@ export const authenticationRoutes: RouteObject = {
 
         return { Component: Page };
     },
-    children: [signupInitiationRoute, signupRoute, loginRoute, forgotPasswordRoute],
+    children: [
+        signupInitiationRoute,
+        signupRoute,
+        loginRoute,
+        forgotPasswordRoute,
+        resetPasswordRoute,
+    ],
 };
