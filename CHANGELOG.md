@@ -1,3 +1,14 @@
+## [1.6.0](https://github.com/mohammaDJ23/expense-web/compare/v1.5.0...v1.6.0) (2026-11-14)
+
+### ✨ Features
+
+- add the Reset password page ([da141fb](https://github.com/mohammaDJ23/expense-web/commit/da141fb02165abeb966dea2aa7b7ba5768ec17c1))
+
+### 🔧 Chores
+
+- rename the files and navigate to home instead of dashboard ([523ef28](https://github.com/mohammaDJ23/expense-web/commit/523ef28e890fb82349fe8b7569e61f30c050da99))
+- rename the variable ([bf782e4](https://github.com/mohammaDJ23/expense-web/commit/bf782e43837c97f581706e7a39cc2520e0c49cbd))
+
 ## [1.5.0](https://github.com/mohammaDJ23/expense-web/compare/v1.4.0...v1.5.0) (2026-11-14)
 
 ### ✨ Features
