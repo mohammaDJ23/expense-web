@@ -1,4 +1,5 @@
 import { forgotPasswordRoute } from '@/features/authentication/forgot-password/route';
+import { localAccountInitiationRoute } from '@/features/authentication/local-account-initiation/route';
 import { loginRoute } from '@/features/authentication/login/route';
 import { resetPasswordRoute } from '@/features/authentication/reset-password/route';
 import { signupRoute } from '@/features/authentication/signup/route';
@@ -19,5 +20,6 @@ export const authenticationRoutes: RouteObject = {
         loginRoute,
         forgotPasswordRoute,
         resetPasswordRoute,
+        localAccountInitiationRoute,
     ],
 };
