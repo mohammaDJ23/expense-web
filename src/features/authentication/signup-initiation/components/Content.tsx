@@ -11,6 +11,7 @@ import {
 import Button from '@/features/shared/components/atoms/Button';
 import Input from '@/features/shared/components/atoms/Input';
 import Message from '@/features/shared/components/atoms/Message';
+import Typography from '@/features/shared/components/atoms/Typography';
 import { getApiErrorMessage } from '@/features/shared/utils/getApiErrorMessage';
 import { getGoogleLoginLink } from '@/features/shared/utils/getGoogleLoginLink';
 
@@ -67,8 +68,12 @@ function Content(): ReactElement {
         <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-7">
                 <div className="flex flex-col gap-1">
-                    <p className="heading-3 text-center">Create Your Account</p>
-                    <p className="caption text-center">Enter your email address to get started</p>
+                    <Typography variant="heading-3" className="text-center">
+                        Create Your Account
+                    </Typography>
+                    <Typography variant="caption" className="text-center">
+                        Enter your email address to get started
+                    </Typography>
                 </div>
                 <form onSubmit={onSubmit} className="flex flex-col gap-4">
                     <Controller
@@ -91,9 +96,9 @@ function Content(): ReactElement {
                                         disabled={isLocalSignupInitiationPending}
                                     />
                                     {errorMessage && (
-                                        <p className="caption text-error">
+                                        <Typography variant="caption" className="text-error">
                                             {errorMessage as string}
-                                        </p>
+                                        </Typography>
                                     )}
                                 </div>
                             );
@@ -108,19 +113,22 @@ function Content(): ReactElement {
             </div>
             <div className="flex items-center gap-4">
                 <hr className="border-surface-secondary border  w-100" />
-                <p className="text-body">or</p>
+                <Typography>or</Typography>
                 <hr className="border-surface-secondary border w-100" />
             </div>
             <div className="flex flex-col gap-4">
                 <Button fullWidth onClick={onGoogleLoginClick} variant="secondary">
                     Continue with Google
                 </Button>
-                <p className="text-body text-center text-text-muted">
+                <Typography className="text-center text-text-muted">
                     Already have an account?{' '}
-                    <span className="text-primary cursor-pointer" onClick={onSigninClick}>
+                    <Typography
+                        className="text-primary cursor-pointer inline-block"
+                        onClick={onSigninClick}
+                    >
                         Sign in
-                    </span>
-                </p>
+                    </Typography>
+                </Typography>
             </div>
         </div>
     );
