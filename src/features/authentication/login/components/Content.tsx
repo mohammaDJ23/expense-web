@@ -42,15 +42,16 @@ function Content(): ReactElement {
         form.handleSubmit((data) => {
             localLoginRequest
                 .mutateAsync({ data })
+                .then(() => form.reset())
+                .then(() => localLoginRequest.reset())
                 .then(() => navigate('/dashboard'))
                 .catch((error: unknown) => {
                     if (isAxiosError(error) && error.response?.status === 422) {
+                        form.reset();
+                        localLoginRequest.reset();
+
                         navigate('/authentication/local-account-initiation');
                     }
-                })
-                .finally(() => {
-                    form.reset();
-                    localLoginRequest.reset();
                 });
         })();
     };
