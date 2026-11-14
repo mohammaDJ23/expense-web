@@ -8,7 +8,7 @@ import { useLocalLogin } from '@/api/orval/generated/endpoints/authentication';
 import {
     loginSchema,
     type TLoginSchema,
-} from '@/features/authentication/login/schemas/signupSchema';
+} from '@/features/authentication/login/schemas/loginSchema';
 import Button from '@/features/shared/components/atoms/Button';
 import Input from '@/features/shared/components/atoms/Input';
 import Message from '@/features/shared/components/atoms/Message';
@@ -44,7 +44,7 @@ function Content(): ReactElement {
                 .mutateAsync({ data })
                 .then(() => form.reset())
                 .then(() => localLoginRequest.reset())
-                .then(() => navigate('/dashboard'))
+                .then(() => navigate('/'))
                 .catch((error: unknown) => {
                     if (isAxiosError(error) && error.response?.status === 422) {
                         form.reset();
