@@ -2,6 +2,7 @@ import { useCallback, type ReactElement } from 'react';
 import { useNavigate } from 'react-router';
 
 import Button from '@/features/shared/components/atoms/Button';
+import Typography from '@/features/shared/components/atoms/Typography';
 
 function Content(): ReactElement {
     const navigate = useNavigate();
@@ -13,12 +14,14 @@ function Content(): ReactElement {
     return (
         <main className="flex min-h-screen flex-col items-center justify-center bg-background p-4 text-center">
             <div className="flex flex-col gap-5 items-center">
-                <h1 className="heading-1 text-primary">404</h1>
+                <Typography variant="heading-1" className="text-primary">
+                    404
+                </Typography>
                 <div className="flex flex-col gap-2">
-                    <p className="heading-3">Page not found</p>
-                    <p className="body-text">
+                    <Typography variant="heading-3">Page not found</Typography>
+                    <Typography>
                         The page you're looking for doesn't exist or has been moved.
-                    </p>
+                    </Typography>
                 </div>
                 <Button onClick={onButtonClick}>Back to home</Button>
             </div>

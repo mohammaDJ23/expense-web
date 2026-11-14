@@ -11,6 +11,7 @@ import {
 import Button from '@/features/shared/components/atoms/Button';
 import Input from '@/features/shared/components/atoms/Input';
 import Message from '@/features/shared/components/atoms/Message';
+import Typography from '@/features/shared/components/atoms/Typography';
 import { getApiErrorMessage } from '@/features/shared/utils/getApiErrorMessage';
 
 function Content(): ReactElement {
@@ -67,8 +68,12 @@ function Content(): ReactElement {
         <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-7">
                 <div className="flex flex-col gap-1">
-                    <p className="heading-3 text-center">Create Your Account</p>
-                    <p className="caption text-center">Set a password to complete signup</p>
+                    <Typography variant="heading-3" className="text-center">
+                        Create Your Account
+                    </Typography>
+                    <Typography variant="caption" className="text-center">
+                        Set a password to complete signup
+                    </Typography>
                 </div>
                 <form onSubmit={onSubmit} className="flex flex-col gap-4">
                     <Controller
@@ -91,9 +96,9 @@ function Content(): ReactElement {
                                         disabled={true}
                                     />
                                     {errorMessage && (
-                                        <p className="caption text-error">
+                                        <Typography variant="caption" className="text-error">
                                             {errorMessage as string}
-                                        </p>
+                                        </Typography>
                                     )}
                                 </div>
                             );
@@ -116,9 +121,9 @@ function Content(): ReactElement {
                                         disabled={isLocalSignupPending}
                                     />
                                     {errorMessage && (
-                                        <p className="caption text-error">
+                                        <Typography variant="caption" className="text-error">
                                             {errorMessage as string}
-                                        </p>
+                                        </Typography>
                                     )}
                                 </div>
                             );
@@ -130,12 +135,15 @@ function Content(): ReactElement {
                     <Message message={localSignupErrorMessage} variant="error" />
                 </form>
             </div>
-            <p className="text-body text-center text-text-muted">
+            <Typography className="text-center text-text-muted">
                 Already have an account?{' '}
-                <span className="text-primary cursor-pointer" onClick={onSigninClick}>
+                <Typography
+                    className="text-primary cursor-pointer inline-block"
+                    onClick={onSigninClick}
+                >
                     Sign in
-                </span>
-            </p>
+                </Typography>
+            </Typography>
         </div>
     );
 }
