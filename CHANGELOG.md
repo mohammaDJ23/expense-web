@@ -1,3 +1,15 @@
+## [1.5.0](https://github.com/mohammaDJ23/expense-web/compare/v1.4.0...v1.5.0) (2026-11-14)
+
+### ✨ Features
+
+- add the Forgot password page ([88878e9](https://github.com/mohammaDJ23/expense-web/commit/88878e90488a84ddc0601a42b926f5313d96d7a4))
+
+### 🔧 Chores
+
+- handle not found local account ([408be7f](https://github.com/mohammaDJ23/expense-web/commit/408be7f504f43331e75e0ea758fb9074b3db7a7e))
+- handle not found local account ([f05d5fb](https://github.com/mohammaDJ23/expense-web/commit/f05d5fbc248a631a18ed3ced445e9e447c200f4b))
+- update the apis ([d0babab](https://github.com/mohammaDJ23/expense-web/commit/d0babab7c2c01974da02593d63ca402a16785525))
+
 ## [1.4.0](https://github.com/mohammaDJ23/expense-web/compare/v1.3.0...v1.4.0) (2026-11-13)
 
 ### ✨ Features
