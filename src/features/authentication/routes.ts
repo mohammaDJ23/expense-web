@@ -1,3 +1,4 @@
+import { forgotPasswordRoute } from '@/features/authentication/forgot-password/route';
 import { loginRoute } from '@/features/authentication/login/route';
 import { signupRoute } from '@/features/authentication/signup/route';
 import { signupInitiationRoute } from '@/features/authentication/signup-initiation/route';
@@ -11,5 +12,5 @@ export const authenticationRoutes: RouteObject = {
 
         return { Component: Page };
     },
-    children: [signupInitiationRoute, signupRoute, loginRoute],
+    children: [signupInitiationRoute, signupRoute, loginRoute, forgotPasswordRoute],
 };
