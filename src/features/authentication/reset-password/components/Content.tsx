@@ -61,7 +61,7 @@ function Content(): ReactElement {
         return <Navigate to="/authentication/login" />;
     }
 
-    const localSignupErrorMessage = getApiErrorMessage(localResetPasswordRequest.error);
+    const localResetPasswordErrorMessage = getApiErrorMessage(localResetPasswordRequest.error);
 
     return (
         <div className="flex flex-col gap-6">
@@ -125,7 +125,7 @@ function Content(): ReactElement {
                     <Button fullWidth type="submit" disabled={isLocalResetPasswordPending}>
                         Reset Password
                     </Button>
-                    <Message message={localSignupErrorMessage} variant="error" />
+                    <Message message={localResetPasswordErrorMessage} variant="error" />
                 </form>
             </div>
             <p
