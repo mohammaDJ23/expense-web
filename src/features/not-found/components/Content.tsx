@@ -7,7 +7,7 @@ function Content(): ReactElement {
     const navigate = useNavigate();
 
     const onButtonClick = useCallback(() => {
-        navigate('/dashboard');
+        navigate('/');
     }, [navigate]);
 
     return (
@@ -20,7 +20,7 @@ function Content(): ReactElement {
                         The page you're looking for doesn't exist or has been moved.
                     </p>
                 </div>
-                <Button onClick={onButtonClick}>Back to dashboard</Button>
+                <Button onClick={onButtonClick}>Back to home</Button>
             </div>
         </main>
     );

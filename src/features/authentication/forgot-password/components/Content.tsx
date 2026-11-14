@@ -7,7 +7,7 @@ import { useLocalForgotPassword } from '@/api/orval/generated/endpoints/authenti
 import {
     forgotPasswordSchema,
     type TForgotPasswordSchema,
-} from '@/features/authentication/forgot-password/schemas/signupSchema';
+} from '@/features/authentication/forgot-password/schemas/forgotPasswordSchema';
 import Button from '@/features/shared/components/atoms/Button';
 import Input from '@/features/shared/components/atoms/Input';
 import Message from '@/features/shared/components/atoms/Message';
