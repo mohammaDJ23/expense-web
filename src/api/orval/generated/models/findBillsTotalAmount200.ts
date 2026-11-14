@@ -10,7 +10,7 @@
  *     • Tracking reimbursement status
  *     • Generating expense analytics and reports
  *
- * OpenAPI spec version: 5.3.10
+ * OpenAPI spec version: 5.3.11
  */
 import type { FindBillsTotalAmountResponseDto } from './findBillsTotalAmountResponseDto';
 import type { HttpResponseDto } from './httpResponseDto';

@@ -474,6 +474,27 @@
                             }
                         }
                     },
+                    "422": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "allOf": [
+                                        { "$ref": "#/components/schemas/HttpResponseDto" },
+                                        {
+                                            "type": "object",
+                                            "required": ["data"],
+                                            "properties": {
+                                                "data": {
+                                                    "$ref": "#/components/schemas/ExceptionDto"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
                     "429": {
                         "description": "",
                         "content": {
@@ -7202,7 +7223,7 @@
     "info": {
         "title": "The expense-api documentation",
         "description": "\n    The Expense API provides endpoints for:\n    • Creating and managing expense reports\n    • Uploading and attaching receipt images\n    • Submitting expenses for approval\n    • Tracking reimbursement status\n    • Generating expense analytics and reports\n",
-        "version": "5.3.10",
+        "version": "5.3.11",
         "contact": {}
     },
     "tags": [],
