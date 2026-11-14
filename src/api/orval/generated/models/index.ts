@@ -10,7 +10,7 @@
  *     • Tracking reimbursement status
  *     • Generating expense analytics and reports
  *
- * OpenAPI spec version: 5.3.10
+ * OpenAPI spec version: 5.3.11
  */
 
 export * from './billResponseDto';
@@ -274,6 +274,7 @@ export * from './localLogin200';
 export * from './localLogin400';
 export * from './localLogin403';
 export * from './localLogin404';
+export * from './localLogin422';
 export * from './localLogin429';
 export * from './localLogin500';
 export * from './localLoginRequestDto';

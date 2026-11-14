@@ -10,7 +10,7 @@
  *     • Tracking reimbursement status
  *     • Generating expense analytics and reports
  *
- * OpenAPI spec version: 5.3.10
+ * OpenAPI spec version: 5.3.11
  */
 import { useMutation, useQuery } from '@tanstack/react-query';
 import type {
@@ -57,6 +57,7 @@ import type {
     LocalLogin400,
     LocalLogin403,
     LocalLogin404,
+    LocalLogin422,
     LocalLogin429,
     LocalLogin500,
     LocalLoginRequestDto,
@@ -307,7 +308,12 @@ export const getLocalLoginMutationKey = () => ['localLogin'] as const;
 
 export const getLocalLoginMutationOptions = <
     TError = ErrorType<
-        LocalLogin400 | LocalLogin403 | LocalLogin404 | LocalLogin429 | LocalLogin500
+        | LocalLogin400
+        | LocalLogin403
+        | LocalLogin404
+        | LocalLogin422
+        | LocalLogin429
+        | LocalLogin500
     >,
     TContext = unknown,
 >(options?: {
@@ -345,7 +351,7 @@ export const getLocalLoginMutationOptions = <
 export type LocalLoginMutationResult = NonNullable<Awaited<ReturnType<typeof localLogin>>>;
 export type LocalLoginMutationBody = LocalLoginRequestDto;
 export type LocalLoginMutationError = ErrorType<
-    LocalLogin400 | LocalLogin403 | LocalLogin404 | LocalLogin429 | LocalLogin500
+    LocalLogin400 | LocalLogin403 | LocalLogin404 | LocalLogin422 | LocalLogin429 | LocalLogin500
 >;
 export type LocalLoginMutationVariables = { data: LocalLoginRequestDto };
 
@@ -354,7 +360,12 @@ export type LocalLoginMutationVariables = { data: LocalLoginRequestDto };
  */
 export const useLocalLogin = <
     TError = ErrorType<
-        LocalLogin400 | LocalLogin403 | LocalLogin404 | LocalLogin429 | LocalLogin500
+        | LocalLogin400
+        | LocalLogin403
+        | LocalLogin404
+        | LocalLogin422
+        | LocalLogin429
+        | LocalLogin500
     >,
     TContext = unknown,
 >(
