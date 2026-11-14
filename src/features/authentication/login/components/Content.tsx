@@ -1,5 +1,6 @@
 import { memo, useCallback, type ReactElement, type SubmitEvent } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { isAxiosError } from 'axios';
 import { Controller, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 
@@ -41,9 +42,16 @@ function Content(): ReactElement {
         form.handleSubmit((data) => {
             localLoginRequest
                 .mutateAsync({ data })
-                .then(() => form.reset())
-                .then(() => localLoginRequest.reset())
-                .then(() => navigate('/dashboard'));
+                .then(() => navigate('/dashboard'))
+                .catch((error: unknown) => {
+                    if (isAxiosError(error) && error.response?.status === 422) {
+                        navigate('/authentication/local-account-initiation');
+                    }
+                })
+                .finally(() => {
+                    form.reset();
+                    localLoginRequest.reset();
+                });
         })();
     };
 
