@@ -1,3 +1,13 @@
+## [1.8.0](https://github.com/mohammaDJ23/expense-web/compare/v1.7.0...v1.8.0) (2026-11-15)
+
+### ✨ Features
+
+- add the local account creation page ([20dd952](https://github.com/mohammaDJ23/expense-web/commit/20dd952f1506dea72577683eb6922698d5ce7082))
+
+### ♻️ Code Refactoring
+
+- use ? sign for extracting the error field ([d7ac506](https://github.com/mohammaDJ23/expense-web/commit/d7ac5062c4c9b9b1f2ca217102b6ad8d239b86d2))
+
 ## [1.7.0](https://github.com/mohammaDJ23/expense-web/compare/v1.6.0...v1.7.0) (2026-11-15)
 
 ### ✨ Features
