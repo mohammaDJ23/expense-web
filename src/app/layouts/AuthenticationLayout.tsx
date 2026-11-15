@@ -1,10 +1,17 @@
-import { Outlet } from 'react-router';
+import { Outlet, useNavigation } from 'react-router';
 
 import Typography from '@/features/shared/components/atoms/Typography';
+import PageSpinner from '@/features/shared/components/molecules/PageSpinner';
 
 import type { ReactElement } from 'react';
 
 function AuthenticationLayout(): ReactElement {
+    const navigation = useNavigation();
+
+    if (navigation.state === 'loading') {
+        return <PageSpinner />;
+    }
+
     return (
         <main className="flex min-h-screen w-full flex-col items-center justify-center bg-background p-4">
             <div className="w-full max-w-md rounded-2xl border border-border bg-surface p-6 shadow-sm sm:p-8">
