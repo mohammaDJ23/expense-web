@@ -80,9 +80,9 @@ function Content(): ReactElement {
                         name="token"
                         control={form.control}
                         render={({ formState }) => {
-                            const errorMessage = formState.errors.token?.message;
+                            const errorMessage = formState.errors?.token?.message;
                             const value = Array.from({
-                                length: Math.min(token?.length ?? 0, 60),
+                                length: Math.min(token.length, 60),
                             })
                                 .fill('*')
                                 .join('');
@@ -97,7 +97,7 @@ function Content(): ReactElement {
                                     />
                                     {errorMessage && (
                                         <Typography variant="caption" className="text-error">
-                                            {errorMessage as string}
+                                            {errorMessage}
                                         </Typography>
                                     )}
                                 </div>
@@ -108,7 +108,7 @@ function Content(): ReactElement {
                         name="password"
                         control={form.control}
                         render={({ field, formState }) => {
-                            const errorMessage = formState.errors.password?.message;
+                            const errorMessage = formState.errors?.password?.message;
 
                             return (
                                 <div className="flex flex-col gap-1">
@@ -122,7 +122,7 @@ function Content(): ReactElement {
                                     />
                                     {errorMessage && (
                                         <Typography variant="caption" className="text-error">
-                                            {errorMessage as string}
+                                            {errorMessage}
                                         </Typography>
                                     )}
                                 </div>

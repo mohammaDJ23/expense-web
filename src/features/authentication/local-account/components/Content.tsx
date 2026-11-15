@@ -80,7 +80,7 @@ function Content(): ReactElement {
                         name="token"
                         control={form.control}
                         render={({ formState }) => {
-                            const errorMessage = formState.errors.token?.message;
+                            const errorMessage = formState.errors?.token?.message;
                             const value = Array.from({
                                 length: Math.min(token.length, 60),
                             })
@@ -108,7 +108,7 @@ function Content(): ReactElement {
                         name="password"
                         control={form.control}
                         render={({ field, formState }) => {
-                            const errorMessage = formState.errors.password?.message;
+                            const errorMessage = formState.errors?.password?.message;
 
                             return (
                                 <div className="flex flex-col gap-1">
