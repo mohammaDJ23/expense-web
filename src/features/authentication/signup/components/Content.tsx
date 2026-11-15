@@ -138,6 +138,7 @@ function Content(): ReactElement {
             <Typography className="text-center text-text-muted">
                 Already have an account?{' '}
                 <Typography
+                    as="span"
                     className="text-primary cursor-pointer inline-block"
                     onClick={onSigninClick}
                 >
