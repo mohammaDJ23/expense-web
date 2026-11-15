@@ -30,6 +30,8 @@ const typographyElements = {
     caption: 'span',
 } as const;
 
+type TElement = (typeof typographyElements)[keyof typeof typographyElements];
+
 type TProps =
     | (Omit<ComponentPropsWithoutRef<'h1'>, 'color'> & VariantProps<typeof typographyVariants>)
     | (Omit<ComponentPropsWithoutRef<'p'>, 'color'> & VariantProps<typeof typographyVariants>)
@@ -37,11 +39,16 @@ type TProps =
 
 function Typography({
     variant = 'body-text',
+    as,
     className,
     children,
     ...props
-}: Readonly<TProps>): ReactElement {
-    const Component = typographyElements[variant as keyof typeof typographyElements];
+}: Readonly<
+    TProps & {
+        as?: TElement;
+    }
+>): ReactElement {
+    const Component = as ?? typographyElements[variant as keyof typeof typographyElements];
 
     return (
         <Component {...props} className={cx(typographyVariants({ variant }), className)}>
