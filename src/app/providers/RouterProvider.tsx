@@ -1,6 +1,6 @@
 import { RouterProvider as RouterProviderBase } from 'react-router';
 
-import { router } from '@/app/router';
+import { router } from '@/app/routes/router';
 
 import type { ReactElement } from 'react';
 

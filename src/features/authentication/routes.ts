@@ -1,3 +1,4 @@
+import { notAuthenticatedMiddleware } from '@/app/routes/middlewares/notAuthenticatedMiddleware';
 import { forgotPasswordRoute } from '@/features/authentication/forgot-password/route';
 import { localAccountRoute } from '@/features/authentication/local-account/route';
 import { localAccountInitiationRoute } from '@/features/authentication/local-account-initiation/route';
@@ -10,6 +11,7 @@ import type { RouteObject } from 'react-router';
 
 export const authenticationRoutes: RouteObject = {
     path: 'authentication',
+    middleware: [notAuthenticatedMiddleware],
     lazy: async () => {
         const { default: Page } = await import('@/app/layouts/AuthenticationLayout');
 
