@@ -80,7 +80,7 @@ function Content(): ReactElement {
                         name="email"
                         control={form.control}
                         render={({ field, formState }) => {
-                            const errorMessage = formState.errors.email?.message;
+                            const errorMessage = formState.errors?.email?.message;
 
                             return (
                                 <div className="flex flex-col gap-1">
@@ -97,7 +97,7 @@ function Content(): ReactElement {
                                     />
                                     {errorMessage && (
                                         <Typography variant="caption" className="text-error">
-                                            {errorMessage as string}
+                                            {errorMessage}
                                         </Typography>
                                     )}
                                 </div>

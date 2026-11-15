@@ -70,7 +70,7 @@ function Content(): ReactElement {
                         name="email"
                         control={form.control}
                         render={({ field, formState }) => {
-                            const errorMessage = formState.errors.email?.message;
+                            const errorMessage = formState.errors?.email?.message;
 
                             return (
                                 <div className="flex flex-col gap-1">
