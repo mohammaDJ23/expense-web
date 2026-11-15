@@ -1,3 +1,13 @@
+## [1.7.0](https://github.com/mohammaDJ23/expense-web/compare/v1.6.0...v1.7.0) (2026-11-15)
+
+### ✨ Features
+
+- add the Local account page ([465a311](https://github.com/mohammaDJ23/expense-web/commit/465a311a88591c9a7a8341d48070b68be2781747))
+
+### ♻️ Code Refactoring
+
+- use Typography instead of the pure element ([040574d](https://github.com/mohammaDJ23/expense-web/commit/040574d2098f2ec1a9d46b2cc52471706df97b4b))
+
 ## [1.6.0](https://github.com/mohammaDJ23/expense-web/compare/v1.5.0...v1.6.0) (2026-11-14)
 
 ### ✨ Features
