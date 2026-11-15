@@ -1,3 +1,13 @@
+## [1.8.1](https://github.com/mohammaDJ23/expense-web/compare/v1.8.0...v1.8.1) (2026-11-15)
+
+### ♻️ Code Refactoring
+
+- centralize the used schemas ([b2e6e73](https://github.com/mohammaDJ23/expense-web/commit/b2e6e7361ceec4c285f181033baea928ca4f6794))
+
+### 🔧 Chores
+
+- use as for Typography ([0f91911](https://github.com/mohammaDJ23/expense-web/commit/0f919118d8177ac1514f54beeec4f7f1e80654ed))
+
 ## [1.8.0](https://github.com/mohammaDJ23/expense-web/compare/v1.7.0...v1.8.0) (2026-11-15)
 
 ### ✨ Features
