@@ -2,6 +2,7 @@ import axios, { type AxiosRequestConfig, type AxiosResponse, type AxiosError } f
 
 const axiosInstance = axios.create({
     baseURL: import.meta.env.VITE_API_URL,
+    withCredentials: true,
 });
 
 export function customInstance<T = unknown, D = unknown>(
