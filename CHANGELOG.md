@@ -1,3 +1,9 @@
+## [1.8.4](https://github.com/mohammaDJ23/expense-web/compare/v1.8.3...v1.8.4) (2026-11-16)
+
+### 🔧 Chores
+
+- add the withCredentials option ([0f04688](https://github.com/mohammaDJ23/expense-web/commit/0f04688773ff9e6ab1bd99b843f8c6f736586c77))
+
 ## [1.8.3](https://github.com/mohammaDJ23/expense-web/compare/v1.8.2...v1.8.3) (2026-11-16)
 
 ### 🐛 Bug Fixes
