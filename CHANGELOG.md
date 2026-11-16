@@ -1,3 +1,13 @@
+## [1.8.2](https://github.com/mohammaDJ23/expense-web/compare/v1.8.1...v1.8.2) (2026-11-16)
+
+### 🔧 Chores
+
+- add the authenticated and notAuthenticated middlewares ([3c7729c](https://github.com/mohammaDJ23/expense-web/commit/3c7729cd0bad57bbfb6e371ea2aab2e58bf830f4))
+- add the error page ([3683870](https://github.com/mohammaDJ23/expense-web/commit/3683870ba01d2d841b91a3ba5123b33f5f26125b))
+- localize the not found page route ([c4609fc](https://github.com/mohammaDJ23/expense-web/commit/c4609fc2612b496b6c380afe2c139161befa931f))
+- rename PageSpinner ([e9dd858](https://github.com/mohammaDJ23/expense-web/commit/e9dd858d41d638ba79a57a2d0160652a3c830369))
+- update put the app and not found route togather ([ad5d3ae](https://github.com/mohammaDJ23/expense-web/commit/ad5d3ae3333bf44277fddc39122ae53f9fa143ba))
+
 ## [1.8.1](https://github.com/mohammaDJ23/expense-web/compare/v1.8.0...v1.8.1) (2026-11-15)
 
 ### ♻️ Code Refactoring
