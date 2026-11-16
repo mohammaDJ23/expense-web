@@ -1,3 +1,9 @@
+## [1.8.3](https://github.com/mohammaDJ23/expense-web/compare/v1.8.2...v1.8.3) (2026-11-16)
+
+### 🐛 Bug Fixes
+
+- use try catch to also get the status code ([785238e](https://github.com/mohammaDJ23/expense-web/commit/785238e9382f37006890f53705b5ac6d667c3e7b))
+
 ## [1.8.2](https://github.com/mohammaDJ23/expense-web/compare/v1.8.1...v1.8.2) (2026-11-16)
 
 ### 🔧 Chores
