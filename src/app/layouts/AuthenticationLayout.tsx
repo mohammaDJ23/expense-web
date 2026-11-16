@@ -1,7 +1,7 @@
 import { Outlet, useNavigation } from 'react-router';
 
 import Typography from '@/features/shared/components/atoms/Typography';
-import PageSpinner from '@/features/shared/components/molecules/PageSpinner';
+import SpinnerPage from '@/features/shared/components/molecules/SpinnerPage';
 
 import type { ReactElement } from 'react';
 
@@ -9,7 +9,7 @@ function AuthenticationLayout(): ReactElement {
     const navigation = useNavigation();
 
     if (navigation.state === 'loading') {
-        return <PageSpinner />;
+        return <SpinnerPage />;
     }
 
     return (

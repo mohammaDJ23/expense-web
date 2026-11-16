@@ -2,7 +2,7 @@ import Spinner from '@/features/shared/components/atoms/Spinner';
 
 import type { ReactElement } from 'react';
 
-function PageSpinner(): ReactElement {
+function SpinnerPage(): ReactElement {
     return (
         <div className="flex flex-col items-center justify-center p-4 h-screen w-full">
             <Spinner size="lg" />
@@ -10,4 +10,4 @@ function PageSpinner(): ReactElement {
     );
 }
 
-export default PageSpinner;
+export default SpinnerPage;
