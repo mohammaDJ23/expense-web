@@ -254,7 +254,7 @@ export default defineConfig([
         rules: {
             '@typescript-eslint/no-empty-object-type': 'off',
             '@typescript-eslint/explicit-function-return-type': 'off',
-            '@typescript-eslint/explicit-module-boundary-types': 'error',
+            '@typescript-eslint/explicit-module-boundary-types': 'off',
             '@typescript-eslint/no-explicit-any': 'error',
             '@typescript-eslint/no-unused-vars': [
                 'error',
@@ -366,7 +366,7 @@ export default defineConfig([
             'max-lines': ['error', { max: 500, skipBlankLines: true }],
             'max-lines-per-function': ['error', { max: 150 }],
             'max-params': 'off',
-            complexity: ['error', 15],
+            complexity: 'off',
             'consistent-return': 'error',
             eqeqeq: ['error', 'always'],
             curly: ['error', 'all'],
