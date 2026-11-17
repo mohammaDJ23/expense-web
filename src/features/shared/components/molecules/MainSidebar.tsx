@@ -62,7 +62,7 @@ function MainSidebar(): ReactElement {
 
     return (
         <aside className="flex h-dvh w-60 shrink-0 flex-col border-r border-border bg-surface overflow-hidden">
-            <div className="flex h-19 shrink-0 items-center gap-4 border-b border-border px-4 overflow-hidden">
+            <div className="flex h-15 shrink-0 items-center gap-4 border-b border-border px-4 overflow-hidden">
                 <Wallet fill="currentColor" className="text-primary" />
                 <AppName />
             </div>
