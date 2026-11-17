@@ -40,7 +40,7 @@ const NAVIGATIEON_ITEMS: INavigationItem[] = [
     { label: 'Create Location', path: '/locations/create', icon: MapPinPlus },
     { label: 'Receivers', path: '/receivers', icon: HandCoins },
     { label: 'Create Receiver', path: '/receivers/create', icon: WalletCards },
-    { label: 'Users', path: '/Users', icon: Users, role: UserRoles.OWNER },
+    { label: 'Users', path: '/users', icon: Users, role: UserRoles.OWNER },
 ];
 
 function MainSidebar(): ReactElement {
