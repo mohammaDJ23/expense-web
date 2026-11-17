@@ -1,4 +1,18 @@
 import { Fragment, useState, type ReactElement } from 'react';
+import {
+    ContactRound,
+    HandCoins,
+    LayoutDashboard,
+    MapPin,
+    MapPinPlus,
+    Receipt,
+    ReceiptText,
+    UserRoundPlus,
+    Users,
+    Wallet,
+    WalletCards,
+    type LucideIcon,
+} from 'lucide-react';
 import { Link, useLocation } from 'react-router';
 import { cx } from 'tailwind-variants';
 
@@ -11,20 +25,21 @@ import { UserRoles } from '@/features/shared/enums/userRole';
 interface INavigationItem {
     label: string;
     path: string;
+    icon: LucideIcon;
     role?: UserRoles;
 }
 
 const NAVIGATIEON_ITEMS: INavigationItem[] = [
-    { label: 'Dashboard', path: '/dashboard' },
-    { label: 'Bills', path: '/bills' },
-    { label: 'Create Bill', path: '/bills/create' },
-    { label: 'Consumers', path: '/consumers' },
-    { label: 'Create Consumer', path: '/consumers/create' },
-    { label: 'Locations', path: '/locations' },
-    { label: 'Create Location', path: '/locations/create' },
-    { label: 'Receivers', path: '/receivers' },
-    { label: 'Create Receiver', path: '/receivers/create' },
-    { label: 'Users', path: '/Users', role: UserRoles.OWNER },
+    { label: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
+    { label: 'Bills', path: '/bills', icon: Receipt },
+    { label: 'Create Bill', path: '/bills/create', icon: ReceiptText },
+    { label: 'Consumers', path: '/consumers', icon: ContactRound },
+    { label: 'Create Consumer', path: '/consumers/create', icon: UserRoundPlus },
+    { label: 'Locations', path: '/locations', icon: MapPin },
+    { label: 'Create Location', path: '/locations/create', icon: MapPinPlus },
+    { label: 'Receivers', path: '/receivers', icon: HandCoins },
+    { label: 'Create Receiver', path: '/receivers/create', icon: WalletCards },
+    { label: 'Users', path: '/Users', icon: Users, role: UserRoles.OWNER },
 ];
 
 function MainSidebar(): ReactElement {
@@ -46,8 +61,9 @@ function MainSidebar(): ReactElement {
     const name = `${firstName?.[0] ?? ''}${lastName?.[0] ?? ''}`.toUpperCase() || null;
 
     return (
-        <aside className="flex h-dvh w-60 shrink-0 flex-col border-r border-border bg-surface">
-            <div className="flex h-19 shrink-0 items-center justify-between border-b border-border px-4">
+        <aside className="flex h-dvh w-60 shrink-0 flex-col border-r border-border bg-surface overflow-hidden">
+            <div className="flex h-19 shrink-0 items-center gap-4 border-b border-border px-4 overflow-hidden">
+                <Wallet fill="currentColor" className="text-primary" />
                 <AppName />
             </div>
             <nav className="flex-1 flex flex-col gap-2 overflow-y-auto p-4 scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
@@ -58,21 +74,28 @@ function MainSidebar(): ReactElement {
                             to={item.path}
                             onClick={() => onNavigationClick(item)}
                             className={cx(
-                                'group flex items-center gap-4 rounded-xl px-4 py-2 transition-colors hover:bg-success-background',
+                                'overflow-hidden group flex items-center gap-4 rounded-xl px-4 py-2 transition-colors hover:bg-success-background',
                                 activePath === item.path && 'bg-success-background',
                             )}
                         >
+                            <item.icon
+                                fill={activePath === item.path ? 'currentColor' : 'none'}
+                                className={cx(
+                                    'group-hover:text-primary',
+                                    activePath === item.path && 'text-primary',
+                                )}
+                            />
                             <Typography
                                 className={cx(
-                                    'group-hover:text-success',
-                                    activePath === item.path && 'text-success',
+                                    'group-hover:text-primary truncate',
+                                    activePath === item.path && 'text-primary',
                                 )}
                             >
                                 {item.label}
                             </Typography>
                         </Link>
                     ) : (
-                        <Fragment></Fragment>
+                        <Fragment key={item.path}></Fragment>
                     ),
                 )}
             </nav>
