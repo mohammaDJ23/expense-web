@@ -2,7 +2,7 @@ import { isAxiosError } from 'axios';
 import { redirect, type MiddlewareFunction } from 'react-router';
 
 import { getFindMeQueryOptions } from '@/api/orval/generated/endpoints/user';
-import { queryClient } from '@/app/providers/queryProviderConstants';
+import { queryClient } from '@/app/providers/QueryProvider';
 
 export const authenticatedMiddleware: MiddlewareFunction = async (_, next) => {
     try {
