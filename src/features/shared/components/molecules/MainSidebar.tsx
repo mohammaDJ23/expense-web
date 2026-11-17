@@ -31,6 +31,10 @@ interface INavigationItem {
     role?: UserRoles;
 }
 
+interface IProps {
+    onItemClick?(): void;
+}
+
 const NAVIGATIEON_ITEMS: INavigationItem[] = [
     { label: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
     { label: 'Bills', path: '/bills', icon: Receipt },
@@ -45,7 +49,7 @@ const NAVIGATIEON_ITEMS: INavigationItem[] = [
     { label: 'Search', path: '/search', icon: Search },
 ];
 
-function MainSidebar(): ReactElement {
+function MainSidebar({ onItemClick = () => {} }: Readonly<IProps>): ReactElement {
     const location = useLocation();
 
     const [activePath, setActivePath] = useState<string>(location.pathname);
@@ -54,6 +58,8 @@ function MainSidebar(): ReactElement {
 
     const onNavigationClick = (item: INavigationItem) => {
         setActivePath(item.path);
+
+        onItemClick();
     };
 
     const id = findMeRequest.data?.data?.data?.id;
@@ -64,7 +70,7 @@ function MainSidebar(): ReactElement {
     const name = `${firstName?.[0] ?? ''}${lastName?.[0] ?? ''}`.toUpperCase() || null;
 
     return (
-        <aside className="flex h-dvh w-60 shrink-0 flex-col border-r border-border bg-surface overflow-hidden">
+        <aside className="flex h-dvh shrink-0 flex-col border-r border-border bg-surface overflow-hidden">
             <div className="flex h-15 shrink-0 items-center gap-4 border-b border-border px-4 overflow-hidden">
                 <Icon icon={Wallet} fill="currentColor" className="text-primary" />
                 <AppName />
