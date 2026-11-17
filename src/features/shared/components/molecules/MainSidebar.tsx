@@ -18,6 +18,7 @@ import { cx } from 'tailwind-variants';
 
 import { useFindMe } from '@/api/orval/generated/endpoints/user';
 import AppName from '@/features/shared/components/atoms/AppName';
+import Icon from '@/features/shared/components/atoms/Icon';
 import Image from '@/features/shared/components/atoms/Image';
 import Typography from '@/features/shared/components/atoms/Typography';
 import { UserRoles } from '@/features/shared/enums/userRole';
@@ -63,7 +64,7 @@ function MainSidebar(): ReactElement {
     return (
         <aside className="flex h-dvh w-60 shrink-0 flex-col border-r border-border bg-surface overflow-hidden">
             <div className="flex h-15 shrink-0 items-center gap-4 border-b border-border px-4 overflow-hidden">
-                <Wallet fill="currentColor" className="text-primary" />
+                <Icon icon={Wallet} fill="currentColor" className="text-primary" />
                 <AppName />
             </div>
             <nav className="flex-1 flex flex-col gap-2 overflow-y-auto p-4 scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
@@ -78,7 +79,8 @@ function MainSidebar(): ReactElement {
                                 activePath === item.path && 'bg-success-background',
                             )}
                         >
-                            <item.icon
+                            <Icon
+                                icon={item.icon}
                                 fill={activePath === item.path ? 'currentColor' : 'none'}
                                 className={cx(
                                     'group-hover:text-primary',
