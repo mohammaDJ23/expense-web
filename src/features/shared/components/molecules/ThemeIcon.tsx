@@ -10,7 +10,7 @@ function ThemeIcon(): ReactElement {
 
     return (
         <Icon
-            icon={theme.activeTheme === 'dark' ? Sun : Moon}
+            icon={theme.isDark ? Sun : Moon}
             className="cursor-pointer"
             onClick={theme.toggleTheme}
         />

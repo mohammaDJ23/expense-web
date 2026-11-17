@@ -15,7 +15,7 @@ function MainLayout(): ReactElement {
 
     return (
         <div className="flex min-h-dvh w-full bg-background">
-            <div className="hidden md:block">
+            <div className="hidden w-60 md:block">
                 <MainSidebar />
             </div>
             <div className="flex min-h-dvh min-w-0 flex-1 flex-col">
