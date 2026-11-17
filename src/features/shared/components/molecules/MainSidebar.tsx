@@ -7,6 +7,7 @@ import {
     MapPinPlus,
     Receipt,
     ReceiptText,
+    Search,
     UserRoundPlus,
     Users,
     Wallet,
@@ -41,6 +42,7 @@ const NAVIGATIEON_ITEMS: INavigationItem[] = [
     { label: 'Receivers', path: '/receivers', icon: HandCoins },
     { label: 'Create Receiver', path: '/receivers/create', icon: WalletCards },
     { label: 'Users', path: '/users', icon: Users, role: UserRoles.OWNER },
+    { label: 'Search', path: '/search', icon: Search },
 ];
 
 function MainSidebar(): ReactElement {
