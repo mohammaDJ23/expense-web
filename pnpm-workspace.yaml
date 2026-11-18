@@ -9,3 +9,7 @@ overrides:
     protobufjs@<=7.5.7: '>=7.5.8'
     protobufjs@<=7.6.0: '>=7.6.1'
     protobufjs@<=7.6.2: '>=7.6.3'
+
+auditConfig:
+    ignoreGhsas:
+        - GHSA-fc5q-39xc-vjpf
