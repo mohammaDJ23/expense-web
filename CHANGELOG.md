@@ -1,3 +1,26 @@
+## [1.9.0](https://github.com/mohammaDJ23/expense-web/compare/v1.8.4...v1.9.0) (2026-11-18)
+
+### ✨ Features
+
+- add the theme ([793664f](https://github.com/mohammaDJ23/expense-web/commit/793664fc3d1c104a87bba2cbb0e60cb19267ac9f))
+
+### 🔧 Chores
+
+- add Icon ([9265f5c](https://github.com/mohammaDJ23/expense-web/commit/9265f5c5846630aa57062e96161016dc8b7adb7a))
+- add lucide-react ([0d6664d](https://github.com/mohammaDJ23/expense-web/commit/0d6664d5b3afc430abaf053a9c197a797153f8b3))
+- add search route ([ba551df](https://github.com/mohammaDJ23/expense-web/commit/ba551df5f7428eba36f2fae130c28cf71f3ecdf9))
+- add some icons to the navs ([359cfdc](https://github.com/mohammaDJ23/expense-web/commit/359cfdce78adadba97810e598115a0b698ec88d1))
+- add the AppName & Image components ([05ba9ef](https://github.com/mohammaDJ23/expense-web/commit/05ba9ef0c30c5b1d1e20d45792549d11890996b3))
+- add the MainHeader & MainSidebar components ([bf02577](https://github.com/mohammaDJ23/expense-web/commit/bf0257730d5c681736e651c65a2e2f5843bfc754))
+- add the MainLayout components ([4dfe7fe](https://github.com/mohammaDJ23/expense-web/commit/4dfe7fee5e737b9aab06058bd91f7c2f9de26bb8))
+- add the mobile side bar ([a3038fc](https://github.com/mohammaDJ23/expense-web/commit/a3038fc8ce8539304bd76aee21bafc5cb019aa90))
+- add the route of dashboard ([88bdff8](https://github.com/mohammaDJ23/expense-web/commit/88bdff8472a1336126b10a3e4b72415cf839362c))
+- add the user roles ([c9544d7](https://github.com/mohammaDJ23/expense-web/commit/c9544d78370b2c999c1e3170d8872415b62e64a1))
+- ignore picomatch since there is no new version ([3c70781](https://github.com/mohammaDJ23/expense-web/commit/3c707818e9ae1ef09a863171d530564bf3e97cac))
+- revise h-19 to h-15 ([bb7201b](https://github.com/mohammaDJ23/expense-web/commit/bb7201bff4050b67663811ae81bacf422bbe01e2))
+- update the path of users ([2ec38b9](https://github.com/mohammaDJ23/expense-web/commit/2ec38b9277665713c2eeeeff684a1ce4ddd58521))
+- use queryClient inside QueryProvider ([00e3b1f](https://github.com/mohammaDJ23/expense-web/commit/00e3b1f02855b707b6ac4f5e16ccd561232e0ac6))
+
 ## [1.8.4](https://github.com/mohammaDJ23/expense-web/compare/v1.8.3...v1.8.4) (2026-11-16)
 
 ### 🔧 Chores
