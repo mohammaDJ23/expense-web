@@ -19,8 +19,8 @@ import { getGoogleLoginLink } from '@/features/shared/utils/getGoogleLoginLink';
 function Content(): ReactElement {
     const navigate = useNavigate();
 
-    const localLoginRequest = useLocalLogin();
-    const isLocalLoginPending = localLoginRequest.isPending;
+    const request = useLocalLogin();
+    const isPending = request.isPending;
 
     const form = useForm<TLoginSchema>({
         resolver: zodResolver(loginSchema),
@@ -34,22 +34,22 @@ function Content(): ReactElement {
     const onSubmit = (event: SubmitEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        if (isLocalLoginPending) {
+        if (isPending) {
             return;
         }
 
-        localLoginRequest.reset();
+        request.reset();
 
         form.handleSubmit((data) => {
-            localLoginRequest
+            request
                 .mutateAsync({ data })
                 .then(() => form.reset())
-                .then(() => localLoginRequest.reset())
+                .then(() => request.reset())
                 .then(() => navigate('/'))
                 .catch((error: unknown) => {
                     if (isAxiosError(error) && error.response?.status === 422) {
                         form.reset();
-                        localLoginRequest.reset();
+                        request.reset();
 
                         navigate('/authentication/local-account-initiation');
                     }
@@ -59,19 +59,19 @@ function Content(): ReactElement {
 
     const onGoogleLoginClick = useCallback(() => {
         form.reset();
-        localLoginRequest.reset();
+        request.reset();
 
         window.location.href = getGoogleLoginLink();
-    }, [localLoginRequest, form]);
+    }, [request, form]);
 
     const onSignupClick = () => {
         form.reset();
-        localLoginRequest.reset();
+        request.reset();
 
         navigate('/authentication/signup-initiation');
     };
 
-    const localLoginErrorMessage = getApiErrorMessage(localLoginRequest.error);
+    const localLoginErrorMessage = getApiErrorMessage(request.error);
 
     return (
         <div className="flex flex-col gap-6">
@@ -96,9 +96,9 @@ function Content(): ReactElement {
                                     <Input
                                         placeholder="email"
                                         name="email"
-                                        onChange={isLocalLoginPending ? () => {} : field.onChange}
+                                        onChange={isPending ? () => {} : field.onChange}
                                         value={field.value}
-                                        disabled={isLocalLoginPending}
+                                        disabled={isPending}
                                     />
                                     {errorMessage && (
                                         <Typography variant="caption" className="text-error">
@@ -121,9 +121,9 @@ function Content(): ReactElement {
                                         type="password"
                                         placeholder="password"
                                         name="password"
-                                        onChange={isLocalLoginPending ? () => {} : field.onChange}
+                                        onChange={isPending ? () => {} : field.onChange}
                                         value={field.value}
-                                        disabled={isLocalLoginPending}
+                                        disabled={isPending}
                                     />
                                     {errorMessage && (
                                         <Typography variant="caption" className="text-error">
@@ -134,7 +134,7 @@ function Content(): ReactElement {
                             );
                         }}
                     />
-                    <Button fullWidth type="submit" disabled={isLocalLoginPending}>
+                    <Button fullWidth type="submit" disabled={isPending}>
                         Sign In
                     </Button>
                     <Message message={localLoginErrorMessage} variant="error" />

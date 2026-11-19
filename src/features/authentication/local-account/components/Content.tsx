@@ -19,8 +19,8 @@ function Content(): ReactElement {
 
     const [searchParams] = useSearchParams();
 
-    const localAccountRequest = useLocalAccountCreation();
-    const isLocalAccountPending = localAccountRequest.isPending;
+    const request = useLocalAccountCreation();
+    const isPending = request.isPending;
 
     const token = searchParams.get('token');
 
@@ -36,24 +36,24 @@ function Content(): ReactElement {
     const onSubmit = (event: SubmitEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        if (isLocalAccountPending) {
+        if (isPending) {
             return;
         }
 
-        localAccountRequest.reset();
+        request.reset();
 
         form.handleSubmit((data) => {
-            localAccountRequest
+            request
                 .mutateAsync({ data })
                 .then(() => form.reset())
-                .then(() => localAccountRequest.reset())
+                .then(() => request.reset())
                 .then(() => navigate('/authentication/login'));
         })();
     };
 
     const onSigninClick = () => {
         form.reset();
-        localAccountRequest.reset();
+        request.reset();
 
         navigate('/authentication/login');
     };
@@ -62,7 +62,7 @@ function Content(): ReactElement {
         return <Navigate to="/authentication/login" />;
     }
 
-    const localAccountErrorMessage = getApiErrorMessage(localAccountRequest.error);
+    const errorMessage = getApiErrorMessage(request.error);
 
     return (
         <div className="flex flex-col gap-6">
@@ -116,9 +116,9 @@ function Content(): ReactElement {
                                         type="password"
                                         placeholder="password"
                                         name="password"
-                                        onChange={isLocalAccountPending ? () => {} : field.onChange}
+                                        onChange={isPending ? () => {} : field.onChange}
                                         value={field.value}
-                                        disabled={isLocalAccountPending}
+                                        disabled={isPending}
                                     />
                                     {errorMessage && (
                                         <Typography variant="caption" className="text-error">
@@ -129,10 +129,10 @@ function Content(): ReactElement {
                             );
                         }}
                     />
-                    <Button fullWidth type="submit" disabled={isLocalAccountPending}>
+                    <Button fullWidth type="submit" disabled={isPending}>
                         Create
                     </Button>
-                    <Message message={localAccountErrorMessage} variant="error" />
+                    <Message message={errorMessage} variant="error" />
                 </form>
             </div>
             <Typography onClick={onSigninClick} className="text-center text-primary cursor-pointer">

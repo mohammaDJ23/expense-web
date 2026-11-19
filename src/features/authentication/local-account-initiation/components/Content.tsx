@@ -17,8 +17,8 @@ import { getApiErrorMessage } from '@/features/shared/utils/getApiErrorMessage';
 function Content(): ReactElement {
     const navigate = useNavigate();
 
-    const localAccountInitiationRequest = useLocalAccountInitiation();
-    const isLocalAccountInitiationPending = localAccountInitiationRequest.isPending;
+    const request = useLocalAccountInitiation();
+    const isPending = request.isPending;
 
     const form = useForm<TLocalAccountInitiationSchema>({
         resolver: zodResolver(localAccountInitiationSchema),
@@ -31,28 +31,26 @@ function Content(): ReactElement {
     const onSubmit = (event: SubmitEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        if (isLocalAccountInitiationPending) {
+        if (isPending) {
             return;
         }
 
-        localAccountInitiationRequest.reset();
+        request.reset();
 
         form.handleSubmit((data) => {
-            localAccountInitiationRequest.mutateAsync({ data }).then(() => form.reset());
+            request.mutateAsync({ data }).then(() => form.reset());
         })();
     };
 
     const onSigninClick = () => {
         form.reset();
-        localAccountInitiationRequest.reset();
+        request.reset();
 
         navigate('/authentication/login');
     };
 
-    const localAccountInitiationSuccessMessage = localAccountInitiationRequest.data?.data?.message;
-    const localAccountInitiationErrorMessage = getApiErrorMessage(
-        localAccountInitiationRequest.error,
-    );
+    const successMessage = request.data?.data?.message;
+    const errorMessage = getApiErrorMessage(request.error);
 
     return (
         <div className="flex flex-col gap-6">
@@ -77,13 +75,9 @@ function Content(): ReactElement {
                                     <Input
                                         placeholder="email"
                                         name="email"
-                                        onChange={
-                                            isLocalAccountInitiationPending
-                                                ? () => {}
-                                                : field.onChange
-                                        }
+                                        onChange={isPending ? () => {} : field.onChange}
                                         value={field.value}
-                                        disabled={isLocalAccountInitiationPending}
+                                        disabled={isPending}
                                     />
                                     {errorMessage && (
                                         <Typography variant="caption" className="text-error">
@@ -94,11 +88,11 @@ function Content(): ReactElement {
                             );
                         }}
                     />
-                    <Button fullWidth type="submit" disabled={isLocalAccountInitiationPending}>
+                    <Button fullWidth type="submit" disabled={isPending}>
                         Continue
                     </Button>
-                    <Message message={localAccountInitiationErrorMessage} variant="error" />
-                    <Message message={localAccountInitiationSuccessMessage} variant="success" />
+                    <Message message={errorMessage} variant="error" />
+                    <Message message={successMessage} variant="success" />
                 </form>
             </div>
             <Typography onClick={onSigninClick} className="text-center text-primary cursor-pointer">
