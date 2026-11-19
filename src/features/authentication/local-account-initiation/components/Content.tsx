@@ -1,4 +1,3 @@
-import { memo, type ReactElement, type SubmitEvent } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
@@ -13,6 +12,8 @@ import Input from '@/features/shared/components/atoms/Input';
 import Message from '@/features/shared/components/atoms/Message';
 import Typography from '@/features/shared/components/atoms/Typography';
 import { getApiErrorMessage } from '@/features/shared/utils/getApiErrorMessage';
+
+import type { ReactElement, SubmitEvent } from 'react';
 
 function Content(): ReactElement {
     const navigate = useNavigate();
@@ -102,4 +103,4 @@ function Content(): ReactElement {
     );
 }
 
-export default memo(Content);
+export default Content;
