@@ -1,3 +1,13 @@
+## [1.11.0](https://github.com/mohammaDJ23/expense-web/compare/v1.10.0...v1.11.0) (2026-11-19)
+
+### ✨ Features
+
+- add create location page ([be3103c](https://github.com/mohammaDJ23/expense-web/commit/be3103ca56e43c89bdc61a17cd314909bce05557))
+
+### 🔧 Chores
+
+- reset the request when the form is valid ([0296b1e](https://github.com/mohammaDJ23/expense-web/commit/0296b1e08730bb1b39cb4f0d398e31406dee030a))
+
 ## [1.10.0](https://github.com/mohammaDJ23/expense-web/compare/v1.9.0...v1.10.0) (2026-11-19)
 
 ### ✨ Features
