@@ -30,7 +30,11 @@ function BillsPeriod(): ReactNode {
         const end = request.data.end;
 
         if (!start || !end) {
-            return null;
+            return (
+                <Card className="min-h-26 flex flex-col items-center justify-center">
+                    <Typography className="text-center">There is no bills period data</Typography>
+                </Card>
+            );
         }
 
         return (
