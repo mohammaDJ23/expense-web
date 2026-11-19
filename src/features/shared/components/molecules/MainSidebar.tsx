@@ -88,7 +88,7 @@ function MainSidebar({ onItemClick = () => {} }: Readonly<IProps>): ReactElement
                             to={item.path}
                             onClick={() => onNavigationClick(item)}
                             className={cx(
-                                'overflow-hidden group flex items-center gap-4 rounded-xl px-4 py-2 transition-colors hover:bg-success-background',
+                                'overflow-hidden shrink-0 group flex items-center gap-4 rounded-xl px-4 py-2 transition-colors hover:bg-success-background',
                                 activePath === item.path && 'bg-success-background',
                             )}
                         >
