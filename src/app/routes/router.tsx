@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router';
+import { createBrowserRouter, Navigate } from 'react-router';
 
 import { authenticationRoutes } from '@/features/authentication/routes';
 import { dashboardRoute } from '@/features/dashboard/route';
@@ -10,6 +10,14 @@ export const router = createBrowserRouter([
     {
         HydrateFallback: SpinnerPage,
         ErrorBoundary: ErrorPage,
-        children: [authenticationRoutes, dashboardRoute, notFoundRoute],
+        children: [
+            {
+                index: true,
+                element: <Navigate to="/dashboard" replace />,
+            },
+            authenticationRoutes,
+            dashboardRoute,
+            notFoundRoute,
+        ],
     },
 ]);
