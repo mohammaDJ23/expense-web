@@ -36,7 +36,11 @@ function MostUsedLocations(): ReactNode {
         const data = request.data;
 
         if (data.length <= 0) {
-            return null;
+            return (
+                <Card className="min-h-[296.484px] flex flex-col items-center justify-center">
+                    <Typography className="text-center">Not any locations used yet</Typography>
+                </Card>
+            );
         }
 
         const maxCount = Math.max(...data.map((item) => item.total));

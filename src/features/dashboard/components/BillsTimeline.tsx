@@ -43,7 +43,13 @@ function BillsTimeline(): ReactNode {
         }));
 
         if (data.length <= 0) {
-            return null;
+            return (
+                <Card className="min-h-96 flex flex-col items-center justify-center">
+                    <Typography className="text-center">
+                        There is no data to show on the chart
+                    </Typography>
+                </Card>
+            );
         }
 
         return (
