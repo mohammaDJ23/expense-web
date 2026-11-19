@@ -17,8 +17,8 @@ import { getApiErrorMessage } from '@/features/shared/utils/getApiErrorMessage';
 function Content(): ReactElement {
     const navigate = useNavigate();
 
-    const localForgotPasswordRequest = useLocalForgotPassword();
-    const isLocalForgotPasswordPending = localForgotPasswordRequest.isPending;
+    const request = useLocalForgotPassword();
+    const isPending = request.isPending;
 
     const form = useForm<TForgotPasswordSchema>({
         resolver: zodResolver(forgotPasswordSchema),
@@ -31,26 +31,26 @@ function Content(): ReactElement {
     const onSubmit = (event: SubmitEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        if (isLocalForgotPasswordPending) {
+        if (isPending) {
             return;
         }
 
-        localForgotPasswordRequest.reset();
+        request.reset();
 
         form.handleSubmit((data) => {
-            localForgotPasswordRequest.mutateAsync({ data }).then(() => form.reset());
+            request.mutateAsync({ data }).then(() => form.reset());
         })();
     };
 
     const onSigninClick = () => {
         form.reset();
-        localForgotPasswordRequest.reset();
+        request.reset();
 
         navigate('/authentication/login');
     };
 
-    const localForgotPasswordSuccessMessage = localForgotPasswordRequest.data?.data?.message;
-    const localForgotPasswordErrorMessage = getApiErrorMessage(localForgotPasswordRequest.error);
+    const successMessage = request.data?.data?.message;
+    const errorMessage = getApiErrorMessage(request.error);
 
     return (
         <div className="flex flex-col gap-6">
@@ -75,11 +75,9 @@ function Content(): ReactElement {
                                     <Input
                                         placeholder="email"
                                         name="email"
-                                        onChange={
-                                            isLocalForgotPasswordPending ? () => {} : field.onChange
-                                        }
+                                        onChange={isPending ? () => {} : field.onChange}
                                         value={field.value}
-                                        disabled={isLocalForgotPasswordPending}
+                                        disabled={isPending}
                                     />
                                     {errorMessage && (
                                         <Typography variant="caption" className="text-error">
@@ -90,11 +88,11 @@ function Content(): ReactElement {
                             );
                         }}
                     />
-                    <Button fullWidth type="submit" disabled={isLocalForgotPasswordPending}>
+                    <Button fullWidth type="submit" disabled={isPending}>
                         Send Reset Link
                     </Button>
-                    <Message message={localForgotPasswordErrorMessage} variant="error" />
-                    <Message message={localForgotPasswordSuccessMessage} variant="success" />
+                    <Message message={errorMessage} variant="error" />
+                    <Message message={successMessage} variant="success" />
                 </form>
             </div>
             <Typography onClick={onSigninClick} className="text-center text-primary cursor-pointer">

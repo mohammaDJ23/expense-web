@@ -18,8 +18,8 @@ import { getGoogleLoginLink } from '@/features/shared/utils/getGoogleLoginLink';
 function Content(): ReactElement {
     const navigate = useNavigate();
 
-    const localSignupInitiationRequest = useLocalSignupInitiation();
-    const isLocalSignupInitiationPending = localSignupInitiationRequest.isPending;
+    const request = useLocalSignupInitiation();
+    const isPending = request.isPending;
 
     const form = useForm<TSignupInitiationSchema>({
         resolver: zodResolver(signupInitiationSchema),
@@ -32,14 +32,14 @@ function Content(): ReactElement {
     const onSubmit = (event: SubmitEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        if (isLocalSignupInitiationPending) {
+        if (isPending) {
             return;
         }
 
-        localSignupInitiationRequest.reset();
+        request.reset();
 
         form.handleSubmit((data) => {
-            localSignupInitiationRequest.mutateAsync({ data }).then(() => {
+            request.mutateAsync({ data }).then(() => {
                 form.reset();
             });
         })();
@@ -47,22 +47,20 @@ function Content(): ReactElement {
 
     const onGoogleLoginClick = useCallback(() => {
         form.reset();
-        localSignupInitiationRequest.reset();
+        request.reset();
 
         window.location.href = getGoogleLoginLink();
-    }, [localSignupInitiationRequest, form]);
+    }, [request, form]);
 
     const onSigninClick = () => {
         form.reset();
-        localSignupInitiationRequest.reset();
+        request.reset();
 
         navigate('/authentication/login');
     };
 
-    const localSignupInitiationSuccessMessage = localSignupInitiationRequest.data?.data?.message;
-    const localSignupInitiationErrorMessage = getApiErrorMessage(
-        localSignupInitiationRequest.error,
-    );
+    const successMessage = request.data?.data?.message;
+    const errorMessage = getApiErrorMessage(request.error);
 
     return (
         <div className="flex flex-col gap-6">
@@ -87,13 +85,9 @@ function Content(): ReactElement {
                                     <Input
                                         placeholder="email"
                                         name="email"
-                                        onChange={
-                                            isLocalSignupInitiationPending
-                                                ? () => {}
-                                                : field.onChange
-                                        }
+                                        onChange={isPending ? () => {} : field.onChange}
                                         value={field.value}
-                                        disabled={isLocalSignupInitiationPending}
+                                        disabled={isPending}
                                     />
                                     {errorMessage && (
                                         <Typography variant="caption" className="text-error">
@@ -104,11 +98,11 @@ function Content(): ReactElement {
                             );
                         }}
                     />
-                    <Button fullWidth type="submit" disabled={isLocalSignupInitiationPending}>
+                    <Button fullWidth type="submit" disabled={isPending}>
                         Continue
                     </Button>
-                    <Message message={localSignupInitiationErrorMessage} variant="error" />
-                    <Message message={localSignupInitiationSuccessMessage} variant="success" />
+                    <Message message={errorMessage} variant="error" />
+                    <Message message={successMessage} variant="success" />
                 </form>
             </div>
             <div className="flex items-center gap-4">

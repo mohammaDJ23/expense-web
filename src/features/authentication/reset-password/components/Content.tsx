@@ -19,8 +19,8 @@ function Content(): ReactElement {
 
     const [searchParams] = useSearchParams();
 
-    const localResetPasswordRequest = useLocalResetPassword();
-    const isLocalResetPasswordPending = localResetPasswordRequest.isPending;
+    const request = useLocalResetPassword();
+    const isPending = request.isPending;
 
     const token = searchParams.get('token');
 
@@ -36,24 +36,24 @@ function Content(): ReactElement {
     const onSubmit = (event: SubmitEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        if (isLocalResetPasswordPending) {
+        if (isPending) {
             return;
         }
 
-        localResetPasswordRequest.reset();
+        request.reset();
 
         form.handleSubmit((data) => {
-            localResetPasswordRequest
+            request
                 .mutateAsync({ data })
                 .then(() => form.reset())
-                .then(() => localResetPasswordRequest.reset())
+                .then(() => request.reset())
                 .then(() => navigate('/authentication/login'));
         })();
     };
 
     const onSigninClick = () => {
         form.reset();
-        localResetPasswordRequest.reset();
+        request.reset();
 
         navigate('/authentication/login');
     };
@@ -62,7 +62,7 @@ function Content(): ReactElement {
         return <Navigate to="/authentication/login" />;
     }
 
-    const localResetPasswordErrorMessage = getApiErrorMessage(localResetPasswordRequest.error);
+    const localResetPasswordErrorMessage = getApiErrorMessage(request.error);
 
     return (
         <div className="flex flex-col gap-6">
@@ -116,11 +116,9 @@ function Content(): ReactElement {
                                         type="password"
                                         placeholder="new password"
                                         name="newPassword"
-                                        onChange={
-                                            isLocalResetPasswordPending ? () => {} : field.onChange
-                                        }
+                                        onChange={isPending ? () => {} : field.onChange}
                                         value={field.value}
-                                        disabled={isLocalResetPasswordPending}
+                                        disabled={isPending}
                                     />
                                     {errorMessage && (
                                         <Typography variant="caption" className="text-error">
@@ -131,7 +129,7 @@ function Content(): ReactElement {
                             );
                         }}
                     />
-                    <Button fullWidth type="submit" disabled={isLocalResetPasswordPending}>
+                    <Button fullWidth type="submit" disabled={isPending}>
                         Reset Password
                     </Button>
                     <Message message={localResetPasswordErrorMessage} variant="error" />
