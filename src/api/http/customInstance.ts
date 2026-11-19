@@ -5,6 +5,14 @@ const axiosInstance = axios.create({
     withCredentials: true,
 });
 
+axiosInstance.interceptors.request.use((config) => {
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+    config.headers.set('Client-Timezone', timeZone);
+
+    return config;
+});
+
 export function customInstance<T = unknown, D = unknown>(
     config: AxiosRequestConfig<D>,
 ): Promise<AxiosResponse<T, D>> {
