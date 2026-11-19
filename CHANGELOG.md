@@ -1,3 +1,23 @@
+## [1.10.0](https://github.com/mohammaDJ23/expense-web/compare/v1.9.0...v1.10.0) (2026-11-19)
+
+### ✨ Features
+
+- add the dashboard page ([2b6f064](https://github.com/mohammaDJ23/expense-web/commit/2b6f064fc6ac5d7f35fb120c1c42b7c98f65e435))
+
+### 🔧 Chores
+
+- add downloadBlod and getApiResponse utils ([8a93a4d](https://github.com/mohammaDJ23/expense-web/commit/8a93a4d0285bbadefea8c6f18768ec9120aeac6a))
+- add the Card and Skeleton components ([fe565e2](https://github.com/mohammaDJ23/expense-web/commit/fe565e29ad87d394cee185491fe2b787f7ebd0b8))
+- add the Client-Timezone header ([8b863bb](https://github.com/mohammaDJ23/expense-web/commit/8b863bbfed58f20db9182b53c01bfacf407f2db9))
+- fix the styles of scrolling ([1fe6793](https://github.com/mohammaDJ23/expense-web/commit/1fe6793b98e7916d6570dbe13c8b848fb2f1e573))
+- install the rechart package ([9efaf50](https://github.com/mohammaDJ23/expense-web/commit/9efaf50cec23280262b489757fc8f63e373370aa))
+- move from index to dashboard ([7fc70fa](https://github.com/mohammaDJ23/expense-web/commit/7fc70fa5f1a6cc1cd65d082db18b5d53a2ce37dc))
+- remove memo since there is no start in the parent ([0dba9c9](https://github.com/mohammaDJ23/expense-web/commit/0dba9c9b98f91fd5b42ebd249b2310bd32032f19))
+- rename the variable names ([d987fc1](https://github.com/mohammaDJ23/expense-web/commit/d987fc1ede47f7c67224159be07049bba418d3b7))
+- reuse the respnose ([7818808](https://github.com/mohammaDJ23/expense-web/commit/78188084ae714f272c9b779f636fe89803447993))
+- show empty state instead of null ([ebc39e7](https://github.com/mohammaDJ23/expense-web/commit/ebc39e7a78d83a2725db9fe93d50b98de97a0314))
+- use Card ([9e397c0](https://github.com/mohammaDJ23/expense-web/commit/9e397c032e48456a1a43c30c2ac9d2a7bff86947))
+
 ## [1.9.0](https://github.com/mohammaDJ23/expense-web/compare/v1.8.4...v1.9.0) (2026-11-18)
 
 ### ✨ Features
