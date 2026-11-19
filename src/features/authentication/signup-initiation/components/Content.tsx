@@ -1,4 +1,4 @@
-import { memo, useCallback, type ReactElement, type SubmitEvent } from 'react';
+import { useCallback, type ReactElement, type SubmitEvent } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
@@ -129,4 +129,4 @@ function Content(): ReactElement {
     );
 }
 
-export default memo(Content);
+export default Content;
