@@ -36,12 +36,10 @@ function Content(): ReactElement {
             return;
         }
 
-        request.reset();
-
         form.handleSubmit((data) => {
-            request.mutateAsync({ data }).then(() => {
-                form.reset();
-            });
+            request.reset();
+
+            request.mutateAsync({ data }).then(() => form.reset());
         })();
     };
 

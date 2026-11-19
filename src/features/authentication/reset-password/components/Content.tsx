@@ -41,9 +41,9 @@ function Content(): ReactElement {
             return;
         }
 
-        request.reset();
-
         form.handleSubmit((data) => {
+            request.reset();
+
             request
                 .mutateAsync({ data })
                 .then(() => form.reset())
