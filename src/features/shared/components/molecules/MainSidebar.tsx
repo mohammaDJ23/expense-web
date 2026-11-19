@@ -1,4 +1,4 @@
-import { Fragment, useState, type ReactElement } from 'react';
+import { Fragment, memo, useState, type ReactElement } from 'react';
 import {
     ContactRound,
     HandCoins,
@@ -23,6 +23,7 @@ import Icon from '@/features/shared/components/atoms/Icon';
 import Image from '@/features/shared/components/atoms/Image';
 import Typography from '@/features/shared/components/atoms/Typography';
 import { UserRoles } from '@/features/shared/enums/userRole';
+import { getApiResponse } from '@/features/shared/utils/getApiResponse';
 
 interface INavigationItem {
     label: string;
@@ -35,7 +36,7 @@ interface IProps {
     onItemClick?(): void;
 }
 
-const NAVIGATIEON_ITEMS: INavigationItem[] = [
+const NAVIGATION_ITEMS: INavigationItem[] = [
     { label: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
     { label: 'Bills', path: '/bills', icon: Receipt },
     { label: 'Create Bill', path: '/bills/create', icon: ReceiptText },
@@ -54,7 +55,11 @@ function MainSidebar({ onItemClick = () => {} }: Readonly<IProps>): ReactElement
 
     const [activePath, setActivePath] = useState<string>(location.pathname);
 
-    const findMeRequest = useFindMe();
+    const findMeRequest = useFindMe({
+        query: {
+            select: getApiResponse,
+        },
+    });
 
     const onNavigationClick = (item: INavigationItem) => {
         setActivePath(item.path);
@@ -62,11 +67,11 @@ function MainSidebar({ onItemClick = () => {} }: Readonly<IProps>): ReactElement
         onItemClick();
     };
 
-    const id = findMeRequest.data?.data?.data?.id;
-    const role = findMeRequest.data?.data?.data?.role;
-    const firstName = findMeRequest.data?.data?.data?.firstName;
-    const lastName = findMeRequest.data?.data?.data?.lastName;
-    const avatar = findMeRequest.data?.data?.data?.avatar;
+    const id = findMeRequest.data?.id;
+    const role = findMeRequest.data?.role;
+    const firstName = findMeRequest.data?.firstName;
+    const lastName = findMeRequest.data?.lastName;
+    const avatar = findMeRequest.data?.avatar;
     const name = `${firstName?.[0] ?? ''}${lastName?.[0] ?? ''}`.toUpperCase() || null;
 
     return (
@@ -76,7 +81,7 @@ function MainSidebar({ onItemClick = () => {} }: Readonly<IProps>): ReactElement
                 <AppName />
             </div>
             <nav className="flex-1 flex flex-col gap-2 overflow-y-auto p-4 scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-                {NAVIGATIEON_ITEMS.map((item) =>
+                {NAVIGATION_ITEMS.map((item) =>
                     !item?.role || role === item?.role ? (
                         <Link
                             key={item.path}
@@ -129,4 +134,4 @@ function MainSidebar({ onItemClick = () => {} }: Readonly<IProps>): ReactElement
     );
 }
 
-export default MainSidebar;
+export default memo(MainSidebar);
