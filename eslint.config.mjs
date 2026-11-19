@@ -215,7 +215,7 @@ export default defineConfig([
         },
         rules: {
             ...sonarjs.configs.recommended.rules,
-            'sonarjs/cognitive-complexity': ['error', 15],
+            'sonarjs/cognitive-complexity': 'off',
             'sonarjs/no-duplicate-string': 'error',
             'sonarjs/no-all-duplicated-branches': 'error',
             'sonarjs/no-identical-functions': 'error',

@@ -16,10 +16,15 @@ export function getApiErrorMessage<T>(error: AxiosError<T> | null | undefined): 
             'data' in responseData &&
             responseData.data &&
             typeof responseData.data === 'object' &&
-            'message' in responseData.data &&
-            typeof responseData.data.message === 'string'
+            'message' in responseData.data
         ) {
-            return responseData.data.message;
+            if (typeof responseData.data.message === 'string') {
+                return responseData.data.message;
+            }
+
+            if (Array.isArray(responseData.data.message)) {
+                return responseData.data.message.join(', ');
+            }
         }
 
         if ('message' in responseData && typeof responseData.message === 'string') {
