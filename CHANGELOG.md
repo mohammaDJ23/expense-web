@@ -1,3 +1,9 @@
+## [1.12.1](https://github.com/mohammaDJ23/expense-web/compare/v1.12.0...v1.12.1) (2026-11-20)
+
+### 🔧 Chores
+
+- add the create receiver page ([1806e80](https://github.com/mohammaDJ23/expense-web/commit/1806e80e7c538f5a23dfe5eaac61f604871dfbb3))
+
 ## [1.12.0](https://github.com/mohammaDJ23/expense-web/compare/v1.11.0...v1.12.0) (2026-11-20)
 
 ### ✨ Features
