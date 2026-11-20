@@ -1,3 +1,9 @@
+## [1.12.0](https://github.com/mohammaDJ23/expense-web/compare/v1.11.0...v1.12.0) (2026-11-20)
+
+### ✨ Features
+
+- add the create consumer page ([e905de5](https://github.com/mohammaDJ23/expense-web/commit/e905de5fde10ebb3e22736d077856a9a96684c03))
+
 ## [1.11.0](https://github.com/mohammaDJ23/expense-web/compare/v1.10.0...v1.11.0) (2026-11-19)
 
 ### ✨ Features
