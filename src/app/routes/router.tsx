@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router';
 
 import { authenticationRoutes } from '@/features/authentication/routes';
+import { consumerRoutes } from '@/features/consumer/routes';
 import { dashboardRoute } from '@/features/dashboard/route';
 import { locationRoutes } from '@/features/location/routes';
 import { notFoundRoute } from '@/features/not-found/route';
@@ -19,6 +20,7 @@ export const router = createBrowserRouter([
             authenticationRoutes,
             dashboardRoute,
             locationRoutes,
+            consumerRoutes,
             notFoundRoute,
         ],
     },
