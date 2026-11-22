@@ -3,7 +3,7 @@ import { cx, tv, type VariantProps } from 'tailwind-variants/lite';
 import type { ComponentPropsWithoutRef, ReactElement } from 'react';
 
 const typographyVariants = tv({
-    base: 'm-0 truncate',
+    base: 'm-0',
     variants: {
         variant: {
             'heading-1': 'heading-1',
@@ -14,9 +14,14 @@ const typographyVariants = tv({
             'body-text': 'body-text',
             caption: 'caption',
         },
+        truncate: {
+            true: 'truncate',
+            false: '',
+        },
     },
     defaultVariants: {
         variant: 'body-text',
+        truncate: true,
     },
 });
 
@@ -42,6 +47,7 @@ function Typography({
     as,
     className,
     children,
+    truncate,
     ...props
 }: Readonly<
     TProps & {
@@ -51,7 +57,7 @@ function Typography({
     const Component = as ?? typographyElements[variant as keyof typeof typographyElements];
 
     return (
-        <Component {...props} className={cx(typographyVariants({ variant }), className)}>
+        <Component {...props} className={cx(typographyVariants({ variant, truncate }), className)}>
             {children}
         </Component>
     );
