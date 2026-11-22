@@ -47,10 +47,7 @@ const badgeVariants = tv({
 });
 
 interface IProps
-    extends
-        ComponentPropsWithoutRef<'span'>,
-        VariantProps<typeof badgeVariants>,
-        PropsWithChildren {
+    extends ComponentPropsWithoutRef<'div'>, VariantProps<typeof badgeVariants>, PropsWithChildren {
     icon?: LucideIcon;
     onIconClick?(): void;
 }
