@@ -1,3 +1,25 @@
+## [1.14.0](https://github.com/mohammaDJ23/expense-web/compare/v1.13.0...v1.14.0) (2026-11-22)
+
+### ✨ Features
+
+- add the bill list page ([7f52435](https://github.com/mohammaDJ23/expense-web/commit/7f524351a173200ac923e94d0fa18b2e8fdeafb0))
+
+### ♻️ Code Refactoring
+
+- remove the hidding scroll classnames ([1a72858](https://github.com/mohammaDJ23/expense-web/commit/1a728587efbd0a682ce368f358769c76f1463a69))
+- use div instead of span ([516d81a](https://github.com/mohammaDJ23/expense-web/commit/516d81a4b4e5acffce2beab78e7219f10ac4ca77))
+
+### 🔧 Improvements
+
+- use axios error type ([14aa1c1](https://github.com/mohammaDJ23/expense-web/commit/14aa1c176de9b0fdc6d67487d7d485b37c2b56ab))
+- use truncate ([9e79dab](https://github.com/mohammaDJ23/expense-web/commit/9e79dab1d59a27814529479d4d05363e10edb60b))
+
+### 🔧 Chores
+
+- add DragScroll ([0b11f76](https://github.com/mohammaDJ23/expense-web/commit/0b11f76a775a3d7c31f85c7e5a19797de2ce7bb3))
+- add useInfiniteQuery ([8085b5b](https://github.com/mohammaDJ23/expense-web/commit/8085b5b57d516af83aa788d6a2353db993b78e46))
+- use ? sign for possible undefined ([2278c98](https://github.com/mohammaDJ23/expense-web/commit/2278c980f33779e0db89358381b3068a42ac9c09))
+
 ## [1.13.0](https://github.com/mohammaDJ23/expense-web/compare/v1.12.1...v1.13.0) (2026-11-22)
 
 ### ✨ Features
