@@ -37,7 +37,7 @@ export function useInfiniteQuery<
     useEffect(() => {
         if (ref.current && request.hasNextPage && !request.isFetchingNextPage) {
             const observer = new IntersectionObserver(([entry]) => {
-                if (entry.isIntersecting) {
+                if (entry?.isIntersecting) {
                     request.fetchNextPage();
                 }
             });
