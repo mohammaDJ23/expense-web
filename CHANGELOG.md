@@ -1,3 +1,25 @@
+## [1.13.0](https://github.com/mohammaDJ23/expense-web/compare/v1.12.1...v1.13.0) (2026-11-22)
+
+### ✨ Features
+
+- add the create bill page ([e15b55e](https://github.com/mohammaDJ23/expense-web/commit/e15b55e7a3f5c5f67af104487d8703cbd3d4f91a))
+
+### 🐛 Bug Fixes
+
+- update the lint:ci command ([4c631f8](https://github.com/mohammaDJ23/expense-web/commit/4c631f87e2d54bb3edb3a02b7573fa2e4800aae6))
+
+### 🔧 Chores
+
+- add Badge ([2de0b75](https://github.com/mohammaDJ23/expense-web/commit/2de0b753fe5f7781997e96291449f9219c675dbc))
+- add FormController ([9db0fee](https://github.com/mohammaDJ23/expense-web/commit/9db0feef791970191218aee4df1c1c780fb4f153))
+- add the date & id schemas ([201b9ef](https://github.com/mohammaDJ23/expense-web/commit/201b9ef7f6998f45528d00b8a06253d8a44a7189))
+- add useSearchApi ([e36481e](https://github.com/mohammaDJ23/expense-web/commit/e36481e7795d680cc169dd3b9aeb01609b910242))
+- install use-debounce ([c7a9d37](https://github.com/mohammaDJ23/expense-web/commit/c7a9d37873094e359d015e9f2a2bc631a179869c))
+- remove the filled icon ([2ed74e6](https://github.com/mohammaDJ23/expense-web/commit/2ed74e65ef57b9ab26a5b0ecbf2cbead037f0f8d))
+- update the height of the most used sections ([dde849e](https://github.com/mohammaDJ23/expense-web/commit/dde849e57098c8df86947862601c7a9ed1166c3d))
+- use FormController ([df735da](https://github.com/mohammaDJ23/expense-web/commit/df735daf36e17dd6957742631922c264d0577a90))
+- use invalidators inside a utiles and use FormController ([476c78d](https://github.com/mohammaDJ23/expense-web/commit/476c78dc5be1dd4a3b1ea451b3572d5726fc1cbc))
+
 ## [1.12.1](https://github.com/mohammaDJ23/expense-web/compare/v1.12.0...v1.12.1) (2026-11-20)
 
 ### 🔧 Chores
