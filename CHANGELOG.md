@@ -1,3 +1,9 @@
+## [1.17.0](https://github.com/mohammaDJ23/expense-web/compare/v1.16.0...v1.17.0) (2026-11-22)
+
+### ✨ Features
+
+- add the receiver list page ([12c556a](https://github.com/mohammaDJ23/expense-web/commit/12c556a9753e833d1e3d6eada0df92fe39e65149))
+
 ## [1.16.0](https://github.com/mohammaDJ23/expense-web/compare/v1.15.0...v1.16.0) (2026-11-22)
 
 ### ✨ Features
