@@ -1,3 +1,9 @@
+## [1.15.0](https://github.com/mohammaDJ23/expense-web/compare/v1.14.0...v1.15.0) (2026-11-22)
+
+### ✨ Features
+
+- add the list page ([f75c967](https://github.com/mohammaDJ23/expense-web/commit/f75c9673116736c2094ce05fae45fe1ad0ff86de))
+
 ## [1.14.0](https://github.com/mohammaDJ23/expense-web/compare/v1.13.0...v1.14.0) (2026-11-22)
 
 ### ✨ Features
