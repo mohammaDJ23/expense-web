@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { useInfiniteQuery as useBaseInfinityQuery, type QueryKey } from '@tanstack/react-query';
 
+import type { ErrorType } from '@/api/http/customInstance';
+import type { ExceptionDto, HttpResponseDto } from '@/api/orval/generated/models';
 // eslint-disable-next-line sonarjs/no-internal-api-use
 import type {
     InfiniteData,
@@ -18,7 +20,7 @@ export function useInfiniteQuery<
     TItem,
     TPageParam,
     TQueryKey extends QueryKey = QueryKey,
-    TError = Error,
+    TError = ErrorType<HttpResponseDto & { data: ExceptionDto }>,
 >(
     options: UseInfiniteQueryOptions<
         IInfinitePage<TItem>,
