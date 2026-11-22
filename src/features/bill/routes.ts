@@ -1,5 +1,6 @@
 import { authenticatedMiddleware } from '@/app/routes/middlewares/authenticatedMiddleware';
 import { createRoute } from '@/features/bill/create/route';
+import { listRoute } from '@/features/bill/list/route';
 
 import type { RouteObject } from 'react-router';
 
@@ -11,5 +12,5 @@ export const billRoutes: RouteObject = {
 
         return { Component: Page };
     },
-    children: [createRoute],
+    children: [listRoute, createRoute],
 };

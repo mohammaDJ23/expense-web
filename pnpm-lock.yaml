@@ -43,6 +43,9 @@ importers:
             react-hook-form:
                 specifier: ^7.92.0
                 version: 7.92.0(@types/react@19.3.0)(react@19.3.1)
+            react-indiana-drag-scroll:
+                specifier: ^2.2.1
+                version: 2.2.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
             react-router:
                 specifier: ^8.5.1
                 version: 8.5.1(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -3116,6 +3119,12 @@ packages:
             }
         engines: { node: '>= 20.19.0' }
 
+    classnames@2.5.1:
+        resolution:
+            {
+                integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==,
+            }
+
     clean-stack@2.2.0:
         resolution:
             {
@@ -3470,6 +3479,12 @@ packages:
             }
         engines: { node: '>=4.0' }
 
+    debounce@1.2.1:
+        resolution:
+            {
+                integrity: sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==,
+            }
+
     debug@2.6.9:
         resolution:
             {
@@ -3591,6 +3606,12 @@ packages:
         resolution:
             {
                 integrity: sha512-asLFVfWWtJ90ZyOUHMqk7/S2w2guQKxUI2itj3d92ADHhxUSbCMGi1f1cBcJ7xM1To+pE/Khbwo1yuNbMEPKeA==,
+            }
+
+    easy-bem@1.1.1:
+        resolution:
+            {
+                integrity: sha512-GJRqdiy2h+EXy6a8E6R+ubmqUM08BK0FWNq41k24fup6045biQ8NXxoXimiwegMQvFFV3t1emADdGNL1TlS61A==,
             }
 
     ee-first@1.1.1:
@@ -6069,6 +6090,16 @@ packages:
         peerDependenciesMeta:
             '@types/react':
                 optional: true
+
+    react-indiana-drag-scroll@2.2.1:
+        resolution:
+            {
+                integrity: sha512-aGNJt7fxWzZGVkd0xRF+fPDt5RFuYouQffwOFx3m+CiOlvLZDQtV+4NyPnJqXCRlfbbwP26LI4LclNymTOgDiQ==,
+            }
+        engines: { node: '>=8', npm: '>=5' }
+        peerDependencies:
+            react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+            react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
     react-is@19.3.1:
         resolution:
@@ -9168,6 +9199,8 @@ snapshots:
         dependencies:
             readdirp: 5.1.1
 
+    classnames@2.5.1: {}
+
     clean-stack@2.2.0: {}
 
     clean-stack@5.3.0:
@@ -9360,6 +9393,8 @@ snapshots:
 
     date-format@4.0.14: {}
 
+    debounce@1.2.1: {}
+
     debug@2.6.9:
         dependencies:
             ms: 2.0.0
@@ -9415,6 +9450,8 @@ snapshots:
     duplexer2@0.1.4:
         dependencies:
             readable-stream: 2.3.8
+
+    easy-bem@1.1.1: {}
 
     ee-first@1.1.1: {}
 
@@ -10870,6 +10907,14 @@ snapshots:
             react: 19.3.1
         optionalDependencies:
             '@types/react': 19.3.0
+
+    react-indiana-drag-scroll@2.2.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
+        dependencies:
+            classnames: 2.5.1
+            debounce: 1.2.1
+            easy-bem: 1.1.1
+            react: 19.3.1
+            react-dom: 19.3.1(react@19.3.1)
 
     react-is@19.3.1: {}
 
