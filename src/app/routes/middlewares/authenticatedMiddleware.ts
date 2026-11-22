@@ -1,13 +1,14 @@
 import { isAxiosError } from 'axios';
 import { redirect, type MiddlewareFunction } from 'react-router';
 
-import { getFindMeQueryOptions } from '@/api/orval/generated/endpoints/user';
+import { findMe, getFindMeQueryOptions } from '@/api/orval/generated/endpoints/user';
 import { queryClient } from '@/app/providers/QueryProvider';
 
 export const authenticatedMiddleware: MiddlewareFunction = async (_, next) => {
     try {
         const request = await queryClient.query({
             ...getFindMeQueryOptions(),
+            queryFn: () => findMe(),
             staleTime: 0,
             gcTime: 0,
         });
