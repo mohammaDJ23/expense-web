@@ -3,7 +3,7 @@ import { cx, tv, type VariantProps } from 'tailwind-variants/lite';
 import type { ComponentPropsWithoutRef, ReactElement } from 'react';
 
 const typographyVariants = tv({
-    base: 'm-0',
+    base: 'm-0 truncate',
     variants: {
         variant: {
             'heading-1': 'heading-1',
