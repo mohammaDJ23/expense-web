@@ -19,12 +19,12 @@ function MostUsedReceivers(): ReactNode {
     );
 
     if (request.isLoading) {
-        return <Skeleton className="min-h-[296.484px] w-full" />;
+        return <Skeleton className="min-h-74 w-full" />;
     }
 
     if (request.isError) {
         return (
-            <Card className="min-h-[296.484px] flex flex-col items-center justify-center">
+            <Card className="min-h-74 flex flex-col items-center justify-center">
                 <Typography className="text-center">
                     Failed to load the most used receivers
                 </Typography>
@@ -37,7 +37,7 @@ function MostUsedReceivers(): ReactNode {
 
         if (data.length <= 0) {
             return (
-                <Card className="min-h-[296.484px] flex flex-col items-center justify-center">
+                <Card className="min-h-74 flex flex-col items-center justify-center">
                     <Typography className="text-center">Not any receivers used yet</Typography>
                 </Card>
             );
@@ -46,7 +46,7 @@ function MostUsedReceivers(): ReactNode {
         const maxCount = Math.max(...data.map((item) => item.total));
 
         return (
-            <Card className="flex min-h-[296.484px] flex-col gap-3">
+            <Card className="flex flex-col gap-3">
                 <Typography variant="heading-4">Most used receivers</Typography>
                 <div className="flex flex-col gap-2">
                     {data.map((item) => (
