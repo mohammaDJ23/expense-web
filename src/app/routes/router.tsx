@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router';
 
 import { authenticationRoutes } from '@/features/authentication/routes';
+import { billRoutes } from '@/features/bill/routes';
 import { consumerRoutes } from '@/features/consumer/routes';
 import { dashboardRoute } from '@/features/dashboard/route';
 import { locationRoutes } from '@/features/location/routes';
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
             },
             authenticationRoutes,
             dashboardRoute,
+            billRoutes,
             locationRoutes,
             consumerRoutes,
             receiverRoutes,
