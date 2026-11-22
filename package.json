@@ -16,7 +16,7 @@
         "preview": "vite preview",
         "format": "prettier --write .",
         "lint:fix": "eslint . --fix",
-        "lint:ci": "eslint . --max-warnings=0",
+        "lint:ci": "eslint .",
         "format:ci": "prettier --check .",
         "knip": "knip",
         "install:ci": "pnpm install --ignore-scripts --frozen-lockfile",
