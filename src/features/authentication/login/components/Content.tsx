@@ -1,7 +1,7 @@
 import { useCallback, type ReactElement, type SubmitEvent } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { isAxiosError } from 'axios';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 
 import { useLocalLogin } from '@/api/orval/generated/endpoints/authentication';
@@ -13,6 +13,7 @@ import Button from '@/features/shared/components/atoms/Button';
 import Input from '@/features/shared/components/atoms/Input';
 import Message from '@/features/shared/components/atoms/Message';
 import Typography from '@/features/shared/components/atoms/Typography';
+import FormController from '@/features/shared/components/molecules/FormController';
 import { getApiErrorMessage } from '@/features/shared/utils/getApiErrorMessage';
 import { getGoogleLoginLink } from '@/features/shared/utils/getGoogleLoginLink';
 
@@ -85,54 +86,32 @@ function Content(): ReactElement {
                     </Typography>
                 </div>
                 <form onSubmit={onSubmit} className="flex flex-col gap-4">
-                    <Controller
+                    <FormController
                         name="email"
                         control={form.control}
-                        render={({ field, formState }) => {
-                            const errorMessage = formState.errors?.email?.message;
-
-                            return (
-                                <div className="flex flex-col gap-1">
-                                    <Input
-                                        placeholder="email"
-                                        name="email"
-                                        onChange={isPending ? () => {} : field.onChange}
-                                        value={field.value}
-                                        disabled={isPending}
-                                    />
-                                    {errorMessage && (
-                                        <Typography variant="caption" className="text-error">
-                                            {errorMessage}
-                                        </Typography>
-                                    )}
-                                </div>
-                            );
-                        }}
+                        render={({ field }) => (
+                            <Input
+                                placeholder="email"
+                                name="email"
+                                onChange={isPending ? () => {} : field.onChange}
+                                value={field.value}
+                                disabled={isPending}
+                            />
+                        )}
                     />
-                    <Controller
+                    <FormController
                         name="password"
                         control={form.control}
-                        render={({ field, formState }) => {
-                            const errorMessage = formState.errors?.password?.message;
-
-                            return (
-                                <div className="flex flex-col gap-1">
-                                    <Input
-                                        type="password"
-                                        placeholder="password"
-                                        name="password"
-                                        onChange={isPending ? () => {} : field.onChange}
-                                        value={field.value}
-                                        disabled={isPending}
-                                    />
-                                    {errorMessage && (
-                                        <Typography variant="caption" className="text-error">
-                                            {errorMessage}
-                                        </Typography>
-                                    )}
-                                </div>
-                            );
-                        }}
+                        render={({ field }) => (
+                            <Input
+                                type="password"
+                                placeholder="password"
+                                name="password"
+                                onChange={isPending ? () => {} : field.onChange}
+                                value={field.value}
+                                disabled={isPending}
+                            />
+                        )}
                     />
                     <Button fullWidth type="submit" disabled={isPending}>
                         Sign In

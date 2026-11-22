@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { Navigate, useNavigate, useSearchParams } from 'react-router';
 
 import { useLocalSignup } from '@/api/orval/generated/endpoints/authentication';
@@ -11,6 +11,7 @@ import Button from '@/features/shared/components/atoms/Button';
 import Input from '@/features/shared/components/atoms/Input';
 import Message from '@/features/shared/components/atoms/Message';
 import Typography from '@/features/shared/components/atoms/Typography';
+import FormController from '@/features/shared/components/molecules/FormController';
 import { getApiErrorMessage } from '@/features/shared/utils/getApiErrorMessage';
 
 import type { ReactElement, SubmitEvent } from 'react';
@@ -77,11 +78,10 @@ function Content(): ReactElement {
                     </Typography>
                 </div>
                 <form onSubmit={onSubmit} className="flex flex-col gap-4">
-                    <Controller
+                    <FormController
                         name="token"
                         control={form.control}
-                        render={({ formState }) => {
-                            const errorMessage = formState.errors?.token?.message;
+                        render={() => {
                             const value = Array.from({
                                 length: Math.min(token.length, 60),
                             })
@@ -89,46 +89,28 @@ function Content(): ReactElement {
                                 .join('');
 
                             return (
-                                <div className="flex flex-col gap-1">
-                                    <Input
-                                        placeholder="token"
-                                        name="token"
-                                        value={value}
-                                        disabled={true}
-                                    />
-                                    {errorMessage && (
-                                        <Typography variant="caption" className="text-error">
-                                            {errorMessage}
-                                        </Typography>
-                                    )}
-                                </div>
+                                <Input
+                                    placeholder="token"
+                                    name="token"
+                                    value={value}
+                                    disabled={true}
+                                />
                             );
                         }}
                     />
-                    <Controller
+                    <FormController
                         name="password"
                         control={form.control}
-                        render={({ field, formState }) => {
-                            const errorMessage = formState.errors?.password?.message;
-
-                            return (
-                                <div className="flex flex-col gap-1">
-                                    <Input
-                                        type="password"
-                                        placeholder="password"
-                                        name="password"
-                                        onChange={isPending ? () => {} : field.onChange}
-                                        value={field.value}
-                                        disabled={isPending}
-                                    />
-                                    {errorMessage && (
-                                        <Typography variant="caption" className="text-error">
-                                            {errorMessage}
-                                        </Typography>
-                                    )}
-                                </div>
-                            );
-                        }}
+                        render={({ field }) => (
+                            <Input
+                                type="password"
+                                placeholder="password"
+                                name="password"
+                                onChange={isPending ? () => {} : field.onChange}
+                                value={field.value}
+                                disabled={isPending}
+                            />
+                        )}
                     />
                     <Button fullWidth type="submit" disabled={isPending}>
                         Sign Up
