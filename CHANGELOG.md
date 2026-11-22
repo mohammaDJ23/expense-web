@@ -1,3 +1,9 @@
+## [1.16.0](https://github.com/mohammaDJ23/expense-web/compare/v1.15.0...v1.16.0) (2026-11-22)
+
+### ✨ Features
+
+- add the location list page ([82dc5c9](https://github.com/mohammaDJ23/expense-web/commit/82dc5c92c85f05e8326d92f51a7c930de8cf8255))
+
 ## [1.15.0](https://github.com/mohammaDJ23/expense-web/compare/v1.14.0...v1.15.0) (2026-11-22)
 
 ### ✨ Features
