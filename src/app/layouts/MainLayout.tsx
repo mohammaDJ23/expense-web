@@ -22,7 +22,7 @@ function MainLayout(): ReactElement {
                 <div className="shrink-0">
                     <MainHeader />
                 </div>
-                <main className="min-h-0 min-w-0 flex-1 overflow-y-auto bg-background p-4 scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                <main className="min-h-0 min-w-0 flex-1 overflow-y-auto bg-background p-4">
                     <Outlet />
                 </main>
             </div>
