@@ -1,3 +1,13 @@
+## [1.18.1](https://github.com/mohammaDJ23/expense-web/compare/v1.18.0...v1.18.1) (2026-11-22)
+
+### 🐛 Bug Fixes
+
+- use queryFn without signal ([80786f6](https://github.com/mohammaDJ23/expense-web/commit/80786f6261500485b54cd8ac6b2e59efb60e41f5))
+
+### 🔧 Improvements
+
+- use toLocaleString ([9f6c93c](https://github.com/mohammaDJ23/expense-web/commit/9f6c93c9116c6e4801880ec5c7620a64f7ece437))
+
 ## [1.18.0](https://github.com/mohammaDJ23/expense-web/compare/v1.17.0...v1.18.0) (2026-11-22)
 
 ### ✨ Features
