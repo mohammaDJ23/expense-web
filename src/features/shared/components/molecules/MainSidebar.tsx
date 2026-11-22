@@ -94,7 +94,6 @@ function MainSidebar({ onItemClick = () => {} }: Readonly<IProps>): ReactElement
                         >
                             <Icon
                                 icon={item.icon}
-                                fill={activePath === item.path ? 'currentColor' : 'none'}
                                 className={cx(
                                     'group-hover:text-primary',
                                     activePath === item.path && 'text-primary',
