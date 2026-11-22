@@ -13,7 +13,7 @@ function UsedIndicator({ name, total, maxCount }: Readonly<IProps>): ReactElemen
         <div className="flex flex-col gap-2 overflow-hidden">
             <div className="flex items-center justify-between gap-4">
                 <Typography>{name}</Typography>
-                <Typography>{total}</Typography>
+                <Typography>{total.toLocaleString()}</Typography>
             </div>
             <div className="h-2 overflow-hidden rounded-full bg-surface-secondary">
                 <div
