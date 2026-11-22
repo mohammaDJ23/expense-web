@@ -30,7 +30,7 @@ function TotalBills(): ReactNode {
 
         return (
             <Card className="min-h-26 flex flex-col justify-between">
-                <Typography variant="heading-4">{total}</Typography>
+                <Typography variant="heading-4">{total.toLocaleString()}</Typography>
                 <Typography>Total bills</Typography>
             </Card>
         );
