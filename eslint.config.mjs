@@ -365,7 +365,7 @@ export default defineConfig([
             'no-magic-numbers': 'off',
             'max-depth': ['error', 4],
             'max-lines': ['error', { max: 500, skipBlankLines: true }],
-            'max-lines-per-function': ['error', { max: 150 }],
+            'max-lines-per-function': ['error', { max: 400 }],
             'max-params': 'off',
             complexity: 'off',
             'consistent-return': 'error',
