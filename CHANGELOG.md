@@ -1,3 +1,9 @@
+## [1.18.0](https://github.com/mohammaDJ23/expense-web/compare/v1.17.0...v1.18.0) (2026-11-22)
+
+### ✨ Features
+
+- add the bill details page ([037a8a3](https://github.com/mohammaDJ23/expense-web/commit/037a8a37cdc750c71576555dcb23279c7b3685d3))
+
 ## [1.17.0](https://github.com/mohammaDJ23/expense-web/compare/v1.16.0...v1.17.0) (2026-11-22)
 
 ### ✨ Features
