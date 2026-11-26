@@ -1,5 +1,6 @@
 import { authenticatedMiddleware } from '@/app/routes/middlewares/authenticatedMiddleware';
 import { createRoute } from '@/features/location/create/route';
+import { itemRoute } from '@/features/location/item/route';
 import { listRoute } from '@/features/location/list/route';
 
 import type { RouteObject } from 'react-router';
@@ -12,5 +13,5 @@ export const locationRoutes: RouteObject = {
 
         return { Component: Page };
     },
-    children: [listRoute, createRoute],
+    children: [listRoute, createRoute, itemRoute],
 };
