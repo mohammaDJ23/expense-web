@@ -1,3 +1,13 @@
+## [1.20.0](https://github.com/mohammaDJ23/expense-web/compare/v1.19.0...v1.20.0) (2026-11-26)
+
+### ✨ Features
+
+- add the location details page ([f4640a3](https://github.com/mohammaDJ23/expense-web/commit/f4640a393eb8dd66370f892662a71e71170112e7))
+
+### 🔧 Chores
+
+- disable the warnings ([dc22174](https://github.com/mohammaDJ23/expense-web/commit/dc221740036b4e365f7aa195a1e916dbf042b8ba))
+
 ## [1.19.0](https://github.com/mohammaDJ23/expense-web/compare/v1.18.2...v1.19.0) (2026-11-26)
 
 ### ✨ Features
