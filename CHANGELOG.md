@@ -1,3 +1,9 @@
+## [1.19.0](https://github.com/mohammaDJ23/expense-web/compare/v1.18.2...v1.19.0) (2026-11-26)
+
+### ✨ Features
+
+- add the consumer details page ([2f87c33](https://github.com/mohammaDJ23/expense-web/commit/2f87c3393360aa5d8028c1b7c04a390eb3ef144b))
+
 ## [1.18.2](https://github.com/mohammaDJ23/expense-web/compare/v1.18.1...v1.18.2) (2026-11-26)
 
 ### 🔧 Chores
