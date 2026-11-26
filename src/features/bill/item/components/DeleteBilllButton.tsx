@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState, type ReactElement } from 'react';
-import { getErrorMessage } from 'react-error-boundary';
 import { useNavigate, useParams } from 'react-router';
 
 import { useDeleteBill } from '@/api/orval/generated/endpoints/bill';
@@ -8,6 +7,7 @@ import Button from '@/features/shared/components/atoms/Button';
 import Message from '@/features/shared/components/atoms/Message';
 import Typography from '@/features/shared/components/atoms/Typography';
 import Modal from '@/features/shared/components/molecules/Modal';
+import { getApiErrorMessage } from '@/features/shared/utils/getApiErrorMessage';
 
 function DeleteBillButton(): ReactElement {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -39,7 +39,7 @@ function DeleteBillButton(): ReactElement {
         }
     }, [isOpen, isPending]);
 
-    const errorMessage = getErrorMessage(request.error);
+    const errorMessage = getApiErrorMessage(request.error);
 
     return (
         <>
