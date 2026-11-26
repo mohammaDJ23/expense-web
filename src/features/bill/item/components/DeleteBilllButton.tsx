@@ -37,6 +37,7 @@ function DeleteBillButton(): ReactElement {
         if (!isOpen && !isPending) {
             request.reset();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isOpen, isPending]);
 
     const errorMessage = getApiErrorMessage(request.error);
