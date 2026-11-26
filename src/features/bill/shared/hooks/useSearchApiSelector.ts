@@ -43,6 +43,7 @@ export function useSearchApiSelector<TData extends IData, TApiData = unknown>({
             setSelectedItem(null);
             searchApi.setSearch('');
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [reset, disabled]);
 
     const onItemMousedown = useCallback(
