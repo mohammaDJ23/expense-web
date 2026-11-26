@@ -1,3 +1,11 @@
+## [1.18.2](https://github.com/mohammaDJ23/expense-web/compare/v1.18.1...v1.18.2) (2026-11-26)
+
+### 🔧 Chores
+
+- add the modal component ([597a91d](https://github.com/mohammaDJ23/expense-web/commit/597a91d6d632ed2d7061132265119c3ba17f2653))
+- add the react-modal package ([9be86ca](https://github.com/mohammaDJ23/expense-web/commit/9be86caa6e81fba8031b53f3c594daf1054b06c1))
+- implement the delete bill service ([b95b120](https://github.com/mohammaDJ23/expense-web/commit/b95b1200ce746ea20f36679ddc658723fe11197b))
+
 ## [1.18.1](https://github.com/mohammaDJ23/expense-web/compare/v1.18.0...v1.18.1) (2026-11-22)
 
 ### 🐛 Bug Fixes
