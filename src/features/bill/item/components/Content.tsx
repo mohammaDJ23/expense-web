@@ -3,10 +3,13 @@ import { useNavigate, useParams } from 'react-router';
 
 import { useFindBill } from '@/api/orval/generated/endpoints/bill';
 import Badge from '@/features/shared/components/atoms/Badge';
+import Button from '@/features/shared/components/atoms/Button';
 import Card from '@/features/shared/components/atoms/Card';
 import Skeleton from '@/features/shared/components/atoms/Skeleton';
 import Typography from '@/features/shared/components/atoms/Typography';
 import { getApiResponse } from '@/features/shared/utils/getApiResponse';
+
+import DeleteBillButton from './DeleteBilllButton';
 
 function Content(): ReactNode {
     const navigate = useNavigate();
@@ -41,6 +44,12 @@ function Content(): ReactNode {
         },
         [navigate],
     );
+
+    const onUpdateClick = useCallback(() => {
+        if (id) {
+            navigate(`/bills/update/${id}`);
+        }
+    }, [navigate, id]);
 
     if (request.isError) {
         return (
@@ -125,6 +134,10 @@ function Content(): ReactNode {
                     <Typography truncate={false}>
                         Updated at: {new Date(request.data.updatedAt).toLocaleDateString()}
                     </Typography>
+                </Card>
+                <Card className="flex items-center flex-wrap gap-2">
+                    <Button onClick={() => onUpdateClick()}>Update</Button>
+                    <DeleteBillButton />
                 </Card>
             </div>
         );
