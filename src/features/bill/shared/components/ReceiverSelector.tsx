@@ -1,23 +1,34 @@
 import { useEffect, useState, type ReactNode } from 'react';
+import { useQueryClient } from '@tanstack/react-query';
 
-import { useSearchReceivers } from '@/api/orval/generated/endpoints/receiver';
-import { useSearchApiSelector } from '@/features/bill/shared/hooks/useSearchApiSelector';
+import {
+    getSearchReceiversQueryKey,
+    useSearchReceivers,
+} from '@/api/orval/generated/endpoints/receiver';
 import { getApiResponse } from '@/features/shared/utils/getApiResponse';
 
 import SearchSelector from './SearchSelector';
 
+import type { ReceiverResponseDto } from '@/api/orval/generated/models';
+
 interface IProps {
     value?: string;
     disabled?: boolean;
+    initialValue?: ReceiverResponseDto;
     onChange?(value: string): void;
 }
 
 function ReceiverSelector({
     value = '',
     disabled = false,
+    initialValue,
     onChange = () => {},
 }: Readonly<IProps>): ReactNode {
+    const reset = value.length <= 0;
+
     const [search, setSearch] = useState<string>('');
+
+    const queryClient = useQueryClient();
 
     const request = useSearchReceivers(
         {
@@ -32,32 +43,34 @@ function ReceiverSelector({
         },
     );
 
-    const searchApiSelector = useSearchApiSelector({
-        value,
-        disabled,
-        onChange,
-        api: () => request.refetch(),
-    });
-
     useEffect(() => {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setSearch(searchApiSelector.search);
-    }, [searchApiSelector.search]);
+        if (disabled) {
+            return;
+        }
+
+        if (reset) {
+            queryClient.resetQueries({ queryKey: getSearchReceiversQueryKey() });
+        }
+
+        return () => {
+            queryClient.resetQueries({ queryKey: getSearchReceiversQueryKey() });
+        };
+    }, [reset, disabled, queryClient]);
 
     return (
         <SearchSelector
-            q={search}
             name="receiverId"
             placeholder="receiver"
             disabled={disabled}
-            showSearchResult={searchApiSelector.showSearchResult}
-            searchedData={request.data}
+            data={request.data}
             isError={request.isError}
             isFetching={request.isFetching}
             isSuccess={request.isSuccess}
-            onInputBlur={searchApiSelector.onInputBlur}
-            onInputChange={searchApiSelector.onInputChange}
-            onItemMousedown={searchApiSelector.onItemMousedown}
+            initialValue={initialValue}
+            reset={reset}
+            onChange={(item) => onChange(item.id)}
+            onSearchChange={setSearch}
+            api={request.refetch}
         />
     );
 }
