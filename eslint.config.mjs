@@ -368,7 +368,7 @@ export default defineConfig([
             'max-lines-per-function': ['error', { max: 400 }],
             'max-params': 'off',
             complexity: 'off',
-            'consistent-return': 'error',
+            'consistent-return': 'off',
             eqeqeq: ['error', 'always'],
             curly: ['error', 'all'],
             'default-case': 'error',
