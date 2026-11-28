@@ -1,5 +1,6 @@
 import {
     getFindBillListQueryKey,
+    getFindBillQueryKey,
     getFindBillsPeriodQueryKey,
     getFindBillsTimelineQueryKey,
     getFindBillsTotalAmountQueryKey,
@@ -11,7 +12,7 @@ import {
 import { getGlobalSearchQueryKey } from '@/api/orval/generated/endpoints/search';
 import { queryClient } from '@/app/providers/QueryProvider';
 
-export function invalidateBillQueries() {
+export function invalidateBillQueries(id?: string) {
     return Promise.all([
         queryClient.invalidateQueries({ queryKey: getFindBillListQueryKey() }),
         queryClient.invalidateQueries({ queryKey: getFindTotalBillsQueryKey() }),
@@ -22,5 +23,6 @@ export function invalidateBillQueries() {
         queryClient.invalidateQueries({ queryKey: getFindMostUsedConsumersQueryKey() }),
         queryClient.invalidateQueries({ queryKey: getFindMostUsedLocationsQueryKey() }),
         queryClient.invalidateQueries({ queryKey: getFindMostUsedReceiversQueryKey() }),
+        id && queryClient.invalidateQueries({ queryKey: getFindBillQueryKey(id) }),
     ]);
 }
