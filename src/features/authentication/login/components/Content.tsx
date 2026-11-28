@@ -121,7 +121,7 @@ function Content(): ReactElement {
             </div>
             <div className="flex items-center gap-4">
                 <hr className="border-surface-secondary border  w-100" />
-                <Typography>or</Typography>
+                <Typography className="shrink-0">or</Typography>
                 <hr className="border-surface-secondary border w-100" />
             </div>
             <div className="flex flex-col gap-4">
