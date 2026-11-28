@@ -1,23 +1,34 @@
 import { useEffect, useState, type ReactNode } from 'react';
+import { useQueryClient } from '@tanstack/react-query';
 
-import { useSearchConsumers } from '@/api/orval/generated/endpoints/consumer';
-import { useSearchApiMultiSelector } from '@/features/bill/shared/hooks/useSearchApiMultiSelector';
+import {
+    getSearchConsumersQueryKey,
+    useSearchConsumers,
+} from '@/api/orval/generated/endpoints/consumer';
 import { getApiResponse } from '@/features/shared/utils/getApiResponse';
 
-import SearchSelector from './SearchSelector';
+import SearchMultipleSelector from './SearchMultipleSelector';
+
+import type { ConsumerResponseDto } from '@/api/orval/generated/models';
 
 interface IProps {
     value?: string[];
     disabled?: boolean;
+    initialValue?: ConsumerResponseDto[];
     onChange?(value: string[]): void;
 }
 
 function ConsumersSelector({
     value = [],
     disabled = false,
+    initialValue,
     onChange = () => {},
 }: Readonly<IProps>): ReactNode {
+    const reset = value.length <= 0;
+
     const [search, setSearch] = useState<string>('');
+
+    const queryClient = useQueryClient();
 
     const request = useSearchConsumers(
         {
@@ -32,34 +43,34 @@ function ConsumersSelector({
         },
     );
 
-    const searchApiMultiSelector = useSearchApiMultiSelector({
-        value,
-        disabled,
-        onChange,
-        api: () => request.refetch(),
-    });
-
     useEffect(() => {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setSearch(searchApiMultiSelector.search);
-    }, [searchApiMultiSelector.search]);
+        if (disabled) {
+            return;
+        }
+
+        if (reset) {
+            queryClient.resetQueries({ queryKey: getSearchConsumersQueryKey() });
+        }
+
+        return () => {
+            queryClient.resetQueries({ queryKey: getSearchConsumersQueryKey() });
+        };
+    }, [reset, disabled, queryClient]);
 
     return (
-        <SearchSelector
-            q={search}
+        <SearchMultipleSelector
             name="consumerIds"
             placeholder="consumers"
             disabled={disabled}
-            showSearchResult={searchApiMultiSelector.showSearchResult}
-            searchedData={request.data}
+            data={request.data}
             isError={request.isError}
             isFetching={request.isFetching}
             isSuccess={request.isSuccess}
-            multiSelectors={searchApiMultiSelector.selectedItems}
-            onSelectedItemRemove={searchApiMultiSelector.onSelectedItemRemove}
-            onInputBlur={searchApiMultiSelector.onInputBlur}
-            onInputChange={searchApiMultiSelector.onInputChange}
-            onItemMousedown={searchApiMultiSelector.onItemMousedown}
+            initialValue={initialValue}
+            reset={reset}
+            onChange={(items) => onChange(items.map((item) => item.id))}
+            onSearchChange={setSearch}
+            api={request.refetch}
         />
     );
 }

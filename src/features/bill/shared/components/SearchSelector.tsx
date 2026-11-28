@@ -1,106 +1,138 @@
-import { X } from 'lucide-react';
+import { useCallback, useEffect, useState, type ChangeEvent, type ReactElement } from 'react';
+import { useDebouncedCallback } from 'use-debounce';
 
-import Badge from '@/features/shared/components/atoms/Badge';
-import Card from '@/features/shared/components/atoms/Card';
 import Input from '@/features/shared/components/atoms/Input';
-import Skeleton from '@/features/shared/components/atoms/Skeleton';
-import Typography from '@/features/shared/components/atoms/Typography';
 
-import type { ChangeEvent, MouseEvent, ReactElement } from 'react';
+import SearchResult from './SearchResult';
 
-interface IData {
+interface IDefaultData {
     id: string;
     name: string;
 }
 
-interface IProps<TData> {
-    q?: string;
+interface IProps<TData, TResponse> {
     name: string;
-    placeholder?: string;
-    disabled?: boolean;
-    showSearchResult?: boolean;
-    searchedData?: TData[];
-    multiSelectors?: TData[];
-    isError?: boolean;
-    isFetching?: boolean;
-    isSuccess?: boolean;
-    onSelectedItemRemove?(item: TData): void;
-    onInputBlur?(): void;
-    onInputChange?(event: ChangeEvent<HTMLInputElement, HTMLInputElement>): void;
-    onItemMousedown?(event: MouseEvent<HTMLDivElement>, item: TData): void;
+    placeholder: string;
+    disabled: boolean;
+    data?: TData[];
+    isError: boolean;
+    isFetching: boolean;
+    isSuccess: boolean;
+    reset: boolean;
+    initialValue?: TData | null;
+    onChange: (value: TData) => void;
+    onSearchChange: (search: string) => void;
+    api: () => TResponse;
 }
 
-function SearchSelector<TData extends IData>({
-    q = '',
+const WAIT = 400;
+const MIN_SEARCH_LENGTH = 2;
+
+function SearchSelector<TData extends IDefaultData, TResponse = unknown>({
     name,
-    placeholder = '',
-    disabled = false,
-    showSearchResult = false,
-    searchedData = [],
-    multiSelectors = [],
-    isError = false,
-    isFetching = false,
-    isSuccess = false,
-    onSelectedItemRemove = () => {},
-    onInputBlur = () => {},
-    onInputChange = () => {},
-    onItemMousedown = () => {},
-}: Readonly<IProps<TData>>): ReactElement {
+    placeholder,
+    disabled,
+    data = [],
+    isError,
+    isFetching,
+    isSuccess,
+    reset,
+    initialValue = null,
+    onChange: onReceivedChange,
+    onSearchChange,
+    api,
+}: Readonly<IProps<TData, TResponse>>): ReactElement {
+    const [search, setSearch] = useState<string>(initialValue?.name || '');
+    const [selectedItem, setSelectedItem] = useState<TData | null>(initialValue);
+
+    useEffect(() => {
+        if (disabled) {
+            return;
+        }
+
+        if (reset) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
+            setSearch('');
+            setSelectedItem(null);
+        }
+    }, [reset, disabled]);
+
+    useEffect(() => {
+        if (disabled) {
+            return;
+        }
+
+        onSearchChange(search);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [search, disabled]);
+
+    const debouncedApi = useDebouncedCallback(api, WAIT);
+
+    const onChange = useCallback(
+        (event: ChangeEvent<HTMLInputElement, HTMLInputElement>) => {
+            if (disabled) {
+                return;
+            }
+
+            const value = event.target.value;
+
+            setSearch(value);
+
+            if (value.length < MIN_SEARCH_LENGTH) {
+                return;
+            }
+
+            debouncedApi();
+        },
+        [disabled, debouncedApi],
+    );
+
+    const onItemMouseDown = useCallback(
+        (item: TData) => {
+            if (disabled) {
+                return;
+            }
+
+            setSearch(item.name);
+
+            onReceivedChange(item);
+
+            setSelectedItem(item);
+        },
+        [disabled, onReceivedChange],
+    );
+
+    const onBlur = useCallback(() => {
+        if (disabled) {
+            return;
+        }
+
+        if (selectedItem) {
+            setSearch(selectedItem.name);
+
+            onReceivedChange(selectedItem);
+        } else {
+            setSearch('');
+        }
+    }, [onReceivedChange, selectedItem, disabled]);
+
     return (
         <div className="w-full flex flex-col gap-4">
             <Input
                 placeholder={placeholder}
                 name={name}
-                onChange={onInputChange}
-                onBlur={onInputBlur}
-                value={q}
+                onChange={onChange}
+                onBlur={onBlur}
+                value={search}
                 disabled={disabled}
             />
-            {multiSelectors.length > 0 && (
-                <div className="flex items-center gap-2 flex-wrap">
-                    {multiSelectors.map((item) => (
-                        <Badge
-                            key={item.id}
-                            icon={X}
-                            onIconClick={() => onSelectedItemRemove(item)}
-                        >
-                            {item.name}
-                        </Badge>
-                    ))}
-                </div>
-            )}
-            {showSearchResult && (
-                <Card className="size-full flex flex-col justify-center items-center overflow-x-hidden overflow-y-auto">
-                    {isError && (
-                        <Typography className="text-center">Faild to search the data</Typography>
-                    )}
-                    {isFetching && (
-                        <div className="flex size-full flex-auto flex-col gap-2">
-                            <Skeleton className="w-full h-[39.8px]" />
-                            <Skeleton className="w-full h-[39.8px]" />
-                            <Skeleton className="w-full h-[39.8px]" />
-                        </div>
-                    )}
-                    {isSuccess && searchedData.length > 0 && (
-                        <div className="flex size-full flex-auto flex-col gap-2">
-                            {searchedData.map((item) => (
-                                <div
-                                    key={item.id}
-                                    onMouseDown={(event) => onItemMousedown(event, item)}
-                                    className="shrink-0 group flex cursor-pointer items-center gap-4 rounded-xl px-4 py-2 transition-colors hover:bg-success-background"
-                                >
-                                    <Typography className="group-hover:text-primary truncate">
-                                        {item.name}
-                                    </Typography>
-                                </div>
-                            ))}
-                        </div>
-                    )}
-                    {isSuccess && searchedData.length <= 0 && (
-                        <Typography className="text-center">No items found</Typography>
-                    )}
-                </Card>
-            )}
+            <SearchResult
+                data={data}
+                isError={isError}
+                isSuccess={isSuccess}
+                isFetching={isFetching}
+                onItemMouseDown={onItemMouseDown}
+            />
         </div>
     );
 }
