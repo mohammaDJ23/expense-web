@@ -26,7 +26,7 @@ function DeleteLocationButton(): ReactElement {
 
             request
                 .mutateAsync({ id })
-                .then(() => invalidateLocationQueries())
+                .then(() => invalidateLocationQueries(id))
                 .then(() => setIsOpen(false))
                 .then(() => request.reset())
                 .then(() => navigate('/locations'));
