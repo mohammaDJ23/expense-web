@@ -26,7 +26,7 @@ function DeleteBillButton(): ReactElement {
 
             request
                 .mutateAsync({ id })
-                .then(() => invalidateBillQueries())
+                .then(() => invalidateBillQueries(id))
                 .then(() => setIsOpen(false))
                 .then(() => request.reset())
                 .then(() => navigate('/bills'));
