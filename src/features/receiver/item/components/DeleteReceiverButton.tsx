@@ -26,7 +26,7 @@ function DeleteReceiverButton(): ReactElement {
 
             request
                 .mutateAsync({ id })
-                .then(() => invalidateReceiverQueries())
+                .then(() => invalidateReceiverQueries(id))
                 .then(() => setIsOpen(false))
                 .then(() => request.reset())
                 .then(() => navigate('/receivers'));
