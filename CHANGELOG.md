@@ -1,3 +1,31 @@
+## [1.22.0](https://github.com/mohammaDJ23/expense-web/compare/v1.21.0...v1.22.0) (2026-11-28)
+
+### ✨ Features
+
+- add the update of bill page ([adb7785](https://github.com/mohammaDJ23/expense-web/commit/adb77858b0140f27cc7ac3e77dd2dcf9dd630c7c))
+
+### 🐛 Bug Fixes
+
+- invalidate the bill item ([0495b85](https://github.com/mohammaDJ23/expense-web/commit/0495b858185ca795de11e1c598dc39532b97583d))
+- invalidate the bill item ([5fa0552](https://github.com/mohammaDJ23/expense-web/commit/5fa05523e9d21e7f15a18e47b6d0278c19d38952))
+- invalidate the consumer item ([ea52295](https://github.com/mohammaDJ23/expense-web/commit/ea52295069a47f3ae7cc8a885afd77d4a122f3ae))
+- invalidate the location item ([6baa1ea](https://github.com/mohammaDJ23/expense-web/commit/6baa1ea3fde2b78c16b0b69a995f8a654a4aa199))
+- invalidate the receiver item ([57d7dc5](https://github.com/mohammaDJ23/expense-web/commit/57d7dc5a300617f095d68404428d00e0d2b8da04))
+
+### ♻️ Code Refactoring
+
+- enhance the performance of searching ([7ea84b1](https://github.com/mohammaDJ23/expense-web/commit/7ea84b14d748949722e74fc3eb05584208d269ea))
+
+### 🔧 Improvements
+
+- add a shrink-0 ([f275463](https://github.com/mohammaDJ23/expense-web/commit/f275463a757c4659e310752aa334da211f26dcb8))
+
+### 🔧 Chores
+
+- change the format of date ([dc9020e](https://github.com/mohammaDJ23/expense-web/commit/dc9020ec752bfed2b3a7961431b42847b0a1b0b9))
+- change the rule of consistent-return ([b5fd645](https://github.com/mohammaDJ23/expense-web/commit/b5fd645c13b643f029fe953c55350466c8b346f2))
+- install date-fns ([a9fe0b1](https://github.com/mohammaDJ23/expense-web/commit/a9fe0b1dda6387ebe6018e8263e3921dcdbd813f))
+
 ## [1.21.0](https://github.com/mohammaDJ23/expense-web/compare/v1.20.0...v1.21.0) (2026-11-26)
 
 ### ✨ Features
