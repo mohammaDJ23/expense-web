@@ -28,6 +28,9 @@ importers:
             axios:
                 specifier: ^1.21.0
                 version: 1.21.0
+            date-fns:
+                specifier: ^4.4.0
+                version: 4.4.0
             lucide-react:
                 specifier: ^1.74.0
                 version: 1.74.0(@types/react@19.3.0)(react@19.3.1)
@@ -3483,6 +3486,12 @@ packages:
                 integrity: sha512-1Il1aliroVSErrv5aulRBxAY+7+DnaoLIWGd1C6SsBTWDeobWiP/V69vwb8vT6abR1kKwaNe1196pmaQ1fK90A==,
             }
         engines: { node: '>=12' }
+
+    date-fns@4.4.0:
+        resolution:
+            {
+                integrity: sha512-+1UMbeh68lH1SegH83CGWwpb6OHHbpSgr3+s5Eww5M4CAgswBpoWS0AjTOfEJ33HiYKz1hdj/KTFprzXHmq/6w==,
+            }
 
     date-format@4.0.14:
         resolution:
@@ -9452,6 +9461,8 @@ snapshots:
             d3-array: 3.2.5
 
     d3-timer@3.0.2: {}
+
+    date-fns@4.4.0: {}
 
     date-format@4.0.14: {}
 
