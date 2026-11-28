@@ -26,7 +26,7 @@ function DeleteConsumerButton(): ReactElement {
 
             request
                 .mutateAsync({ id })
-                .then(() => invalidateConsumerQueries())
+                .then(() => invalidateConsumerQueries(id))
                 .then(() => setIsOpen(false))
                 .then(() => request.reset())
                 .then(() => navigate('/consumers'));
